@@ -101,6 +101,25 @@
   .progress{position:absolute;left:0;bottom:0;height:.35vw;background:var(--gold);z-index:6}
   .actbadge{position:absolute;bottom:3.6%;right:4%;z-index:6;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1vw;color:rgba(227,197,121,.7)}
 
+  /* SCENE two-column: phone-frame visual + editorial */
+  .scenegrid{display:grid;grid-template-columns:15.4vw 1fr;gap:2vw;margin-top:1.1vw;align-items:center;flex:1;min-height:0}
+  .phone{position:relative;width:15.4vw;height:27.4vw;border-radius:1.6vw;overflow:hidden;background:#000;border:.32vw solid #10203f;box-shadow:0 26px 60px rgba(0,0,0,.6), inset 0 0 0 1px rgba(227,197,121,.18)}
+  .phone img{width:100%;height:100%;object-fit:cover;display:block}
+  .phone .pnotch{position:absolute;top:.55vw;left:50%;transform:translateX(-50%);width:4vw;height:.7vw;border-radius:999px;background:rgba(0,0,0,.7)}
+  .sccol{display:flex;flex-direction:column;gap:.85vw;min-width:0}
+  .sccol .ost{flex:0 0 auto}
+  .sccol .gcta{width:100%;min-width:0}
+  .sccol .sbcol{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:.6vw;padding:.7vw .9vw}
+
+  /* FULL SCRIPT slide */
+  .scriptbox{margin-top:1.1vw;display:flex;flex-direction:column;gap:.55vw;overflow:hidden}
+  .scr-row{display:grid;grid-template-columns:6vw 1fr;gap:1.1vw;padding:.5vw 0;border-top:1px solid rgba(255,255,255,.08);align-items:baseline}
+  .scr-tc{font-family:'Inter';font-size:.82vw;font-weight:800;color:var(--gold2);letter-spacing:.02em}
+  .scr-tc small{display:block;font-size:.62vw;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:.15vw}
+  .scr-vo{font-family:'Cormorant Garamond',serif;font-size:1.28vw;line-height:1.34;color:#fff}
+  .scr-vo .scard{display:inline-block;margin-left:.4vw;font-family:'Inter';font-size:.6vw;font-weight:900;letter-spacing:.14em;color:#1a1204;background:linear-gradient(180deg,var(--gold2),var(--gold));border-radius:999px;padding:.12vw .55vw;vertical-align:middle}
+  .scr-ost{font-family:'Inter';font-size:.72vw;letter-spacing:.06em;color:var(--sky);margin-top:.25vw;font-weight:600}
+
   /* CARD SYSTEM slide */
   .csys{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1vw;margin-top:auto}
   .csys .gcta{width:100%;min-width:0}
@@ -137,7 +156,7 @@
 <header class="top">
   <div class="kick">Courtney × Longevity Life Academy</div>
   <h1>The Masterclass Series — Deconstructed</h1>
-  <p>3 masterclass films · 60–90s each · named acts · SEE / HEAR editor breakdown · 3 website-ready CTA cards per film</p>
+  <p>3 masterclass films · 60–90s each · storyboard visuals · full read-through scripts · 3 website-ready CTA cards per film</p>
 </header>
 
 <div class="toolbar">
@@ -178,12 +197,12 @@ const films = [
     ],
     website:"Card 1 → hero headline · Card 2 → “The Method” section · Card 3 → enrollment CTA band",
     scenes:[
-      {act:"Act I", t:"0:00–0:06", ost:"You're not aging the way you think.", see:"Slow push-in, Courtney direct to camera, calm confidence. Soft window light, warm navy interior. Fade from black.", hear:"“Here's what almost no one tells you about how you age.”"},
-      {act:"Act II", t:"0:06–0:16", card:{verb:"LEARN", gh:["Aging is a trajectory,","not a fate."], btn:"Learn to bend your curve →", tag:"Website → hero headline"}, see:"Talking head cuts to a clean animated line graph — one steep climbing line, a second bends flatter. Gold accent glows on the bend.", hear:"“Two people, same birthday. One keeps climbing — faster decline every year. The other bends the curve and stays strong far longer. That gap isn't luck.”"},
-      {act:"Act III", t:"0:16–0:38", ost:"[RESULT]", see:"Courtney walking outdoors, energized. A navy + gold result card animates in on the [RESULT] number. Slow push-in for intimacy.", hear:"“For years I believed longevity belonged to the wealthy — the labs, the injections, the two-million-dollar protocols. I was wrong. With one simple system, I [RESULT]. No extreme diet. No fortune.”"},
-      {act:"Act IV", t:"0:38–0:50", card:{verb:"MASTER", gh:["Master the 3 levers","that move aging."], btn:"Master the method →", tag:"Website → “The Method” section"}, see:"Three icons animate one at a time: Move · Eat · Recover. Premium gold-on-navy. Rhythmic cut per word.", hear:"“That's what we teach inside Longevity Life Academy — the science-backed steps that actually bend your trajectory. Not a hundred rules. The handful that move the needle.”"},
-      {act:"Act V", t:"0:50–1:02", ost:"Longevity Life Academy", see:"Course UI glimpse: lessons, checklist, weekly plan, progress bar. Warm, calm.", hear:"“A guided path, lesson by lesson, built for real life — for people who want more good years, not a second job. You always know your next step.”"},
-      {act:"Act VI", t:"1:02–1:15", card:{verb:"START", gh:["Your trajectory is","still yours to change."], btn:"Enroll now · start this week →", tag:"Website → enrollment CTA band"}, see:"Gold ENROLL NOW button pulses; LLA logo + tagline lock-up on deep navy. Music resolves.", hear:"“The best time to start is this week. Enroll in Longevity Life Academy today.”"}
+      {act:"Act I", t:"0:00–0:06", img:"images/f1_s1_hook.png", ost:"You're not aging the way you think.", see:"Slow push-in, Courtney direct to camera, calm confidence. Soft window light, warm navy interior. Fade from black.", hear:"“Here's what almost no one tells you about how you age.”"},
+      {act:"Act II", t:"0:06–0:16", img:"images/g_trajectory.png", card:{verb:"LEARN", gh:["Aging is a trajectory,","not a fate."], btn:"Learn to bend your curve →", tag:"Website → hero headline"}, see:"Talking head cuts to a clean animated line graph — one steep climbing line, a second bends flatter. Gold accent glows on the bend.", hear:"“Two people, same birthday. One keeps climbing — faster decline every year. The other bends the curve and stays strong far longer. That gap isn't luck.”"},
+      {act:"Act III", t:"0:16–0:38", img:"images/g_result.png", ost:"[RESULT]", see:"Courtney walking outdoors, energized. A navy + gold result card animates in on the [RESULT] number. Slow push-in for intimacy.", hear:"“For years I believed longevity belonged to the wealthy — the labs, the injections, the two-million-dollar protocols. I was wrong. With one simple system, I [RESULT]. No extreme diet. No fortune.”"},
+      {act:"Act IV", t:"0:38–0:50", img:"images/g_levers.png", card:{verb:"MASTER", gh:["Master the 3 levers","that move aging."], btn:"Master the method →", tag:"Website → “The Method” section"}, see:"Three icons animate one at a time: Move · Eat · Recover. Premium gold-on-navy. Rhythmic cut per word.", hear:"“That's what we teach inside Longevity Life Academy — the science-backed steps that actually bend your trajectory. Not a hundred rules. The handful that move the needle.”"},
+      {act:"Act V", t:"0:50–1:02", img:"images/g_courseui.png", ost:"Longevity Life Academy", see:"Course UI glimpse: lessons, checklist, weekly plan, progress bar. Warm, calm.", hear:"“A guided path, lesson by lesson, built for real life — for people who want more good years, not a second job. You always know your next step.”"},
+      {act:"Act VI", t:"1:02–1:15", img:"images/f1_s3_energized.png", card:{verb:"START", gh:["Your trajectory is","still yours to change."], btn:"Enroll now · start this week →", tag:"Website → enrollment CTA band"}, see:"Gold ENROLL NOW button pulses; LLA logo + tagline lock-up on deep navy. Music resolves.", hear:"“The best time to start is this week. Enroll in Longevity Life Academy today.”"}
     ]
   },
   {
@@ -199,12 +218,12 @@ const films = [
     ],
     website:"Card 1 → value-prop headline · Card 2 → “Your weekly plan” block · Card 3 → enrollment CTA band",
     scenes:[
-      {act:"Act I", t:"0:00–0:06", ost:"Nobody wants to just live longer.", see:"Courtney, warm, seated, slight lean-in. Soft key light, navy + gold room. Static hold.", hear:"“Let me be honest — nobody actually wants to just live longer.”"},
-      {act:"Act II", t:"0:06–0:18", card:{verb:"LEARN", gh:["Healthspan is the years","you live ","well."], btn:"Learn what healthspan means →", tag:"Website → value-prop headline"}, see:"Montage, word-to-image match: hiking with grandkids, dancing, travel, garden — vibrant people in their 50s–60s. Warm grade.", hear:"“What they really want is to feel like this at seventy. And eighty. Strong. Sharp. Free. That's healthspan — the years you actually get to live well.”"},
-      {act:"Act III", t:"0:18–0:30", ost:"Lifespan vs. Healthspan", see:"Split screen: “Lifespan” side greys and fades; “Healthspan” side glows warm gold. Slow push-in on the gold side.", hear:"“Most advice adds years to your life. We add life to your years. That's the whole difference — and the part that matters most: it's trainable.”"},
-      {act:"Act IV", t:"0:30–0:44", card:{verb:"MASTER", gh:["Master the routine that","fits a normal week."], btn:"Master your week →", tag:"Website → “Your weekly plan” block"}, see:"Courtney beside her result card, navy + gold, bold [RESULT] number. Medium-close, intimate.", hear:"“I'm proof it works on a normal budget. I [RESULT] — not with gadgets or extremes, but with a routine that fits an ordinary week. If I can, so can you.”"},
-      {act:"Act V", t:"0:44–0:56", ost:"A complete, guided path", see:"Course modules fan out cleanly: Energy · Strength · Sleep · Mind. Calm UI.", hear:"“Inside Longevity Life Academy we walk you through it step by step — energy, strength, sleep, and a clear mind. No guessing, no gimmicks.”"},
-      {act:"Act VI", t:"0:56–1:05", card:{verb:"START", gh:["Add life","to your years."], btn:"Enroll now · start this week →", tag:"Website → enrollment CTA band"}, see:"Warm close on Courtney, then ENROLL NOW gold button + tagline lock-up.", hear:"“Don't just add years. Add life to them. Enroll in Longevity Life Academy and start this week.”"}
+      {act:"Act I", t:"0:00–0:06", img:"images/f2_s1_seated.png", ost:"Nobody wants to just live longer.", see:"Courtney, warm, seated, slight lean-in. Soft key light, navy + gold room. Static hold.", hear:"“Let me be honest — nobody actually wants to just live longer.”"},
+      {act:"Act II", t:"0:06–0:18", img:"images/f2_s2_vitality.png", card:{verb:"LEARN", gh:["Healthspan is the years","you live ","well."], btn:"Learn what healthspan means →", tag:"Website → value-prop headline"}, see:"Montage, word-to-image match: hiking with grandkids, dancing, travel, garden — vibrant people in their 50s–60s. Warm grade.", hear:"“What they really want is to feel like this at seventy. And eighty. Strong. Sharp. Free. That's healthspan — the years you actually get to live well.”"},
+      {act:"Act III", t:"0:18–0:30", img:"images/g_trajectory.png", ost:"Lifespan vs. Healthspan", see:"Split screen: “Lifespan” side greys and fades; “Healthspan” side glows warm gold. Slow push-in on the gold side.", hear:"“Most advice adds years to your life. We add life to your years. That's the whole difference — and the part that matters most: it's trainable.”"},
+      {act:"Act IV", t:"0:30–0:44", img:"images/g_result.png", card:{verb:"MASTER", gh:["Master the routine that","fits a normal week."], btn:"Master your week →", tag:"Website → “Your weekly plan” block"}, see:"Courtney beside her result card, navy + gold, bold [RESULT] number. Medium-close, intimate.", hear:"“I'm proof it works on a normal budget. I [RESULT] — not with gadgets or extremes, but with a routine that fits an ordinary week. If I can, so can you.”"},
+      {act:"Act V", t:"0:44–0:56", img:"images/g_courseui.png", ost:"A complete, guided path", see:"Course modules fan out cleanly: Energy · Strength · Sleep · Mind. Calm UI.", hear:"“Inside Longevity Life Academy we walk you through it step by step — energy, strength, sleep, and a clear mind. No guessing, no gimmicks.”"},
+      {act:"Act VI", t:"0:56–1:05", img:"images/f3_s3_kitchen.png", card:{verb:"START", gh:["Add life","to your years."], btn:"Enroll now · start this week →", tag:"Website → enrollment CTA band"}, see:"Warm close on Courtney, then ENROLL NOW gold button + tagline lock-up.", hear:"“Don't just add years. Add life to them. Enroll in Longevity Life Academy and start this week.”"}
     ]
   },
   {
@@ -221,13 +240,13 @@ const films = [
     ],
     website:"Card 1 → myth-buster hero · Card 2 → “The 4 Pillars” section · Card 3 → enrollment CTA band",
     scenes:[
-      {act:"Act I", t:"0:00–0:06", ost:"You don't need $2M to slow aging.", see:"Fast, confident cut. Courtney direct to camera, a little bold. Punch-in.", hear:"“You do not need two million dollars to slow how fast you age. Let me prove it.”"},
-      {act:"Act II", t:"0:06–0:18", card:{verb:"CONTROL", gh:["Take control back","from the hype."], btn:"Learn what actually works →", tag:"Website → myth-buster hero"}, see:"Quick montage of extreme-biohacker clichés — cold plunge, red-light room, hundred-pill morning — then Courtney's gentle “no” gesture.", hear:"“The plunges. The red-light rooms. The hundred supplements before breakfast. You've assumed that's the price of entry. It isn't. Most of it is expensive noise.”"},
-      {act:"Act III", t:"0:18–0:30", ost:"Real life. Real results.", see:"Courtney in an ordinary kitchen / neighborhood. Relatable but premium. Natural light.", hear:"“What actually moves the needle is boring, repeatable, and affordable. That's the good news nobody selling you gadgets wants you to hear.”"},
-      {act:"Act IV", t:"0:30–0:44", ost:"[RESULT]", see:"Result card, navy + gold, one bold [RESULT] number front and center.", hear:"“On a normal schedule and a normal budget, I [RESULT]. Not a study. Not a theory. My own result, from doing the simple things well.”"},
-      {act:"Act V", t:"0:44–0:58", card:{verb:"MASTER", gh:["Master the 4 things","that matter."], btn:"Master the 4 pillars →", tag:"Website → “The 4 Pillars” section"}, see:"Four clean pillars animate one by one: Move · Eat · Sleep · Connect. Rhythmic cuts.", hear:"“Inside Longevity Life Academy we cut through it and focus on the handful of things that truly work — how you move, eat, sleep, and connect. Then we make them stick.”"},
-      {act:"Act VI", t:"0:58–1:12", ost:"Guided. Proven. Doable.", see:"Course experience: guided lessons, a coach, a supportive community.", hear:"“You get the whole system, laid out lesson by lesson, with support — so you never waste time guessing what's worth doing.”"},
-      {act:"Act VII", t:"1:12–1:25", card:{verb:"START", gh:["Slowing your aging is","closer than you think."], btn:"Enroll now · start this week →", tag:"Website → enrollment CTA band"}, see:"ENROLL NOW gold button pulses; LLA logo + tagline on deep navy. Music resolves.", hear:"“It's closer — and far cheaper — than you've been led to believe. Enroll in Longevity Life Academy and start this week.”"}
+      {act:"Act I", t:"0:00–0:06", img:"images/f1_s1_hook.png", ost:"You don't need $2M to slow aging.", see:"Fast, confident cut. Courtney direct to camera, a little bold. Punch-in.", hear:"“You do not need two million dollars to slow how fast you age. Let me prove it.”"},
+      {act:"Act II", t:"0:06–0:18", img:"images/f3_s2_biohacker.png", card:{verb:"CONTROL", gh:["Take control back","from the hype."], btn:"Learn what actually works →", tag:"Website → myth-buster hero"}, see:"Quick montage of extreme-biohacker clichés — cold plunge, red-light room, hundred-pill morning — then Courtney's gentle “no” gesture.", hear:"“The plunges. The red-light rooms. The hundred supplements before breakfast. You've assumed that's the price of entry. It isn't. Most of it is expensive noise.”"},
+      {act:"Act III", t:"0:18–0:30", img:"images/f3_s3_kitchen.png", ost:"Real life. Real results.", see:"Courtney in an ordinary kitchen / neighborhood. Relatable but premium. Natural light.", hear:"“What actually moves the needle is boring, repeatable, and affordable. That's the good news nobody selling you gadgets wants you to hear.”"},
+      {act:"Act IV", t:"0:30–0:44", img:"images/g_result.png", ost:"[RESULT]", see:"Result card, navy + gold, one bold [RESULT] number front and center.", hear:"“On a normal schedule and a normal budget, I [RESULT]. Not a study. Not a theory. My own result, from doing the simple things well.”"},
+      {act:"Act V", t:"0:44–0:58", img:"images/g_pillars.png", card:{verb:"MASTER", gh:["Master the 4 things","that matter."], btn:"Master the 4 pillars →", tag:"Website → “The 4 Pillars” section"}, see:"Four clean pillars animate one by one: Move · Eat · Sleep · Connect. Rhythmic cuts.", hear:"“Inside Longevity Life Academy we cut through it and focus on the handful of things that truly work — how you move, eat, sleep, and connect. Then we make them stick.”"},
+      {act:"Act VI", t:"0:58–1:12", img:"images/g_courseui.png", ost:"Guided. Proven. Doable.", see:"Course experience: guided lessons, a coach, a supportive community.", hear:"“You get the whole system, laid out lesson by lesson, with support — so you never waste time guessing what's worth doing.”"},
+      {act:"Act VII", t:"1:12–1:25", img:"images/f1_s3_energized.png", card:{verb:"START", gh:["Slowing your aging is","closer than you think."], btn:"Enroll now · start this week →", tag:"Website → enrollment CTA band"}, see:"ENROLL NOW gold button pulses; LLA logo + tagline on deep navy. Music resolves.", hear:"“It's closer — and far cheaper — than you've been led to believe. Enroll in Longevity Life Academy and start this week.”"}
     ]
   }
 ];
@@ -289,34 +308,55 @@ films.forEach(f=>{
       <div style="margin-top:auto;font-size:.82vw;color:var(--muted);letter-spacing:.03em"><b style="color:#E3C579">Website mapping:</b> ${f.website}</div>
     </div></div>`});
 
-  // SCENE SLIDES
+  // SCENE SLIDES — two-column: phone-frame visual (left) + editorial breakdown (right)
   f.scenes.forEach((sc,ci)=>{
     const pct = Math.round(((ci+1)/f.scenes.length)*100);
-    const mid = sc.card
-      ? ctaCard(sc.card)
-      : "";
+    const card = sc.card ? ctaCard(sc.card) : "";
     const ost = sc.ost!==undefined
-      ? `<div class="ost"><div class="osk">On-screen text</div><div class="osv">${sc.ost}</div></div>`
-      : `<div class="ost empty"><div class="osk">On-screen text</div><div class="osv">— let the visual breathe —</div></div>`;
+      ? `<div class="ost"><div class="osk">On-screen text (burned-in caption)</div><div class="osv">${sc.ost}</div></div>`
+      : "";
     slides.push({label:`${f.n} · Sc ${ci+1}`, html:`
-      <div class="slide"><div class="pad">
+      <div class="slide scene"><div class="pad">
         ${brandTag()}
         <div class="sbtop">
-          <div class="sc">${String(ci+1).padStart(2,'0')}<small>${f.n} · Scene</small></div>
+          <div class="sc">${String(ci+1).padStart(2,'0')}<small>${f.n} · ${sc.act}</small></div>
           <div class="time">${sc.t}<small>Timecode</small></div>
         </div>
-        <div class="midrow">
-          ${ost}
-          ${mid}
-        </div>
-        <div class="sbgrid">
-          <div class="sbcol see"><div class="h"><span class="b"></span>See · Visual + Editorial</div><p>${sc.see}</p></div>
-          <div class="sbcol hear"><div class="h"><span class="b"></span>Hear · Voiceover</div><p>${sc.hear}</p></div>
+        <div class="scenegrid">
+          <div class="phone"><img src="${sc.img}" alt="scene visual"><span class="pnotch"></span></div>
+          <div class="sccol">
+            ${ost}
+            ${card}
+            <div class="sbcol see"><div class="h"><span class="b"></span>See · Visual + Editorial</div><p>${sc.see}</p></div>
+            <div class="sbcol hear"><div class="h"><span class="b"></span>Hear · Voiceover</div><p>${sc.hear}</p></div>
+          </div>
         </div>
       </div>
-      <div class="actbadge">${sc.act}</div>
+      <div class="actbadge">${f.n} · ${sc.act}</div>
       <div class="progress" style="width:${pct}%"></div></div>`});
   });
+
+  // FULL SCRIPT slide — the entire film read top to bottom
+  const scriptRows = f.scenes.map((sc,ci)=>{
+    const cardLine = sc.card ? `<span class="scard">CARD · ${sc.card.verb}</span>` : "";
+    const ostLine = sc.ost!==undefined ? `<div class="scr-ost">ON-SCREEN: “${sc.ost}”</div>` : "";
+    return `<div class="scr-row">
+      <div class="scr-tc">${sc.t}<small>${sc.act}</small></div>
+      <div class="scr-body">
+        <div class="scr-vo">${sc.hear} ${cardLine}</div>
+        ${ostLine}
+      </div>
+    </div>`;
+  }).join("");
+  slides.push({label:`${f.n} · Full script`, html:`
+    <div class="slide script"><div class="pad">
+      ${brandTag()}
+      <div class="ohead">
+        <div class="kick">${f.n} · Full Voiceover Script · ${f.len} · ${f.words}</div>
+        <h2>${f.title[0]} <em>${f.title[1]}</em> — read straight through</h2>
+      </div>
+      <div class="scriptbox">${scriptRows}</div>
+    </div></div>`});
 });
 
 // CARD-SYSTEM slide — all reusable, website-ready
