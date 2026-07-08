@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>eTeacher · Longevity Life Academy — PR Campaign Deck (with Julie VO Scripts)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --paper:#F4F2EC; --panel:#FFFFFF; --navy:#12293F; --ink:#1E2A26;
+    --gold:#C79A3A; --gold-deep:#8A6A22; --line:#D8D3C6; --muted:#6B6355;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#0c1a2a;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+
+  header{max-width:1280px;margin:0 auto;padding:26px 20px 6px;display:flex;justify-content:space-between;align-items:center;color:#cddaee;font-size:12px;letter-spacing:2px;font-weight:600;text-transform:uppercase}
+  header .r{color:var(--gold)}
+  .toolbar{max-width:1280px;margin:0 auto;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:10px 20px 22px}
+  .toolbar a,.toolbar button{background:var(--gold);color:#2a2107;border:none;border-radius:999px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;transition:opacity .15s}
+  .toolbar a:hover,.toolbar button:hover{opacity:.85}
+  .toolbar .ghost{background:transparent;border:1px solid #35507a;color:#cddaee}
+  .toolbar .counter{color:#cddaee;font-size:13px;align-self:center;font-weight:600}
+
+  .deck{max-width:1280px;margin:0 auto;padding:0 20px 60px}
+  .slide{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 26px 70px rgba(0,0,0,.5);margin-bottom:30px;scroll-margin-top:20px}
+  .slide.img{aspect-ratio:16/9;background:#fff}
+  .slide.img img{width:100%;height:100%;display:block;object-fit:contain}
+
+  /* Chapter-2 divider ribbon for the inserted scripts */
+  .scriptmark{max-width:1280px;margin:6px auto 14px;padding:0 24px;color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:700;text-transform:uppercase}
+
+  /* Coded PAPER article slide (matches deck 1:1) */
+  .art{background:var(--paper);color:var(--ink)}
+  .art .topbar{height:8px;background:var(--gold);width:100%}
+  .art .body{padding:4.2% 5% 4.5%}
+  .kick{display:flex;justify-content:space-between;align-items:baseline;gap:20px}
+  .kick .l{color:var(--gold-deep);font-size:13px;letter-spacing:2.5px;font-weight:700;text-transform:uppercase}
+  .kick .l .dot{color:var(--muted);margin:0 8px}
+  .kick .l .cat{color:#4a4436;font-weight:600;letter-spacing:1.8px}
+  .kick .t{font-size:12px;letter-spacing:.5px;color:var(--muted);text-align:right;white-space:nowrap}
+  .kick .t .tt{color:var(--muted);font-weight:400;margin-right:6px}
+  .kick .t b{color:var(--navy);font-weight:700}
+  .art h2{font-family:var(--serif);font-weight:700;font-size:38px;line-height:1.14;color:var(--navy);margin-top:20px;letter-spacing:-.4px}
+  .deckline{font-family:var(--serif);font-style:italic;font-weight:600;font-size:21px;line-height:1.45;color:#3a4048;margin-top:20px}
+  .rule{height:1px;background:var(--line);margin:22px 0 22px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+  .col p{font-size:15.5px;line-height:1.68;color:#3d3a33;margin-bottom:13px}
+  .col p.cue{color:var(--gold-deep);font-weight:700;font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:6px}
+  .col p .em{color:var(--navy);font-weight:700}
+  .onscreen{border-left:3px solid var(--gold);background:rgba(199,154,58,.08);padding:9px 14px;margin:4px 0 15px;font-size:13.5px;color:#4a4436;font-style:italic}
+  .onscreen b{color:var(--navy);font-style:normal;font-weight:700;letter-spacing:.4px}
+  .qbox{margin-top:24px;border-radius:4px;overflow:hidden;box-shadow:0 8px 22px rgba(18,41,63,.18)}
+  .qbox .qh{background:var(--gold);color:#3a2f10;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:11px 22px}
+  .qbox .qb{background:var(--navy);color:#fff;padding:20px 24px}
+  .qbox .qb .lock{font-family:var(--serif);font-weight:700;font-size:24px;line-height:1.3;color:#fff}
+  .qbox .qb .note{color:#9fb0c4;font-size:12.5px;font-style:italic;margin-top:10px;line-height:1.45}
+  .pagefoot{position:absolute;right:26px;bottom:16px;color:#b7b1a2;font-size:13px;font-family:var(--serif)}
+
+  footer{text-align:center;color:#7C8CA8;font-size:12px;padding:20px 16px 50px}
+  @media(max-width:900px){
+    .art h2{font-size:26px}.deckline{font-size:17px}
+    .cols{grid-template-columns:1fr;gap:20px}
+    .kick{flex-direction:column;gap:8px}.kick .t{text-align:left}
+    .qbox .qb .lock{font-size:19px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <span>eTeacher Group · Longevity Life Academy · PR Campaign Deck</span>
+  <span class="r">39 slides · incl. Julie VO Scripts 06 &amp; 07</span>
+</header>
+<div class="toolbar">
+  <a href="#s25a">Jump to Julie VO Scripts ↓</a>
+  <a class="ghost" href="eTeacher_Longevity_PR_Campaign-7.pptx" download>Download PowerPoint</a>
+</div>
+
+<div class="deck" id="deck"></div>
+
+<!-- The two coded script slides live in this template and get spliced in after slide 24 -->
+<template id="script06">
+  <section class="slide art" id="s25a">
+    <div class="topbar"></div>
+    <div class="body">
+      <div class="kick">
+        <div class="l">SCRIPT 06 <span class="dot">·</span> <span class="cat">FOUNDING-FACULTY FILM — "THE $2M ANSWER"</span></div>
+        <div class="t"><span class="tt">FRAMEWORK</span> <b>French Atelier</b> · 60–75s · direct to camera</div>
+      </div>
+      <h2>She Out-Aged a $2-Million-a-Year Man — on an Ordinary Budget</h2>
+      <div class="deckline">World-before-face cold open, teacher reveal, the two factors, proof, offer, and a mirrored brand-lock-up close — all in Julie's documented voice.</div>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="col">
+          <p class="cue">Act I · World before face — cold open</p>
+          <p>"Somewhere right now, a man is spending <span class="em">two million dollars a year</span> trying to age slower. Cold plunges. A hundred pills a day. A full-time medical team. And for more than a year, on the same scoreboard that ranks him — he was in <span class="em">second place</span>. First place was a working mother, living on an ordinary budget."</p>
+          <div class="onscreen"><b>ON SCREEN:</b> $2,000,000 a year. And he came in second.</div>
+          <p class="cue">Act II · Teacher reveal — to camera</p>
+          <p>"That mother is me. I'm <span class="em">Julie Gibson Clark</span>. For over a year I ranked second in the world for slowing my own aging — ahead of the men with the labs and the millions. I didn't beat them with money. I beat them with the boring things, done every single day."</p>
+          <p class="cue">Act III · The two factors</p>
+          <p>"There are <span class="em">two factors</span> that decide almost everything: how <span class="em">consistent</span> you are, and how well you actually <span class="em">read your own body</span>. Not the plunge. Not the pills. Consistency, and your own numbers."</p>
+        </div>
+        <div class="col">
+          <p class="cue">Act IV · Proof — word-to-image cutaway</p>
+          <p>"My pace of aging is measured at <span class="em">point-six-six-five</span> — my body is aging about a third slower than the calendar. On an ordinary budget. He spends two million a year."</p>
+          <div class="onscreen"><b>CARD:</b> DunedinPACE 0.665 · aging ~34% slower · ordinary budget vs $2M/yr</div>
+          <p class="cue">Act V · The offer</p>
+          <p>"That's why I teach at <span class="em">Longevity Life Academy</span> — the two factors, across six simple pillars: eat, sleep, move, supplement, protect your heart, and read your own data. Eighteen live sessions that turn a millionaire's obsession into something you can actually do."</p>
+          <p class="cue">Act VI · Close — mirror the open</p>
+          <p>"The biggest bang for your buck was never expensive — it's eating right, moving, and sleeping, done every day. Second place cost me nothing but consistency. <span class="em">Join us</span>, and design the life ahead of you."</p>
+        </div>
+      </div>
+      <div class="qbox">
+        <div class="qh">Welcome &amp; Brand Lock-Up · Julie Gibson Clark, LLA Founding Faculty</div>
+        <div class="qb">
+          <div class="lock">"I'm Julie — welcome to Longevity Life Academy."</div>
+          <div class="note">Bookend close mirrors the open. #2 ranking stated PAST-tense ("was," "for over a year"). No "$12" figure — affordability carried by "ordinary budget."</div>
+        </div>
+      </div>
+    </div>
+    <div class="pagefoot">24a</div>
+  </section>
+</template>
+
+<template id="script07">
+  <section class="slide art" id="s25b">
+    <div class="topbar"></div>
+    <div class="body">
+      <div class="kick">
+        <div class="l">SCRIPT 07 <span class="dot">·</span> <span class="cat">FOUNDING-FACULTY FILM — "SECOND PLACE, FIRST TRUTH"</span></div>
+        <div class="t"><span class="tt">FRAMEWORK</span> <b>French Atelier</b> · 60–75s · direct to camera</div>
+      </div>
+      <h2>Second in the World — and That's Exactly Why You Can Trust It</h2>
+      <div class="deckline">The humility flip: coming second, not first, is the proof — because she didn't buy the result, she built it. Same six-act arc, same brand lock-up.</div>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="col">
+          <p class="cue">Act I · World before face — the scoreboard</p>
+          <p>"There's a global ranking for how slowly people are aging. At the top, the names you'd expect — labs, money, full-time teams. And for over a year, just below them, in <span class="em">second place</span>, was a name nobody recognized. No lab. No fortune. Just a woman who paid attention."</p>
+          <p class="cue">Act II · Teacher reveal — humility flip</p>
+          <p>"I'm that name. <span class="em">Julie Gibson Clark</span>. And honestly? I'm glad I came second, not first. Because first place had unlimited money. I didn't. Which means everything I did — you can do too."</p>
+          <p class="cue">Act III · The two factors</p>
+          <p>"It came down to two things. <span class="em">Consistency</span> — boring habits kept every single day. And <span class="em">visibility</span> — actually reading your own body instead of guessing. You don't need a fortune. You need a curriculum."</p>
+        </div>
+        <div class="col">
+          <p class="cue">Act IV · Proof</p>
+          <p>"My body aging about a third slower than the calendar. Holding <span class="em">second in the world</span> for more than a year — on the habits, not the budget."</p>
+          <div class="onscreen"><b>CARD:</b> DunedinPACE 0.665 · #2 held 1+ year · habits, not budget</div>
+          <p class="cue">Act V · The offer</p>
+          <p>"At <span class="em">Longevity Life Academy</span>: eighteen live sessions across the six pillars, and your own numbers turned into a blueprint. Not a millionaire's protocol. A learnable path."</p>
+          <p class="cue">Act VI · Close — emotional dwell</p>
+          <p>"You don't need to come first. You need to <span class="em">start</span>. It's your life. Live it well. <span class="em">Join us</span>."</p>
+        </div>
+      </div>
+      <div class="qbox">
+        <div class="qh">Welcome &amp; Brand Lock-Up · Julie Gibson Clark, LLA Founding Faculty</div>
+        <div class="qb">
+          <div class="lock">"I'm Julie — welcome to Longevity Life Academy."</div>
+          <div class="note">Signature line "It's your life. Live it well." carried into the close. #2 ranking PAST-tense throughout. Respectful toward Bryan Johnson — never named as a rival here.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pagefoot">24b</div>
+  </section>
+</template>
+
+<footer>Confidential communications plan — eTeacher Group · Longevity Life Academy. Every quote verbatim from published sources or written in the speaker's documented voice and flagged for approval.</footer>
+
+<script>
+  const N = 37, pad = n => String(n).padStart(2,'0');
+  const deck = document.getElementById('deck');
+  const INSERT_AFTER = 24; // end of Chapter 2 (article 2.7)
+  for (let k = 1; k <= N; k++){
+    const s = document.createElement('section');
+    s.className = 'slide img';
+    const img = document.createElement('img');
+    img.src = 'slides/slide-' + pad(k) + '.png';
+    img.loading = k <= 3 ? 'eager' : 'lazy';
+    img.alt = 'Slide ' + k;
+    s.appendChild(img); deck.appendChild(s);
+    if (k === INSERT_AFTER){
+      const mark = document.createElement('div');
+      mark.className = 'scriptmark';
+      mark.textContent = 'Chapter 2 · Star Power — Julie Gibson Clark Voiceover Scripts (added)';
+      deck.appendChild(mark);
+      deck.appendChild(document.getElementById('script06').content.cloneNode(true));
+      deck.appendChild(document.getElementById('script07').content.cloneNode(true));
+    }
+  }
+</script>
+</body>
+</html>
