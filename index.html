@@ -55,6 +55,10 @@
   .splt .col{flex:1;position:relative;overflow:hidden}
   .splt .col .bg{position:absolute;inset:0}
   .splt .col.solid{background:var(--navy2);display:flex;align-items:center;justify-content:center}
+  .splt .col.solidcol{background:linear-gradient(160deg,#081226,#02091C);display:flex;align-items:center;justify-content:center;padding:0 8%}
+  .splt .col.solidcol .solidin{text-align:center;opacity:.55}
+  .splt .col.solidcol .solidin .k{font-size:.95vw;letter-spacing:.3em;font-weight:800;color:#5E76A6;text-transform:uppercase}
+  .splt .col.solidcol .solidin .t{font-size:1.5vw;font-weight:600;margin-top:.7vw;color:#8FA2C6}
   .splt .divide{width:3px;background:var(--blue);z-index:6}
   .splt .lbl{position:absolute;left:6%;bottom:9%;z-index:6}
   .splt .lbl .k{font-size:.95vw;letter-spacing:.3em;font-weight:800;color:var(--sky);text-transform:uppercase}
@@ -140,13 +144,13 @@
 <footer>Confidential — prepared for the Longevity Life Academy partnership. Cinematic reference, built in the Julie production-deck language.</footer>
 
 <script>
-const IMG={cover:'images/set_cover.png',portrait:'images/set_portrait.png',closeup:'images/set_closeup.png',interview:'images/set_interview.png',
-  f1:'images/f1_s1_hook.png',f1e:'images/f1_s3_energized.png',f2:'images/f2_s2_vitality.png',f2s:'images/f2_s1_seated.png',f3:'images/f3_s2_biohacker.png',f3k:'images/f3_s3_kitchen.png'};
+const IMG={cover:'images/real_cover.png',portrait:'images/real_portrait.png',closeup:'images/real_closeup.png',interview:'images/real_cover.png',
+  f1:'images/real_portrait.png',f1e:'images/real_closeup.png',f2:'images/real_cover.png',f2s:'images/real_portrait.png',f3:'images/real_closeup.png',f3k:'images/real_portrait.png'};
 
 // helpers to build slide HTML
 const bar=n=>`<div class="topbar"></div><div class="pg">${n}</div>`;
 function cover(img,kick,h,sub,n){return `<div class="slide cvr"><img class="bg" src="${img}">${bar(n)}<div class="band"><div class="kick">${kick}</div><div class="h">${h}</div><div class="sub">${sub}</div></div></div>`;}
-function split(head,beforeImg,afterImg,bK,bT,aK,aT,n){return `<div class="slide splt"><img class="bg" src="${afterImg}" style="opacity:0">${bar(n)}<div class="head"><div class="kick">The Casting</div><div class="h">${head}</div></div><div class="cols"><div class="col"><img class="bg" src="${beforeImg}"><div class="scrim"></div><div class="lbl"><div class="k">${bK}</div><div class="t">${bT}</div></div></div><div class="divide"></div><div class="col"><img class="bg" src="${afterImg}"><div class="scrim"></div><div class="lbl"><div class="k">${aK}</div><div class="t">${aT}</div></div></div></div></div>`;}
+function split(head,beforeImg,afterImg,bK,bT,aK,aT,n){return `<div class="slide splt">${bar(n)}<div class="head"><div class="kick">The Casting</div><div class="h">${head}</div></div><div class="cols"><div class="col solidcol"><div class="solidin"><div class="k">${bK}</div><div class="t">${bT}</div></div></div><div class="divide"></div><div class="col"><img class="bg" src="${afterImg}"><div class="scrim"></div><div class="lbl"><div class="k">${aK}</div><div class="t">${aT}</div></div></div></div></div>`;}
 function panelRows(side,img,kick,h,rows,n){const r=rows.map(x=>`<div class="row"><div class="k">${x[0]}</div><div class="v">${x[1]}</div></div>`).join('');return `<div class="slide pnl ${side}"><img class="bg" src="${img}">${bar(n)}<div class="panel"><div class="kick">${kick}</div><div class="h">${h}</div>${r}</div></div>`;}
 function panelStack(side,img,kick,h,items,n){const r=items.map(x=>`<div class="s"><div class="sk">${x[0]}</div><div class="sv">${x[1]}</div></div>`).join('');return `<div class="slide pnl ${side}"><img class="bg" src="${img}">${bar(n)}<div class="panel"><div class="kick">${kick}</div><div class="h">${h}</div><div class="stk">${r}</div></div></div>`;}
 function cards(img,kick,h,cc,n){const c=cc.map(x=>`<div class="cc"><div class="ct">${x[0]}</div><div class="cd">${x[1]}</div></div>`).join('');return `<div class="slide crd"><img class="bg" src="${img}"><div class="scrim"></div>${bar(n)}<div class="head"><div class="kick">${kick}</div><div class="h">${h}</div></div><div class="cards">${c}</div></div>`;}
