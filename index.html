@@ -5,14 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Courtney × Longevity Life Academy — Masterclass Scripts</title>
 <style>
-  :root{ --navy:#02091C; --navy2:#050E28; --blue:#1A7FFF; --sky:#7EC8FF; --card:#0B1834; --line:#22406f; --ink:#B7C6E0; --gold:#C9A24B; }
+  :root{ --navy:#02091C; --navy2:#050E28; --blue:#1A7FFF; --sky:#7EC8FF; --card:#0B1834; --line:#22406f; --ink:#B7C6E0; --gold:#C9A24B; --green:#37D08A; }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--navy);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 
   header.top{padding:30px 20px 8px;text-align:center}
   header.top .kick{color:var(--sky);font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase}
   header.top h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px}
-  header.top p{color:var(--ink);font-size:14px;margin-top:8px;max-width:760px;margin-left:auto;margin-right:auto}
+  header.top p{color:var(--ink);font-size:14px;margin-top:8px;max-width:780px;margin-left:auto;margin-right:auto}
+
+  .offerbar{max-width:1080px;margin:16px auto 0;padding:0 18px}
+  .offerbar .inner{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:linear-gradient(160deg,rgba(26,127,255,.14),rgba(26,127,255,.04));border:1px solid rgba(26,127,255,.35);border-radius:12px;padding:12px 16px}
+  .offerbar .chip{font-size:12px;font-weight:700;color:#EAF2FF;letter-spacing:.02em}
+  .offerbar .chip b{color:var(--sky)}
+  .offerbar .chip.pro b{color:var(--green)}
 
   .chooser{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:18px 14px 8px}
   .chooser button{background:var(--card);color:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:.15s}
@@ -24,50 +30,51 @@
   .film{display:none}
   .film.active{display:block}
 
-  /* HERO banner */
-  .hero{position:relative;border-radius:16px 16px 0 0;overflow:hidden;height:300px;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .hero{position:relative;border-radius:16px 16px 0 0;overflow:hidden;height:310px;box-shadow:0 24px 70px rgba(0,0,0,.5)}
   .hero .topbar{position:absolute;top:0;left:0;right:0;height:6px;background:var(--blue);z-index:8}
   .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 26%}
-  .hero .grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,9,28,.92) 30%,rgba(2,9,28,.35) 70%,rgba(2,9,28,.15))}
-  .hero .htext{position:absolute;left:6%;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;max-width:60%;z-index:5}
+  .hero .grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,9,28,.93) 32%,rgba(2,9,28,.4) 72%,rgba(2,9,28,.15))}
+  .hero .htext{position:absolute;left:6%;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;max-width:62%;z-index:5}
   .hero .fkick{color:var(--sky);font-size:13px;letter-spacing:.28em;font-weight:800;text-transform:uppercase}
-  .hero .fh{font-size:34px;font-weight:800;line-height:1.05;margin:8px 0 10px;letter-spacing:-.5px}
-  .hero .fsub{color:#E7EEFB;font-size:14px;line-height:1.5;max-width:92%}
-  .hero .specs{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}
-  .hero .spec{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--sky);border:1px solid rgba(126,200,255,.35);border-radius:6px;padding:5px 9px}
+  .hero .fh{font-size:33px;font-weight:800;line-height:1.05;margin:8px 0 8px;letter-spacing:-.5px}
+  .hero .fpromise{color:#fff;font-size:15px;line-height:1.45;max-width:94%;font-weight:600}
+  .hero .fpromise b{color:var(--sky)}
+  .hero .specs{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .hero .spec{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--sky);border:1px solid rgba(126,200,255,.35);border-radius:6px;padding:5px 9px}
 
-  /* SCRIPT BODY — full script, all acts, one slide */
-  .body{background:linear-gradient(180deg,#050E28,#02091C);border:1px solid rgba(26,127,255,.16);border-top:none;border-radius:0 0 16px 16px;padding:6px 0 10px}
-  .act{display:grid;grid-template-columns:150px 1fr;gap:0;border-bottom:1px solid rgba(34,64,111,.5)}
+  .body{background:linear-gradient(180deg,#050E28,#02091C);border:1px solid rgba(26,127,255,.16);border-top:none;padding:6px 0 10px}
+  .act{display:grid;grid-template-columns:158px 1fr;gap:0;border-bottom:1px solid rgba(34,64,111,.5)}
   .act:last-child{border-bottom:none}
-  .act .lft{padding:22px 20px 22px 30px;border-right:2px solid var(--blue)}
-  .act .no{font-size:13px;letter-spacing:.2em;font-weight:800;color:var(--sky);text-transform:uppercase;line-height:1.3}
+  .act .lft{padding:22px 18px 22px 30px;border-right:2px solid var(--blue)}
+  .act .no{font-size:13px;letter-spacing:.16em;font-weight:800;color:var(--sky);text-transform:uppercase;line-height:1.35}
   .act .time{font-size:12px;color:#7C8CA8;font-weight:600;margin-top:6px}
   .act .rgt{padding:22px 30px 22px 24px}
-  .act .atitle{font-size:19px;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-.2px}
+  .act .atitle{font-size:19px;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-.2px;line-height:1.2}
   .blk{margin-bottom:12px}
   .blk:last-child{margin-bottom:0}
   .lab{font-size:11px;letter-spacing:.2em;font-weight:800;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
-  .vo{font-size:16px;line-height:1.5;color:#fff;font-weight:500}
+  .vo{font-size:16px;line-height:1.52;color:#fff;font-weight:500}
   .vo .q{color:var(--sky)}
   .see{font-size:13px;line-height:1.5;color:#AEBDD9}
-  .onscreen{display:inline-block;background:linear-gradient(160deg,rgba(26,127,255,.16),rgba(26,127,255,.05));border:1px solid rgba(26,127,255,.4);border-left:3px solid var(--blue);border-radius:7px;padding:8px 13px;font-size:14px;font-weight:700;color:#EAF2FF}
+  .onscreen{display:inline-block;background:linear-gradient(160deg,rgba(26,127,255,.16),rgba(26,127,255,.05));border:1px solid rgba(26,127,255,.4);border-left:3px solid var(--blue);border-radius:7px;padding:8px 13px;font-size:14px;font-weight:800;color:#EAF2FF}
   .card{display:inline-flex;align-items:center;gap:11px;background:linear-gradient(160deg,rgba(201,162,75,.14),rgba(201,162,75,.03));border:1px solid rgba(201,162,75,.45);border-radius:8px;padding:9px 14px;flex-wrap:wrap}
   .card .verb{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;border:1px solid rgba(201,162,75,.55);border-radius:5px;padding:4px 8px;white-space:nowrap}
-  .card .ctext{font-size:14px;color:#F3E9D2;font-weight:600;line-height:1.4}
+  .card .ctext{font-size:14px;color:#F3E9D2;font-weight:700;line-height:1.4}
 
-  /* CTA foot */
-  .cta{text-align:center;padding:30px 20px 34px;background:linear-gradient(180deg,rgba(26,127,255,.08),transparent)}
-  .cta .ch{font-size:24px;font-weight:800;letter-spacing:-.3px}
-  .cta .cs{color:var(--ink);font-size:14px;margin-top:8px}
-  .cta .pill{display:inline-block;margin-top:16px;background:var(--blue);color:#fff;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:14px;padding:13px 32px;border-radius:999px;box-shadow:0 12px 34px rgba(26,127,255,.4)}
-  .cta .tag{margin-top:14px;color:var(--sky);font-size:12px;letter-spacing:.14em}
+  .cta{text-align:center;padding:32px 20px 36px;background:linear-gradient(180deg,rgba(26,127,255,.1),transparent);border:1px solid rgba(26,127,255,.16);border-top:none;border-radius:0 0 16px 16px}
+  .cta .ch{font-size:25px;font-weight:800;letter-spacing:-.3px}
+  .cta .cs{color:var(--ink);font-size:14px;margin-top:8px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.5}
+  .cta .stack{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .cta .val{font-size:12px;font-weight:700;color:#EAF2FF;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:7px;padding:7px 11px}
+  .cta .val b{color:var(--green)}
+  .cta .pill{display:inline-block;margin-top:18px;background:var(--blue);color:#fff;font-weight:800;letter-spacing:.05em;text-transform:uppercase;font-size:15px;padding:14px 34px;border-radius:999px;box-shadow:0 12px 34px rgba(26,127,255,.45)}
+  .cta .promo{margin-top:12px;color:var(--green);font-size:13px;font-weight:700;letter-spacing:.04em}
+  .cta .tag{margin-top:12px;color:var(--sky);font-size:12px;letter-spacing:.14em}
 
   footer{text-align:center;color:#7C8CA8;font-size:12px;padding:8px 16px 34px}
   @media(max-width:720px){
     header.top h1{font-size:22px}
-    .hero{height:auto;border-radius:16px 16px 0 0}
-    .hero img{position:relative;height:180px}
+    .hero{height:auto}.hero img{position:relative;height:190px}
     .hero .grad{background:linear-gradient(180deg,rgba(2,9,28,.2),rgba(2,9,28,.95))}
     .hero .htext{position:relative;max-width:100%;padding:16px 6% 22px}
     .hero .fh{font-size:24px}
@@ -81,18 +88,22 @@
 <header class="top">
   <div class="kick">Courtney × Longevity Life Academy</div>
   <h1>The Masterclass Films — Full Scripts</h1>
-  <p>Three cinematic launch films, built in the Julie production-deck language. Pick a film below — the entire script appears on one page: every act with the exact words Courtney says, the on-screen graphics, and the editor's shot notes.</p>
+  <p>Three cinematic direct-response films for the launch. Every act sells the actual program: 18 live sessions, the Six Pillars, and learning beside the #2 slowest-aging person on Earth. Pick a film — the full script appears on one page.</p>
 </header>
 
+<div class="offerbar"><div class="inner">
+  <span class="chip"><b>18</b> live cohort sessions</span>
+  <span class="chip"><b>6</b> Pillars: Nutrition · Sleep · Movement · Supplements · Cardio · Biohacking</span>
+  <span class="chip">Faculty: <b>Julie Gibson Clark — #2, Rejuvenation Olympics</b></span>
+  <span class="chip pro">Enroll offer: <b>20% off · $1,500 → $1,200</b></span>
+</div></div>
+
 <div class="chooser" id="chooser"></div>
-
 <div class="wrap" id="wrap"></div>
-
-<footer>Confidential — prepared for the Longevity Life Academy partnership. Real Courtney footage direction. Insert her verified result wherever you see [RESULT].</footer>
+<footer>Confidential — prepared for the Longevity Life Academy partnership. Real Courtney footage; Julie Gibson Clark to appear via real press photo only. Insert Courtney's verified figure wherever you see [RESULT].</footer>
 
 <script>
 const IMG={cover:'images/real_cover.png',portrait:'images/real_portrait.png',closeup:'images/real_closeup.png'};
-
 function act(no,time,title,vo,onscreen,see){
   let os='';
   if(onscreen){
@@ -107,47 +118,52 @@ function act(no,time,title,vo,onscreen,see){
 
 const FILMS=[
 {
-  n:"01", name:"The Trajectory", img:IMG.cover,
-  kick:"Film 01", h:"The Trajectory", sub:"You can change the direction you're aging in. Curiosity → Realization → Proof → Empowerment → Desire → Action.",
-  specs:["~75 sec","9:16","≈185 words","Cold + idea"],
+  n:"01", name:"The 2-Million-Dollar Lie", img:IMG.cover,
+  kick:"Film 01 · Cold traffic", h:"The $2M Lie",
+  promise:"Kills the #1 objection in 6 seconds — then hands them the exact program. <b>18 live sessions. Six Pillars. 20% off.</b>",
+  specs:["~80 sec","9:16","Hook @ 0s","Offer @ 0:50","Hard CTA"],
   acts:[
-    act("Act I · The Hook","0:00–0:06","Pattern-interrupt to camera.","“Here's what almost no one tells you about how you age.”",{text:"You're not aging the way you think."},"Slow push-in, Courtney direct to camera, calm confidence. Soft window light, warm navy interior. Fade from black."),
-    act("Act II · The Reframe","0:06–0:16","Aging is a trajectory, not a fate.","“Two people, same birthday. One keeps climbing — faster decline every year. The other bends the curve and stays strong far longer. That gap isn't luck, and it isn't even mostly genetics.”",{verb:"Learn",text:"“Aging is a trajectory, not a fate.” → Learn how to bend your curve"},"Talking head cuts to a clean animated line graph: one steep climbing line, a second bends flatter. Blue accent line glows on the bend."),
-    act("Act III · Confession + Proof","0:16–0:38","The $2M myth, broken by her own result.","“For years I believed longevity belonged to the wealthy — the private labs, the injections, the two-million-dollar protocols. I was wrong. With one simple, repeatable system, I [RESULT]. No extreme diet. No fortune. Just the right things, in the right order.”",{text:"[RESULT] — insert Courtney's real number"},"Return to Courtney walking outdoors, energized, real life. Then a navy result card animates in on the [RESULT] number. Slow push-in for intimacy."),
-    act("Act IV · The Method","0:38–0:50","The handful that moves the needle.","“That's what we teach inside Longevity Life Academy — the science-backed steps that actually bend your trajectory. Not a hundred rules. The handful that move the needle.”",{verb:"Master",text:"“Master the 3 levers that actually move aging.” → Master the method"},"Three icons animate one at a time: Move · Eat · Recover. Premium, rhythmic cut per word."),
-    act("Act V · The Course","0:50–1:02","Guided, lesson by lesson.","“It's a guided path, lesson by lesson, built for real life — for people who want more good years, not a second job. You always know your next step.”",{text:"Longevity Life Academy"},"Course UI glimpse: lessons, checklist, weekly plan, progress bar. Warm, calm."),
-    act("Act VI · The Invitation","1:02–1:15","Your trajectory is still yours to change.","“The best time to start is this week. Enroll in Longevity Life Academy today.”",{verb:"Start",text:"“Your trajectory is still yours to change.” → Enroll now · start this week"},"Blue ENROLL NOW button pulses; LLA logo + tagline lock-up on deep navy. Music resolves.")
+    act("Act I · The Hook","0:00–0:06","Detonate the objection instantly.","“You've been told slowing your aging costs two million dollars. That's a lie — and it's costing you years.”",{text:"The $2M longevity lie."},"Hard cut on the word LIE. Courtney direct to camera, bold, zero fluff. Punch-in on 'years.' No music yet — just her voice."),
+    act("Act II · The Enemy","0:06–0:18","Name what's failing them.","“The plunges, the red-light rooms, the hundred pills before breakfast — that's the influencer version. It's expensive, it's confusing, and 90% of it does nothing. No wonder you gave up.”",{text:"90% of it does nothing."},"Fast montage of biohacker clichés, each stamped with a red ✕. Ends on Courtney's calm head-shake — she's the antidote."),
+    act("Act III · Her Proof","0:18–0:34","Undeniable, personal, specific.","“I'm not a scientist with a lab. I'm a normal woman on a normal budget — and in [RESULT], I slowed my aging measurably. Not with gadgets. With a system anyone can follow.”",{verb:"Proof",text:"“I did it on a normal budget → [RESULT].” Insert Courtney's verified figure"},"Courtney beside a bold result card. Real, warm, believable. Slow push-in for intimacy — this is the trust beat."),
+    act("Act IV · The Authority","0:34–0:48","Borrow the world's credibility.","“And you won't learn it alone. Inside Longevity Life Academy you learn beside Julie Gibson Clark — ranked the #2 slowest-aging person on Earth in the Rejuvenation Olympics. The real science, from the people who top the leaderboard.”",{verb:"Trust",text:"Faculty: Julie Gibson Clark — #2, Rejuvenation Olympics"},"Julie's REAL press photo (never AI) with her ranking lower-third. Cut back to Courtney nodding — peer credibility transfer."),
+    act("Act V · The Mechanism","0:48–1:02","Make the offer concrete.","“It's not a PDF you'll never open. It's 18 live sessions across the Six Pillars — nutrition, sleep, movement, supplements, heart health, and biohacking — so you know exactly what to do, and actually do it.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · you're never guessing"},"Six pillar icons snap in on the beat, then a live-session UI with faces on camera. Momentum builds — this is buyable, not theoretical."),
+    act("Act VI · The Close","1:02–1:20","Urgency + risk-reversal + CTA.","“Live seats are limited, and enrollment closes soon. Join now and take 20% off — a full year of longevity coaching for less than a month of the gimmicks. Enroll in Longevity Life Academy today.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · seats limited"},"ENROLL NOW button pulses, price crosses out $1,500 → $1,200. Countdown feel. LLA lock-up + 'It's Your Life. Live It Well.' Music resolves.")
   ],
-  cta:{h:"Bend your aging trajectory — starting this week.",sub:"Two people, same age — one aging twice as fast. The difference isn't genetics, it's a method."}
+  cta:{h:"Slowing your aging costs a routine — not $2 million.",sub:"Prove the lie wrong in 6 seconds, transfer Julie's world-#2 credibility, then convert on a concrete live program with a real discount.",
+    stack:["18 live sessions","6 Pillars","Faculty: Julie #2 worldwide","<b>20% off → $1,200</b>","Seats limited"]}
 },
 {
-  n:"02", name:"Healthspan", img:IMG.portrait,
-  kick:"Film 02", h:"Healthspan, Not Lifespan", sub:"Add life to your years, not just years to your life. Recognition → Aspiration → Clarity → Proof → Trust → Action.",
-  specs:["~70 sec","9:16","≈170 words","Retargeting"],
+  n:"02", name:"Same Birthday, Different Ending", img:IMG.portrait,
+  kick:"Film 02 · Idea-led", h:"Two People. One Choice.",
+  promise:"The most shareable idea in longevity — then a hard turn into the program. <b>Bend your curve with the Six Pillars.</b>",
+  specs:["~75 sec","9:16","Visual hook","Live proof","Enroll CTA"],
   acts:[
-    act("Act I · The Hook","0:00–0:06","Nobody wants to just live longer.","“Let me be honest — nobody actually wants to just live longer.”",{text:"Nobody wants to just live longer."},"Courtney, warm, seated, slight lean-in. Soft key light, navy room. Static hold."),
-    act("Act II · The Aspiration","0:06–0:18","Healthspan is the years you live well.","“What they really want is to feel like this at seventy. And eighty. Strong. Sharp. Free to do what they love. That's healthspan — the years you actually get to live well.”",{verb:"Learn",text:"“Healthspan is the years you live well.” → Learn what healthspan means"},"Montage, word-to-image match: hiking with grandkids, dancing, travel, gardening — vibrant people in their 50s–60s. Warm grade."),
-    act("Act III · The Reframe","0:18–0:30","Lifespan vs. Healthspan — it's trainable.","“Most advice adds years to your life. We add life to your years. That's the whole difference — and the part that matters most: it's trainable.”",{text:"Lifespan vs. Healthspan"},"Split screen: “Lifespan” side greys and fades; “Healthspan” side glows warm. Slow push-in on the bright side."),
-    act("Act IV · The Proof","0:30–0:44","Proof it works on a normal budget.","“I'm proof it works on a normal budget. I [RESULT] — not with gadgets or extremes, but with a routine that fits an ordinary week. If I can, so can you.”",{verb:"Master",text:"“Master the routine that fits a normal week.” → Master your week"},"Courtney beside her result card, bold [RESULT] number. Medium-close, intimate."),
-    act("Act V · The Course","0:44–0:56","A complete, guided path.","“Inside Longevity Life Academy we walk you through it step by step — energy, strength, sleep, and a clear mind. No guessing, no gimmicks, no equipment you'll never touch.”",{text:"Energy · Strength · Sleep · Mind"},"Course modules fan out cleanly. Calm UI."),
-    act("Act VI · The Invitation","0:56–1:05","Add life to your years.","“Don't just add years. Add life to them. Enroll in Longevity Life Academy and start this week.”",{verb:"Start",text:"“Add life to your years.” → Enroll now · start this week"},"Warm close on Courtney, then ENROLL NOW button + tagline lock-up.")
+    act("Act I · The Hook","0:00–0:07","One image that stops the scroll.","“Two people, same birthday. In ten years one is thriving — the other is falling apart. Same age. Completely different ending. Here's what decides it.”",{text:"Same birthday. Different ending."},"Split screen: two 40-somethings age-morph — left vibrant, right declining. Courtney speaks over it, then turns to camera on 'decides it.'"),
+    act("Act II · The Reframe","0:07–0:18","Aging is a slope you can bend.","“Aging isn't a countdown you're stuck with. It's a slope — and the right habits, done consistently, literally bend it. That's not motivation. That's measurable biology.”",{verb:"Learn",text:"“You can bend your aging curve.” → It's measurable, not motivational"},"Talking head to a clean line graph: two lines from one point, one bends flat and glows blue. Data-driven, premium."),
+    act("Act III · Her Proof","0:18–0:32","Make it real and personal.","“I bent mine. Normal life, normal budget — and in [RESULT], I slowed my biological aging. If a busy 40-something can do it, so can you. It just takes the right plan.”",{verb:"Proof",text:"“I bent my curve → [RESULT].” Insert Courtney's verified figure"},"Courtney energized in real life, then her result card. Believable, not staged. This is the 'if her, then me' beat."),
+    act("Act IV · The Authority","0:32–0:46","World-class faculty = shortcut.","“The fastest way to bend your curve is to learn from the people who've done it best. At Longevity Life Academy that's Julie Gibson Clark — #2 in the world on the Rejuvenation Olympics. You get her exact playbook, live.”",{verb:"Trust",text:"Learn beside Julie Gibson Clark — #2, Rejuvenation Olympics"},"Julie's REAL press photo + ranking graphic. Then Courtney: 'You get her exact playbook.' Credibility, not celebrity."),
+    act("Act V · The Mechanism","0:46–1:00","Concrete program, no guessing.","“It's 18 live sessions across the Six Pillars — nutrition, sleep, movement, supplements, heart health, biohacking. A step-by-step path, with coaching, so your habits actually stick this time.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · coaching so it sticks"},"Six pillars build on a spine graphic; live-session faces. The bend-the-curve line reappears, now labeled with the pillars."),
+    act("Act VI · The Close","1:00–1:15","Decision + discount + CTA.","“Ten years from now you'll be one of those two people. You get to choose which. Enroll in Longevity Life Academy this week and take 20% off.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Return to the split-screen; the declining side fades, the thriving side stays. ENROLL NOW + price drop. Tagline lock-up.")
   ],
-  cta:{h:"Add life to your years, not just years to your life.",sub:"Healthspan is the years you're strong, sharp and free — and it's trainable at any budget."}
+  cta:{h:"Same birthday. Your ending is still unwritten.",sub:"A share-worthy hook that reframes aging as a choice, then converts on Julie's world-#2 authority and a concrete, discounted live program.",
+    stack:["18 live sessions","6 Pillars","Faculty: Julie #2 worldwide","<b>20% off → $1,200</b>","Start this week"]}
 },
 {
-  n:"03", name:"The $2M Myth", img:IMG.closeup,
-  kick:"Film 03", h:"The $2M Myth", sub:"Slow your aging — without the $2M price tag. Disruption → Relief → Credibility → Proof → Simplicity → Trust → Action.",
-  specs:["~85 sec","9:16","≈205 words","Cold opener"],
+  n:"03", name:"The Insider Confession", img:IMG.closeup,
+  kick:"Film 03 · Retargeting", h:"The Insider Talks.",
+  promise:"Warm-audience confession that pays off with the offer. <b>A year of coaching for less than a month of gimmicks.</b>",
+  specs:["~70 sec","9:16","Confession","Value stack","Enroll CTA"],
   acts:[
-    act("Act I · The Hook","0:00–0:06","You don't need $2M to slow aging.","“You do not need two million dollars to slow down how fast you age. Let me prove it.”",{text:"You don't need $2 million to slow aging."},"Fast, confident cut. Courtney direct to camera, a little bold. Punch-in."),
-    act("Act II · The Objection","0:06–0:18","Take control back from the hype.","“The plunges. The red-light rooms. The hundred supplements before breakfast. You've assumed that's the price of entry. It isn't. Most of it is expensive noise.”",{verb:"Control",text:"“Take control back from the hype.” → Learn what actually works"},"Quick montage of extreme-biohacker clichés — cold plunge, red-light room, hundred-pill morning — then Courtney's gentle “no” gesture."),
-    act("Act III · The Reframe","0:18–0:30","What works is boring, cheap, repeatable.","“What actually moves the needle is boring, repeatable, and affordable. That's the good news nobody selling you gadgets wants you to hear.”",{text:"Real life. Real results."},"Courtney in an ordinary kitchen / neighborhood. Relatable but premium. Natural light."),
-    act("Act IV · The Proof","0:30–0:44","Her result, on a normal budget.","“On a normal schedule and a normal budget, I [RESULT]. Not a study. Not a theory. My own result, from doing the simple things well.”",{text:"[RESULT] — insert Courtney's real number"},"Result card, one bold [RESULT] number front and center."),
-    act("Act V · The 4 Pillars","0:44–0:58","Master the 4 things that matter.","“Inside Longevity Life Academy we cut through it and focus on the handful of things that truly work — how you move, eat, sleep, and connect. Then we make them stick.”",{verb:"Master",text:"“Master the 4 things that matter.” → Master the 4 pillars"},"Four clean pillars animate one by one: Move · Eat · Sleep · Connect. Rhythmic cuts."),
-    act("Act VI · The Course","0:58–1:12","Guided. Proven. Doable.","“You get the whole system, laid out lesson by lesson, with support along the way — so you never waste time guessing what's worth doing.”",{text:"Guided. Proven. Doable."},"Course experience: guided lessons, a coach, a supportive community."),
-    act("Act VII · The Invitation","1:12–1:25","Closer and cheaper than you think.","“It's closer — and far cheaper — than you've been led to believe. Enroll in Longevity Life Academy and start this week.”",{verb:"Start",text:"“Slowing your aging is closer than you think.” → Enroll now · start this week"},"ENROLL NOW button pulses; LLA logo + tagline on deep navy. Music resolves.")
+    act("Act I · The Hook","0:00–0:06","Confessional pattern-interrupt.","“I'm going to say the quiet part out loud — the longevity industry oversold you, and it's why nothing's worked.”",{text:"The quiet part, out loud."},"Intimate, seated, direct to camera. Documentary-interview framing. Quiet room tone, no music — feels like a confession."),
+    act("Act II · The Empathy","0:06–0:18","Meet them in the frustration.","“You've bought the supplements. Tried the diets. Watched the gurus. And you're still tired, still guessing, still wondering if any of it actually adds up. That's not your fault — you were never given a real system.”",{text:"You were never given a system."},"B-roll of a cluttered supplement shelf, half-watched videos. Then back to Courtney — she gets it. This is the relate beat for warm traffic."),
+    act("Act III · Her Proof","0:18–0:30","The turn — she found the system.","“Then I stopped collecting hacks and followed one clear plan. In [RESULT], I slowed my aging — measurably. No fortune. No extremes. Just the right things, in the right order.”",{verb:"Proof",text:"“One system → [RESULT].” Insert Courtney's verified figure"},"Shift in tone and light — warmer, hopeful. Result card animates in. This is where the frustrated viewer leans back in."),
+    act("Act IV · The Authority","0:30–0:42","Back it with the world's best.","“That plan is what we teach inside Longevity Life Academy — alongside Julie Gibson Clark, ranked #2 in the world on the Rejuvenation Olympics. This isn't gurus guessing. It's the leaderboard, teaching you directly.”",{verb:"Trust",text:"Taught with Julie Gibson Clark — #2, Rejuvenation Olympics"},"Julie's REAL press photo + ranking. Courtney: 'the leaderboard, teaching you.' Positions LLA above the guru noise."),
+    act("Act V · The Value Stack","0:42–0:56","Make the price a no-brainer.","“18 live sessions. All Six Pillars. Coaching and a community that keeps you going. A full year of real longevity guidance — for less than what you've wasted on gimmicks that never worked.”",{verb:"Value",text:"18 sessions + 6 Pillars + coaching < a month of gimmicks"},"Value stack builds line by line, then collapses into one price. The 'wasted spend' pile crosses out. Clear cost-vs-value contrast."),
+    act("Act VI · The Close","0:56–1:10","Warm-audience hard close.","“You already know the scattered approach doesn't work. Do it right this time. Enroll in Longevity Life Academy this week and take 20% off — your seat's waiting.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · your seat's waiting"},"ENROLL NOW pulses, price drops $1,500 → $1,200. Personal, direct, urgent. LLA lock-up + tagline. Resolve.")
   ],
-  cta:{h:"Slow your aging — without the $2M price tag.",sub:"The billionaires want you to think longevity costs millions. It doesn't."}
+  cta:{h:"You've tried everything except a real system.",sub:"A confession that validates warm-audience frustration, then converts with world-#2 authority and a value stack that makes $1,200 obvious.",
+    stack:["18 live sessions","6 Pillars","Faculty: Julie #2 worldwide","<b>20% off → $1,200</b>","Your seat's waiting"]}
 }
 ];
 
@@ -157,10 +173,12 @@ FILMS.forEach((f,fi)=>{
   const el=document.createElement('div');el.className='film'+(fi===0?' active':'');
   el.innerHTML=`
     <div class="hero"><div class="topbar"></div><img src="${f.img}"><div class="grad"></div>
-      <div class="htext"><div class="fkick">${f.kick}</div><div class="fh">${f.h}</div><div class="fsub">${f.sub}</div>
+      <div class="htext"><div class="fkick">${f.kick}</div><div class="fh">${f.h}</div><div class="fpromise">${f.promise}</div>
       <div class="specs">${f.specs.map(s=>`<span class="spec">${s}</span>`).join('')}</div></div></div>
     <div class="body">${f.acts.join('')}</div>
-    <div class="cta"><div class="ch">${f.cta.h}</div><div class="cs">${f.cta.sub}</div><div class="pill">Enroll Now</div><div class="tag">It's Your Life. Live It Well.</div></div>`;
+    <div class="cta"><div class="ch">${f.cta.h}</div><div class="cs">${f.cta.sub}</div>
+      <div class="stack">${f.cta.stack.map(s=>`<span class="val">${s}</span>`).join('')}</div>
+      <div class="pill">Enroll Now</div><div class="promo">Use code for 20% off — $1,500 → $1,200</div><div class="tag">It's Your Life. Live It Well.</div></div>`;
   wrap.appendChild(el);
 });
 const filmEls=[...wrap.children],chooserEls=[...chooser.children];
