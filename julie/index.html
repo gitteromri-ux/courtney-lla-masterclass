@@ -3,411 +3,190 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Julie, On Set — Production Deck</title>
+<title>Julie Gibson Clark — VO Scripts 06 &amp; 07 · Longevity Life Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-  :root{ --navy:#02091C; --blue:#1A7FFF; --sky:#7EC8FF; --paper:#0a1428; --card:#0E1F48; }
+  :root{
+    --paper:#F4F2EC; --panel:#FFFFFF; --navy:#12293F; --ink:#1E2A26;
+    --gold:#C79A3A; --gold-deep:#8A6A22; --line:#D8D3C6; --muted:#6B6355;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--navy);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  header{padding:26px 20px 14px;text-align:center}
-  header .kick{color:var(--sky);font-size:12px;letter-spacing:3px;font-weight:700;text-transform:uppercase}
-  header h1{font-size:26px;font-weight:800;margin-top:8px}
-  header p{color:#B7C6E0;font-size:14px;margin-top:8px}
-  .toolbar{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;padding:8px 16px 20px}
-  .toolbar a,.toolbar button{background:var(--blue);color:#fff;border:none;border-radius:999px;padding:10px 18px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:opacity .15s}
-  .toolbar a:hover,.toolbar button:hover{opacity:.85}
-  .toolbar .ghost{background:transparent;border:1px solid #2c4a80;color:var(--sky)}
-  .counter{color:#B7C6E0;font-size:13px}
-  .stage{max-width:1180px;margin:0 auto;padding:0 16px 40px}
-  .slide{display:none;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-  .slide.active{display:block}
-  .slide img{width:100%;display:block}
-  .nav{display:flex;justify-content:space-between;align-items:center;max-width:1180px;margin:18px auto 0;padding:0 16px;gap:12px}
-  .nav button{background:var(--card);color:#fff;border:1px solid #24427a;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:600;cursor:pointer}
-  .nav button:disabled{opacity:.35;cursor:default}
-  .dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:820px}
-  .dot{width:9px;height:9px;border-radius:50%;background:#2c4a80;border:none;cursor:pointer;padding:0}
-  .dot.on{background:var(--sky)}
-  .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;max-width:1180px;margin:26px auto 0;padding:0 16px}
-  .thumbs img{width:100%;border-radius:6px;cursor:pointer;border:2px solid transparent;transition:border-color .15s}
-  .thumbs img:hover,.thumbs img.on{border-color:var(--blue)}
-  footer{text-align:center;color:#7C8CA8;font-size:12px;padding:30px 16px}
-  @media(max-width:640px){header h1{font-size:20px}.nav button{padding:10px 14px;font-size:13px}}
+  html{scroll-behavior:smooth}
+  body{background:#0c1a2a;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+
+  /* Deck frame */
+  .deck{max-width:1280px;margin:0 auto;padding:28px 20px 60px}
+  .brandbar{display:flex;justify-content:space-between;align-items:center;color:#cddaee;font-size:12px;letter-spacing:2px;font-weight:600;text-transform:uppercase;padding:6px 4px 22px}
+  .brandbar .r{color:var(--gold)}
+
+  /* Slide card */
+  .slide{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55);margin-bottom:34px}
+
+  /* NAVY section slide — strict 16:9 */
+  .sect{background:var(--navy);color:#fff;padding:0;aspect-ratio:16/9}
+  .sect .goldedge{position:absolute;left:0;top:0;bottom:0;width:12px;background:var(--gold)}
+  .sect .inner{padding:9% 8% 9% 9%;height:100%;display:flex;flex-direction:column;justify-content:center}
+  .sect .chap{color:var(--gold);font-size:14px;letter-spacing:5px;font-weight:700;text-transform:uppercase}
+  .sect h1{font-family:var(--serif);font-weight:900;font-size:52px;line-height:1.05;margin-top:34px;letter-spacing:-.5px;color:#fff}
+  .sect .sub{color:#c9d4e2;font-size:20px;line-height:1.5;margin-top:34px;max-width:70%}
+  .sect .count{color:var(--gold);font-size:14px;letter-spacing:4px;font-weight:700;text-transform:uppercase;margin-top:34px}
+
+  /* PAPER article slide */
+  .art{background:var(--paper);color:var(--ink);padding:0}
+  .art .topbar{height:8px;background:var(--gold);width:100%}
+  .art .body{padding:4.2% 5% 4.5%}
+  .kick{display:flex;justify-content:space-between;align-items:baseline;gap:20px}
+  .kick .l{color:var(--gold-deep);font-size:13px;letter-spacing:2.5px;font-weight:700;text-transform:uppercase}
+  .kick .l .dot{color:var(--muted);margin:0 8px}
+  .kick .l .cat{color:#4a4436;font-weight:600;letter-spacing:1.8px}
+  .kick .t{font-size:12px;letter-spacing:.5px;color:var(--muted);text-align:right;white-space:nowrap}
+  .kick .t .tt{color:var(--muted);font-weight:400;margin-right:6px}
+  .kick .t b{color:var(--navy);font-weight:700}
+  .art h2{font-family:var(--serif);font-weight:700;font-size:38px;line-height:1.14;color:var(--navy);margin-top:20px;letter-spacing:-.4px}
+  .deckline{font-family:var(--serif);font-style:italic;font-weight:600;font-size:21px;line-height:1.45;color:#3a4048;margin-top:20px}
+  .rule{height:1px;background:var(--line);margin:22px 0 22px}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+  .col p{font-size:15.5px;line-height:1.68;color:#3d3a33;margin-bottom:13px}
+  .col p.cue{color:var(--gold-deep);font-weight:700;font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:6px}
+  .col p .vo{color:var(--ink)}
+  .col p .em{color:var(--navy);font-weight:700}
+  .onscreen{border-left:3px solid var(--gold);background:rgba(199,154,58,.08);padding:9px 14px;margin:4px 0 15px;font-size:13.5px;color:#4a4436;font-style:italic}
+  .onscreen b{color:var(--navy);font-style:normal;font-weight:700;letter-spacing:.4px}
+
+  /* Highlighted quote / brand lock-up box */
+  .qbox{margin-top:24px;border-radius:4px;overflow:hidden;box-shadow:0 8px 22px rgba(18,41,63,.18)}
+  .qbox .qh{background:var(--gold);color:#3a2f10;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:11px 22px}
+  .qbox .qb{background:var(--navy);color:#fff;padding:20px 24px}
+  .qbox .qb .lock{font-family:var(--serif);font-weight:700;font-size:24px;line-height:1.3;color:#fff}
+  .qbox .qb .note{color:#9fb0c4;font-size:12.5px;font-style:italic;margin-top:10px;line-height:1.45}
+
+  .pagefoot{position:absolute;right:26px;bottom:16px;color:#b7b1a2;font-size:13px;font-family:var(--serif)}
+
+  @media(max-width:900px){
+    .slide{aspect-ratio:auto}
+    .sect h1{font-size:32px}.sect .sub{max-width:100%;font-size:16px}
+    .art h2{font-size:26px}.deckline{font-size:17px}
+    .cols{grid-template-columns:1fr;gap:20px}
+    .kick{flex-direction:column;gap:8px}.kick .t{text-align:left}
+    .qbox .qb .lock{font-size:19px}
+  }
 </style>
 </head>
 <body>
-<header>
-  <div class="kick">Julie, On Set</div>
-  <h1>Production Deck</h1>
-  <p>10 slides · the set, the casting, the look &amp; the deliverables</p>
-</header>
-<div class="toolbar">
-  <button id="prevTop">‹ Prev</button>
-  <span class="counter"><span id="cur">1</span> / <span id="tot">10</span></span>
-  <button id="nextTop">Next ›</button>
-  <a id="dl" href="JGC_Production_Deck.pptx" download>Download PowerPoint</a>
-  <a href="scripts.html">VO Scripts 06 &amp; 07</a>
-  <button class="ghost" id="fs">Fullscreen</button>
+<div class="deck">
+  <div class="brandbar">
+    <span>eTeacher Group · Longevity Life Academy</span>
+    <span class="r">Chapter 2 · Star Power · VO Scripts</span>
+  </div>
+
+  <!-- SECTION DIVIDER -->
+  <section class="slide sect">
+    <div class="goldedge"></div>
+    <div class="inner">
+      <div class="chap">Chapter 2 · Video Scripts 06 &amp; 07</div>
+      <h1>Julie's Voiceover Scripts:<br/>The #2-in-the-World Story</h1>
+      <div class="sub">Two French-Atelier scripts for the founding-faculty films — the single mom who out-aged a $2-million-a-year man, told in her own voice.</div>
+      <div class="count">2 Scripts · direct-to-camera · brand lock-up close</div>
+    </div>
+    <div class="pagefoot">S1</div>
+  </section>
+
+  <!-- SCRIPT 06 -->
+  <section class="slide art">
+    <div class="topbar"></div>
+    <div class="body">
+      <div class="kick">
+        <div class="l">SCRIPT 06 <span class="dot">·</span> <span class="cat">FOUNDING-FACULTY FILM — "THE $2M ANSWER"</span></div>
+        <div class="t"><span class="tt">FRAMEWORK</span> <b>French Atelier</b> · 60–75s · direct to camera</div>
+      </div>
+      <h2>She Out-Aged a $2-Million-a-Year Man — on an Ordinary Budget</h2>
+      <div class="deckline">World-before-face cold open, teacher reveal, the two factors, proof, offer, and a mirrored brand-lock-up close — all in Julie's documented voice.</div>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="col">
+          <p class="cue">Act I · World before face — cold open</p>
+          <p class="vo">"Somewhere right now, a man is spending <span class="em">two million dollars a year</span> trying to age slower. Cold plunges. A hundred pills a day. A full-time medical team. And for more than a year, on the same scoreboard that ranks him — he was in <span class="em">second place</span>. First place was a working mother, living on an ordinary budget."</p>
+          <div class="onscreen"><b>ON SCREEN:</b> $2,000,000 a year. And he came in second.</div>
+
+          <p class="cue">Act II · Teacher reveal — to camera</p>
+          <p class="vo">"That mother is me. I'm <span class="em">Julie Gibson Clark</span>. For over a year I ranked second in the world for slowing my own aging — ahead of the men with the labs and the millions. I didn't beat them with money. I beat them with the boring things, done every single day."</p>
+
+          <p class="cue">Act III · The two factors</p>
+          <p class="vo">"There are <span class="em">two factors</span> that decide almost everything: how <span class="em">consistent</span> you are, and how well you actually <span class="em">read your own body</span>. Not the plunge. Not the pills. Consistency, and your own numbers."</p>
+        </div>
+        <div class="col">
+          <p class="cue">Act IV · Proof — word-to-image cutaway</p>
+          <p class="vo">"My pace of aging is measured at <span class="em">point-six-six-five</span> — my body is aging about a third slower than the calendar. On an ordinary budget. He spends two million a year."</p>
+          <div class="onscreen"><b>CARD:</b> DunedinPACE 0.665 · aging ~34% slower · ordinary budget vs $2M/yr</div>
+
+          <p class="cue">Act V · The offer</p>
+          <p class="vo">"That's why I teach at <span class="em">Longevity Life Academy</span> — the two factors, across six simple pillars: eat, sleep, move, supplement, protect your heart, and read your own data. Eighteen live sessions that turn a millionaire's obsession into something you can actually do."</p>
+
+          <p class="cue">Act VI · Close — mirror the open</p>
+          <p class="vo">"The biggest bang for your buck was never expensive — it's eating right, moving, and sleeping, done every day. Second place cost me nothing but consistency. <span class="em">Join us</span>, and design the life ahead of you."</p>
+        </div>
+      </div>
+      <div class="qbox">
+        <div class="qh">Welcome &amp; Brand Lock-Up · Julie Gibson Clark, LLA Founding Faculty</div>
+        <div class="qb">
+          <div class="lock">"I'm Julie — welcome to Longevity Life Academy."</div>
+          <div class="note">Bookend close mirrors the open. #2 ranking stated PAST-tense ("was," "for over a year"). No "$12" figure used — affordability carried by "ordinary budget."</div>
+        </div>
+      </div>
+    </div>
+    <div class="pagefoot">S2</div>
+  </section>
+
+  <!-- SCRIPT 07 -->
+  <section class="slide art">
+    <div class="topbar"></div>
+    <div class="body">
+      <div class="kick">
+        <div class="l">SCRIPT 07 <span class="dot">·</span> <span class="cat">FOUNDING-FACULTY FILM — "SECOND PLACE, FIRST TRUTH"</span></div>
+        <div class="t"><span class="tt">FRAMEWORK</span> <b>French Atelier</b> · 60–75s · direct to camera</div>
+      </div>
+      <h2>Second in the World — and That's Exactly Why You Can Trust It</h2>
+      <div class="deckline">The humility flip: coming second, not first, is the proof — because she didn't buy the result, she built it. Same six-act arc, same brand lock-up.</div>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="col">
+          <p class="cue">Act I · World before face — the scoreboard</p>
+          <p class="vo">"There's a global ranking for how slowly people are aging. At the top, the names you'd expect — labs, money, full-time teams. And for over a year, just below them, in <span class="em">second place</span>, was a name nobody recognized. No lab. No fortune. Just a woman who paid attention."</p>
+
+          <p class="cue">Act II · Teacher reveal — humility flip</p>
+          <p class="vo">"I'm that name. <span class="em">Julie Gibson Clark</span>. And honestly? I'm glad I came second, not first. Because first place had unlimited money. I didn't. Which means everything I did — you can do too."</p>
+
+          <p class="cue">Act III · The two factors</p>
+          <p class="vo">"It came down to two things. <span class="em">Consistency</span> — boring habits kept every single day. And <span class="em">visibility</span> — actually reading your own body instead of guessing. You don't need a fortune. You need a curriculum."</p>
+        </div>
+        <div class="col">
+          <p class="cue">Act IV · Proof</p>
+          <p class="vo">"My body aging about a third slower than the calendar. Holding <span class="em">second in the world</span> for more than a year — on the habits, not the budget."</p>
+          <div class="onscreen"><b>CARD:</b> DunedinPACE 0.665 · #2 held 1+ year · habits, not budget</div>
+
+          <p class="cue">Act V · The offer</p>
+          <p class="vo">"At <span class="em">Longevity Life Academy</span>: eighteen live sessions across the six pillars, and your own numbers turned into a blueprint. Not a millionaire's protocol. A learnable path."</p>
+
+          <p class="cue">Act VI · Close — emotional dwell</p>
+          <p class="vo">"You don't need to come first. You need to <span class="em">start</span>. It's your life. Live it well. <span class="em">Join us</span>."</p>
+        </div>
+      </div>
+      <div class="qbox">
+        <div class="qh">Welcome &amp; Brand Lock-Up · Julie Gibson Clark, LLA Founding Faculty</div>
+        <div class="qb">
+          <div class="lock">"I'm Julie — welcome to Longevity Life Academy."</div>
+          <div class="note">Signature line "It's your life. Live it well." carried into the close. #2 ranking PAST-tense throughout. Respectful toward Bryan Johnson — never named as a rival here.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pagefoot">S3</div>
+  </section>
+
 </div>
-<div class="stage" id="stage"></div>
-<div class="nav">
-  <button id="prev">‹ Previous</button>
-  <div class="dots" id="dots"></div>
-  <button id="next">Next ›</button>
-</div>
-<div class="thumbs" id="thumbs"></div>
-<footer>Confidential — prepared for the Longevity Life Academy partnership.</footer>
-<script>
-  const N=10, pad=n=>String(n).padStart(2,'0');
-  const stage=document.getElementById('stage'),dots=document.getElementById('dots'),thumbs=document.getElementById('thumbs');
-  let i=0;
-  for(let k=0;k<N;k++){
-    const d=document.createElement('div');d.className='slide'+(k===0?' active':'');
-    const img=document.createElement('img');img.src='pslide-'+pad(k+1)+'.jpg';img.loading=k<3?'eager':'lazy';img.alt='Slide '+(k+1);
-    d.appendChild(img);stage.appendChild(d);
-    const dot=document.createElement('button');dot.className='dot'+(k===0?' on':'');dot.onclick=()=>go(k);dots.appendChild(dot);
-    const t=document.createElement('img');t.src='pslide-'+pad(k+1)+'.jpg';t.loading='lazy';t.className=(k===0?'on':'');t.onclick=()=>go(k);thumbs.appendChild(t);
-  }
-  const slides=[...document.querySelectorAll('.slide')],dEls=[...dots.children],tEls=[...thumbs.children];
-  function go(n){i=Math.max(0,Math.min(N-1,n));slides.forEach((s,x)=>s.classList.toggle('active',x===i));
-    dEls.forEach((d,x)=>d.classList.toggle('on',x===i));tEls.forEach((t,x)=>t.classList.toggle('on',x===i));
-    document.getElementById('cur').textContent=i+1;
-    document.getElementById('prev').disabled=document.getElementById('prevTop').disabled=(i===0);
-    document.getElementById('next').disabled=document.getElementById('nextTop').disabled=(i===N-1);
-    window.scrollTo({top:0,behavior:'smooth'});}
-  document.getElementById('prev').onclick=document.getElementById('prevTop').onclick=()=>go(i-1);
-  document.getElementById('next').onclick=document.getElementById('nextTop').onclick=()=>go(i+1);
-  document.getElementById('tot').textContent=N;
-  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(i+1);if(e.key==='ArrowLeft')go(i-1);});
-  document.getElementById('fs').onclick=()=>{if(!document.fullscreenElement)stage.requestFullscreen&&stage.requestFullscreen();else document.exitFullscreen();};
-  go(0);
-</script>
-<script data-pplx-inline-edit>
-(function () {
-  if (window === window.top) return;
-
-  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
-  const MAX_FONT_BYTES = 500 * 1024;
-  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
-  let scrollForwarding = false;
-  let scrollRaf = 0;
-  let trustedTopOrigin = null;
-
-  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
-  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
-  // across multiple labels.
-  function matchesAllowedOrigin(origin) {
-    if (!origin) return false;
-    for (const entry of allowedParentOrigins) {
-      if (!entry.includes("*")) {
-        if (entry === origin) return true;
-        continue;
-      }
-      const pattern = new RegExp(
-        "^" +
-          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
-          "$",
-      );
-      if (pattern.test(origin)) return true;
-    }
-    return false;
-  }
-
-  // Trust decision: when the sender is same-origin-visible (event.origin is a
-  // real origin like https://www.perplexity.ai) we trust event.origin directly.
-  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
-  // broker's stamped `parentOrigin` to identify the top window. The fallback
-  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
-  // on the response path (see postToTrustedTop) to ensure replies can't be
-  // delivered to anyone but the actual top window of that claimed origin.
-  function getTrustedParentOrigin(event) {
-    const forwardedParentOrigin =
-      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
-    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
-    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
-  }
-
-  // All responses go to window.top with targetOrigin = the allowlisted origin.
-  // An attacker that iframes us inside their own null-origin broker can claim
-  // any parentOrigin they like, but the browser will drop the reply whenever
-  // the real top's origin doesn't match — so the screenshot never leaves.
-  function postToTrustedTop(message) {
-    if (!trustedTopOrigin) return;
-    try {
-      window.top.postMessage(message, trustedTopOrigin);
-    } catch (_error) {}
-  }
-
-  function inlineAll(original, clone) {
-    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
-
-    try {
-      const computedStyle = getComputedStyle(original);
-      // cssText on a computed style is the serialized declaration in modern
-      // Chromium/Safari — a single read beats enumerating ~400 longhand
-      // properties. Firefox returns "" here, so we fall back on empty.
-      const serialized = computedStyle.cssText;
-      if (serialized) {
-        clone.style.cssText = serialized;
-      } else {
-        const parts = new Array(computedStyle.length);
-        for (let index = 0; index < computedStyle.length; index += 1) {
-          const property = computedStyle[index];
-          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
-        }
-        clone.style.cssText = parts.join("");
-      }
-    } catch (_error) {}
-
-    const originalChildren = original.children;
-    const clonedChildren = clone.children;
-    for (
-      let index = 0;
-      index < originalChildren.length && index < clonedChildren.length;
-      index += 1
-    ) {
-      inlineAll(originalChildren[index], clonedChildren[index]);
-    }
-  }
-
-  function extractFontUrl(srcValue) {
-    const matches = [
-      ...srcValue.matchAll(
-        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
-      ),
-    ];
-    if (matches.length === 0) return null;
-    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
-    if (woff2) return woff2[1];
-    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
-    if (woff) return woff[1];
-    return matches[0][1];
-  }
-
-  // Cache resolved font URL -> data URI across captures. Fonts on a page
-  // essentially never change, and a batch run emits multiple captures back to
-  // back — without this we'd refetch + re-base64 every time.
-  const fontDataUriCache = new Map();
-  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
-
-  async function fetchAsDataUri(url) {
-    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
-    let dataUri = null;
-    try {
-      const response = await fetch(url, { mode: "cors", credentials: "omit" });
-      if (response.ok) {
-        const blob = await response.blob();
-        if (blob.size <= MAX_FONT_BYTES) {
-          dataUri = await new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onloadend = () =>
-              resolve(typeof reader.result === "string" ? reader.result : null);
-            reader.onerror = () => resolve(null);
-            reader.readAsDataURL(blob);
-          });
-        }
-      }
-    } catch (_error) {
-      dataUri = null;
-    }
-    fontDataUriCache.set(url, dataUri);
-    return dataUri;
-  }
-
-  function collectFontFaceRuleTexts() {
-    const rules = [];
-    for (const sheet of document.styleSheets) {
-      let cssRules;
-      try {
-        cssRules = sheet.cssRules;
-      } catch (_error) {
-        continue;
-      }
-      if (!cssRules) continue;
-      for (const rule of cssRules) {
-        const cssText = rule.cssText || "";
-        if (cssText.startsWith("@font-face")) rules.push(cssText);
-      }
-    }
-    return rules;
-  }
-
-  async function buildInlinedFontCss() {
-    const ruleTexts = collectFontFaceRuleTexts();
-    if (ruleTexts.length === 0) return null;
-
-    const resolved = ruleTexts.map((cssText) => {
-      if (!SRC_DECLARATION_RE.test(cssText)) return null;
-      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
-      if (!srcMatch) return null;
-      const url = extractFontUrl(srcMatch[1]);
-      if (!url) return null;
-      try {
-        return { cssText, url: new URL(url, document.baseURI).href };
-      } catch (_error) {
-        return null;
-      }
-    });
-
-    const dataUris = await Promise.all(
-      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
-    );
-
-    const inlined = [];
-    let totalBytes = 0;
-    for (let index = 0; index < resolved.length; index += 1) {
-      const entry = resolved[index];
-      const dataUri = dataUris[index];
-      if (!entry || !dataUri) continue;
-      const approxBytes = dataUri.length * 0.75;
-      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
-      totalBytes += approxBytes;
-      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
-    }
-    return inlined.length > 0 ? inlined.join("\n") : null;
-  }
-
-  function stripExternal(clone) {
-    const images = clone.querySelectorAll("img");
-    for (let index = 0; index < images.length; index += 1) {
-      const src = images[index].getAttribute("src");
-      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
-    }
-
-    const elements = clone.querySelectorAll("*");
-    for (let index = 0; index < elements.length; index += 1) {
-      const style = elements[index].style.cssText;
-      if (style && style.includes("url(")) {
-        elements[index].style.cssText = style.replace(
-          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
-          "none",
-        );
-      }
-    }
-  }
-
-  function emitScroll() {
-    scrollRaf = 0;
-    if (!scrollForwarding) return;
-    postToTrustedTop({
-      type: "INLINE_EDIT_SCROLL",
-      scrollX: window.scrollX,
-      scrollY: window.scrollY,
-    });
-  }
-
-  window.addEventListener(
-    "scroll",
-    function () {
-      if (!scrollForwarding || scrollRaf) return;
-      scrollRaf = requestAnimationFrame(emitScroll);
-    },
-    { passive: true, capture: true },
-  );
-
-  async function handleCaptureRequest(event) {
-    const requestId = event.data.requestId;
-    const scrollX = window.scrollX;
-    const scrollY = window.scrollY;
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    function postResult(dataUrl) {
-      postToTrustedTop({
-        type: "INLINE_EDIT_SCREENSHOT_RESULT",
-        requestId,
-        dataUrl,
-        scrollX,
-        scrollY,
-      });
-    }
-
-    try {
-      // Wait for any pending web fonts to resolve so both inline metrics and
-      // the @font-face inlining below see the same loaded faces.
-      if (document.fonts && document.fonts.ready) {
-        try {
-          await document.fonts.ready;
-        } catch (_error) {}
-      }
-
-      const clone = document.documentElement.cloneNode(true);
-      inlineAll(document.documentElement, clone);
-
-      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
-      for (let index = 0; index < removedNodes.length; index += 1) {
-        removedNodes[index].remove();
-      }
-
-      stripExternal(clone);
-
-      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
-      // can resolve them — external font URLs aren't fetched during
-      // foreignObject rendering, which would otherwise force a fallback face
-      // and change text metrics.
-      const inlinedFontCss = await buildInlinedFontCss();
-      if (inlinedFontCss) {
-        const styleEl = document.createElement("style");
-        styleEl.textContent = inlinedFontCss;
-        const head = clone.querySelector("head");
-        if (head) head.appendChild(styleEl);
-        else clone.insertBefore(styleEl, clone.firstChild);
-      }
-
-      const html = new XMLSerializer().serializeToString(clone);
-      const svg =
-        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
-        '<foreignObject width="100%" height="100%">' +
-        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
-        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
-        html +
-        "</div></div></foreignObject></svg>";
-      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
-      const image = new Image();
-      image.onload = function () {
-        const canvas = document.createElement("canvas");
-        canvas.width = width;
-        canvas.height = height;
-        canvas.getContext("2d").drawImage(image, 0, 0);
-        postResult(canvas.toDataURL("image/png"));
-      };
-      image.onerror = function () {
-        postResult(null);
-      };
-      image.src = svgUrl;
-    } catch (_error) {
-      postResult(null);
-    }
-  }
-
-  window.addEventListener("message", function (event) {
-    if (!event.data) return;
-    // Only accept messages from the direct parent frame. Blocks sibling /
-    // unrelated-window postMessage senders that could otherwise reach us.
-    if (event.source !== window.parent) return;
-
-    const trustedParentOrigin = getTrustedParentOrigin(event);
-    if (!trustedParentOrigin) return;
-    trustedTopOrigin = trustedParentOrigin;
-
-    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
-      scrollForwarding = true;
-      emitScroll();
-      return;
-    }
-
-    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
-      scrollForwarding = false;
-      if (scrollRaf) cancelAnimationFrame(scrollRaf);
-      scrollRaf = 0;
-      return;
-    }
-
-    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
-
-    handleCaptureRequest(event);
-  });
-})();
-
-
-</script></body>
+</body>
 </html>
