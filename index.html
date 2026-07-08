@@ -3,204 +3,363 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Courtney × Longevity Life Academy — Masterclass Scripts</title>
+<title>Courtney × Longevity Life Academy — Master Deck</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F4F2EC;      /* soft off-white */
-    --panel:#FBFAF6;      /* card surface */
-    --ink:#1E2A26;        /* charcoal-green ink */
-    --ink2:#5A6763;       /* muted secondary */
-    --sage:#5E7A6B;       /* muted sage accent */
-    --sage-d:#3E5347;     /* deep sage */
-    --gold:#A88431;       /* warm restrained gold */
-    --line:#DFDBD0;       /* hairline */
-    --line2:#E7E3D9;
+    --paper:#F4F2EC; --panel:#FBFAF6; --ink:#1E2A26; --ink2:#5A6763;
+    --sage:#5E7A6B; --sage-d:#3E5347; --gold:#A88431; --line:#DFDBD0; --line2:#E7E3D9;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
-  .serif{font-family:'Fraunces',Georgia,serif}
 
-  header.top{padding:44px 20px 4px;text-align:center}
+  header.top{padding:40px 20px 4px;text-align:center}
   header.top .kick{color:var(--sage);font-size:11px;letter-spacing:.34em;font-weight:600;text-transform:uppercase}
-  header.top h1{font-size:34px;font-weight:600;margin-top:12px;letter-spacing:-.5px;font-family:'Fraunces',Georgia,serif;color:var(--ink)}
-  header.top p{color:var(--ink2);font-size:14px;margin-top:12px;max-width:720px;margin-left:auto;margin-right:auto;line-height:1.6}
+  header.top h1{font-size:33px;font-weight:600;margin-top:12px;letter-spacing:-.5px;font-family:'Fraunces',Georgia,serif;color:var(--ink)}
+  header.top p{color:var(--ink2);font-size:14px;margin-top:12px;max-width:720px;margin:12px auto 0;line-height:1.6}
 
-  .offerbar{max-width:1000px;margin:22px auto 0;padding:0 18px}
-  .offerbar .inner{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 20px}
-  .offerbar .chip{font-size:12.5px;font-weight:500;color:var(--ink2);letter-spacing:.01em}
-  .offerbar .chip b{color:var(--sage-d);font-weight:600}
-  .offerbar .chip.pro b{color:var(--gold)}
-
-  .chooser{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:26px 14px 6px}
-  .chooser button{background:transparent;color:var(--ink2);border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;transition:.18s;font-family:inherit}
-  .chooser button .n{color:var(--sage);margin-right:8px;font-weight:600}
+  /* chooser: 8 entries, grouped */
+  .grp{max-width:1080px;margin:22px auto 0;padding:0 18px;text-align:center}
+  .grp .glab{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:14px 0 10px}
+  .chooser{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .chooser button{background:transparent;color:var(--ink2);border:1px solid var(--line);border-radius:999px;padding:9px 17px;font-size:12.5px;font-weight:600;cursor:pointer;transition:.18s;font-family:inherit}
+  .chooser button .n{color:var(--sage);margin-right:7px;font-weight:600}
   .chooser button.on{background:var(--ink);border-color:var(--ink);color:#fff}
   .chooser button.on .n{color:#C7D3CB}
   .chooser button:hover:not(.on){border-color:var(--sage);color:var(--ink)}
 
-  .wrap{max-width:1000px;margin:0 auto;padding:18px 18px 48px}
-  .film{display:none}
-  .film.active{display:block}
+  .meta{text-align:center;padding:20px 16px 4px}
+  .meta .mname{font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:600;color:var(--ink)}
+  .meta .mtag{color:var(--ink2);font-size:13px;margin-top:4px}
+
+  .toolbar{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;padding:14px 16px 8px}
+  .toolbar button{background:var(--sage-d);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit}
+  .toolbar button:disabled{opacity:.3;cursor:default}
+  .toolbar .counter{color:var(--ink2);font-size:12.5px;font-variant-numeric:tabular-nums}
+  .toolbar .ghost{background:transparent;border:1px solid var(--line);color:var(--sage-d)}
+
+  .stage{max-width:1080px;margin:0 auto;padding:6px 18px 10px}
+  .entry{display:none}.entry.active{display:block}
+  .slide{display:none}.slide.active{display:block}
 
   .sheet{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(30,42,38,.04),0 18px 48px rgba(30,42,38,.07)}
 
-  .hero{position:relative;overflow:hidden;height:300px;border-bottom:1px solid var(--line)}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 24%}
-  .hero .grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,34,30,.86) 0%,rgba(24,34,30,.66) 46%,rgba(24,34,30,.12) 78%,rgba(24,34,30,0))}
-  .hero .htext{position:absolute;left:44px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;max-width:60%;z-index:5}
-  .hero .fkick{color:#CBD8CF;font-size:11px;letter-spacing:.3em;font-weight:600;text-transform:uppercase}
-  .hero .fh{font-size:38px;font-weight:600;line-height:1.04;margin:12px 0 12px;letter-spacing:-.5px;color:#fff;font-family:'Fraunces',Georgia,serif}
-  .hero .fpromise{color:#EAECE8;font-size:14.5px;line-height:1.55;max-width:96%;font-weight:400}
-  .hero .fpromise b{color:#fff;font-weight:600}
-  .hero .fpromise i{color:#DCE6DE}
-  .hero .specs{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
-  .hero .spec{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#E7EDE9;border:1px solid rgba(255,255,255,.32);border-radius:5px;padding:5px 10px}
-
-  .body{padding:4px 0}
-  .act{display:grid;grid-template-columns:170px 1fr;gap:0;border-bottom:1px solid var(--line2)}
+  /* ===== SCRIPT SLIDE (full one-page script) ===== */
+  .scr .hero{position:relative;overflow:hidden;height:280px;border-bottom:1px solid var(--line)}
+  .scr .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 24%}
+  .scr .hero .grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,34,30,.86) 0%,rgba(24,34,30,.64) 46%,rgba(24,34,30,.1) 78%,rgba(24,34,30,0))}
+  .scr .hero .htext{position:absolute;left:40px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;max-width:62%;z-index:5}
+  .scr .fkick{color:#CBD8CF;font-size:11px;letter-spacing:.3em;font-weight:600;text-transform:uppercase}
+  .scr .fh{font-size:36px;font-weight:600;line-height:1.05;margin:12px 0;letter-spacing:-.5px;color:#fff;font-family:'Fraunces',Georgia,serif}
+  .scr .fpromise{color:#EAECE8;font-size:14px;line-height:1.55;max-width:96%;font-weight:400}
+  .scr .fpromise b{color:#fff;font-weight:600}.scr .fpromise i{color:#DCE6DE}
+  .scr .specs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .scr .spec{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#E7EDE9;border:1px solid rgba(255,255,255,.32);border-radius:5px;padding:5px 10px}
+  .act{display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--line2)}
   .act:last-child{border-bottom:none}
-  .act .lft{padding:26px 20px 26px 44px}
+  .act .lft{padding:24px 18px 24px 40px}
   .act .no{font-size:11px;letter-spacing:.16em;font-weight:600;color:var(--sage);text-transform:uppercase;line-height:1.5}
   .act .time{font-size:12px;color:#9AA39E;font-weight:500;margin-top:7px;font-variant-numeric:tabular-nums}
-  .act .rgt{padding:26px 44px 26px 12px;border-left:1px solid var(--line2)}
-  .act .atitle{font-size:20px;font-weight:600;color:var(--ink);margin-bottom:16px;letter-spacing:-.2px;line-height:1.25;font-family:'Fraunces',Georgia,serif}
-  .blk{margin-bottom:15px}
-  .blk:last-child{margin-bottom:0}
+  .act .rgt{padding:24px 40px 24px 12px;border-left:1px solid var(--line2)}
+  .act .atitle{font-size:19px;font-weight:600;color:var(--ink);margin-bottom:14px;letter-spacing:-.2px;line-height:1.25;font-family:'Fraunces',Georgia,serif}
+  .blk{margin-bottom:14px}.blk:last-child{margin-bottom:0}
   .lab{font-size:10px;letter-spacing:.18em;font-weight:600;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-  .vo{font-size:16px;line-height:1.62;color:var(--ink);font-weight:400}
-  .vo .q{color:var(--ink)}
+  .vo{font-size:15.5px;line-height:1.62;color:var(--ink);font-weight:400}
   .vo i{color:var(--sage-d);font-style:italic}
-  .see{font-size:13px;line-height:1.6;color:var(--ink2)}
+  .see{font-size:12.5px;line-height:1.6;color:var(--ink2)}
   .onscreen{display:inline-block;background:#EEF2EE;border:1px solid #D4DED6;border-left:3px solid var(--sage);border-radius:6px;padding:9px 14px;font-size:14px;font-weight:600;color:var(--sage-d)}
   .card{display:inline-flex;align-items:center;gap:12px;background:#FBF6EA;border:1px solid #E8DCBF;border-radius:8px;padding:9px 14px;flex-wrap:wrap}
   .card .verb{font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;border:1px solid #E0CF9E;border-radius:5px;padding:4px 8px;white-space:nowrap}
   .card .ctext{font-size:14px;color:#6B5620;font-weight:600;line-height:1.4}
-
-  .cta{text-align:center;padding:40px 24px 44px;background:var(--sage-d);color:#fff}
-  .cta .ch{font-size:26px;font-weight:600;letter-spacing:-.3px;font-family:'Fraunces',Georgia,serif;max-width:640px;margin:0 auto;line-height:1.2}
-  .cta .cs{color:#D3DED6;font-size:13.5px;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
-  .cta .stack{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+  .cta{text-align:center;padding:36px 24px 40px;background:var(--sage-d);color:#fff}
+  .cta .ch{font-size:24px;font-weight:600;letter-spacing:-.3px;font-family:'Fraunces',Georgia,serif;max-width:640px;margin:0 auto;line-height:1.2}
+  .cta .cs{color:#D3DED6;font-size:13px;margin:12px auto 0;max-width:600px;line-height:1.6}
+  .cta .stk{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
   .cta .val{font-size:11.5px;font-weight:600;color:#EAF0EC;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:6px;padding:7px 12px}
   .cta .val b{color:#F2D98A}
-  .cta .pill{display:inline-block;margin-top:24px;background:var(--gold);color:#231B08;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;padding:15px 40px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.22)}
-  .cta .promo{margin-top:14px;color:#F2D98A;font-size:12.5px;font-weight:600;letter-spacing:.03em}
+  .cta .pill{display:inline-block;margin-top:22px;background:var(--gold);color:#231B08;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;padding:14px 38px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.22)}
+  .cta .promo{margin-top:14px;color:#F2D98A;font-size:12.5px;font-weight:600}
   .cta .tag{margin-top:14px;color:#B9C7BE;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
 
-  footer{text-align:center;color:#9AA39E;font-size:11.5px;padding:26px 16px 40px;line-height:1.6}
-  @media(max-width:720px){
-    header.top h1{font-size:25px}
-    .hero{height:auto}.hero img{position:relative;height:210px}
-    .hero .grad{background:linear-gradient(180deg,rgba(24,34,30,.15),rgba(24,34,30,.9))}
-    .hero .htext{position:relative;max-width:100%;padding:20px 22px 26px;left:0}
-    .hero .fh{font-size:27px}
+  /* ===== STORYBOARD / CAMPAIGN SLIDES (16:9 sheets) ===== */
+  .board{padding:0}
+  .board .bhead{padding:26px 40px 10px;border-bottom:1px solid var(--line2)}
+  .board .bkick{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .board .bh{font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:600;margin-top:6px;color:var(--ink);letter-spacing:-.3px}
+  .board .grid{display:grid;grid-template-columns:300px 1fr;gap:0;min-height:420px}
+  .board .visual{position:relative;background:#20302B;overflow:hidden;border-right:1px solid var(--line2);display:flex;align-items:center;justify-content:center;padding:26px}
+  /* phone frame */
+  .phone{position:relative;width:210px;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 44px rgba(0,0,0,.4),0 0 0 6px #11201B,0 0 0 7px #2A3A34}
+  .phone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .phone .pscrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,24,20,.15),rgba(15,24,20,.7))}
+  .phone .cap{position:absolute;left:14px;right:14px;bottom:16px;z-index:3;color:#fff;font-size:13px;font-weight:700;line-height:1.3;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+  .phone .gcard{position:absolute;left:14px;right:14px;bottom:16px;z-index:3;background:rgba(251,246,234,.95);border-radius:9px;padding:9px 11px}
+  .phone .gcard .gv{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+  .phone .gcard .gt{font-size:11.5px;font-weight:700;color:#3B3011;margin-top:3px;line-height:1.3}
+  .board .txt{padding:26px 40px 30px}
+  .board .beat{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);font-weight:600}
+  .board .btitle{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:600;color:var(--ink);margin:8px 0 18px;line-height:1.2}
+
+  footer{text-align:center;color:#9AA39E;font-size:11.5px;padding:24px 16px 40px;line-height:1.6}
+  @media(max-width:760px){
+    header.top h1{font-size:24px}
+    .scr .hero{height:auto}.scr .hero img{position:relative;height:200px}
+    .scr .hero .grad{background:linear-gradient(180deg,rgba(24,34,30,.15),rgba(24,34,30,.9))}
+    .scr .hero .htext{position:relative;max-width:100%;padding:20px 22px 26px;left:0}
+    .scr .fh{font-size:26px}
     .act{grid-template-columns:1fr}
-    .act .lft{padding:18px 22px 4px}
-    .act .rgt{padding:14px 22px 22px;border-left:none}
+    .act .lft{padding:16px 22px 4px}.act .rgt{padding:12px 22px 20px;border-left:none}
+    .board .grid{grid-template-columns:1fr}
+    .board .visual{border-right:none;border-bottom:1px solid var(--line2)}
+    .board .bhead,.board .txt{padding-left:22px;padding-right:22px}
   }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="kick">Courtney × Longevity Life Academy</div>
-  <h1>The Masterclass Films — Full Scripts</h1>
-  <p>Three cinematic films built on the nerves that actually move a 40-year-old to enroll: you're at the midpoint and the next decade decides everything · the wellness industry has been selling you the wrong things · you can't fix what you can't see. Gain-framed, proof-backed, tied to the real program. Pick a film — the full script appears on one page.</p>
+  <h1>The Master Deck</h1>
+  <p>Eight ways in — five campaign concepts and three full films. Pick any one: it opens on a full script slide, then walks through every storyboard slide for that concept. All real Courtney footage. Clinical-premium production language.</p>
 </header>
 
-<div class="offerbar"><div class="inner">
-  <span class="chip">The nerves: <b>the midpoint · sold the wrong things · you can't fix what you can't see</b></span>
-  <span class="chip">Proof: <b>5 habits by 40 = +14 yrs (Harvard); 8 = +24 yrs (MVP)</b></span>
-  <span class="chip pro">Offer: <b>18 live sessions · 6 Pillars · 20% off → $1,200</b></span>
-</div></div>
+<div class="grp">
+  <div class="glab">The 3 Films — full scripts</div>
+  <div class="chooser" id="chFilms"></div>
+  <div class="glab" style="margin-top:20px">The 5 Campaign Options</div>
+  <div class="chooser" id="chOpts"></div>
+</div>
 
-<div class="chooser" id="chooser"></div>
-<div class="wrap" id="wrap"></div>
+<div class="meta" id="meta"></div>
+<div class="toolbar">
+  <button id="prev">‹ Prev</button>
+  <span class="counter"><span id="cur">1</span> / <span id="tot">1</span></span>
+  <button id="next">Next ›</button>
+  <button class="ghost" id="fs">Fullscreen</button>
+</div>
+<div class="stage" id="stage"></div>
 <footer>Confidential — prepared for the Longevity Life Academy partnership. Real Courtney footage only. Insert Courtney's verified figure wherever you see [RESULT].</footer>
 
 <script>
-const IMG={cover:'images/real_cover.png',portrait:'images/real_portrait.png',closeup:'images/real_closeup.png'};
-function act(no,time,title,vo,onscreen,see){
-  let os='';
-  if(onscreen){
-    if(onscreen.verb) os=`<div class="blk"><div class="lab">Graphic Card</div><div class="card"><span class="verb">${onscreen.verb}</span><span class="ctext">${onscreen.text}</span></div></div>`;
-    else os=`<div class="blk"><div class="lab">On Screen</div><span class="onscreen">${onscreen.text}</span></div>`;
-  }
-  return `<div class="act"><div class="lft"><div class="no">${no}</div><div class="time">${time}</div></div><div class="rgt"><div class="atitle">${title}</div>
-    <div class="blk"><div class="lab">Hear · Courtney (VO)</div><div class="vo"><span class="q">${vo}</span></div></div>
-    ${os}
-    <div class="blk"><div class="lab">See · Editor</div><div class="see">${see}</div></div></div></div>`;
+const IMG={cover:'images/real_cover.png',portrait:'images/real_portrait.png',closeup:'images/real_closeup.png',
+  set_cover:'images/set_cover.png',set_portrait:'images/set_portrait.png',set_closeup:'images/set_closeup.png',set_interview:'images/set_interview.png',
+  f1:'images/f1_s1_hook.png',f1e:'images/f1_s3_energized.png',f2:'images/f2_s2_vitality.png',f2s:'images/f2_s1_seated.png',f3:'images/f3_s2_biohacker.png',f3k:'images/f3_s3_kitchen.png',
+  gtraj:'images/g_trajectory.png',glev:'images/g_levers.png',gpil:'images/g_pillars.png',gres:'images/g_result.png',gui:'images/g_courseui.png'};
+
+/* ---- act data ---- */
+function act(no,time,title,vo,onscreen,see,frame){return {no,time,title,vo,onscreen,see,frame};}
+function osHTML(o){if(!o)return '';return o.verb?`<div class="blk"><div class="lab">Graphic Card</div><div class="card"><span class="verb">${o.verb}</span><span class="ctext">${o.text}</span></div></div>`:`<div class="blk"><div class="lab">On Screen</div><span class="onscreen">${o.text}</span></div>`;}
+function actRow(a){return `<div class="act"><div class="lft"><div class="no">${a.no}</div><div class="time">${a.time}</div></div><div class="rgt"><div class="atitle">${a.title}</div>
+  <div class="blk"><div class="lab">Hear · Courtney (VO)</div><div class="vo">${a.vo}</div></div>${osHTML(a.onscreen)}
+  <div class="blk"><div class="lab">See · Editor</div><div class="see">${a.see}</div></div></div></div>`;}
+
+/* SCRIPT SLIDE = hero + all acts + cta */
+function scriptSlide(f){
+  return `<div class="slide scr active"><div class="sheet">
+    <div class="hero"><img src="${f.img}"><div class="grad"></div>
+      <div class="htext"><div class="fkick">${f.kick}</div><div class="fh">${f.h}</div><div class="fpromise">${f.promise}</div>
+      <div class="specs">${f.specs.map(s=>`<span class="spec">${s}</span>`).join('')}</div></div></div>
+    <div>${f.acts.map(actRow).join('')}</div>
+    <div class="cta"><div class="ch">${f.cta.h}</div><div class="cs">${f.cta.sub}</div>
+      <div class="stk">${f.cta.stack.map(s=>`<span class="val">${s}</span>`).join('')}</div>
+      <div class="pill">Enroll Now</div><div class="promo">Use code for 20% off — $1,500 → $1,200</div><div class="tag">It's Your Life. Live It Well.</div></div>
+  </div></div>`;
+}
+/* STORYBOARD SLIDE = one per act, phone frame + beat */
+function boardSlide(f,a){
+  const inner=a.onscreen?(a.onscreen.verb
+      ?`<div class="gcard"><div class="gv">${a.onscreen.verb}</div><div class="gt">${a.onscreen.text}</div></div>`
+      :`<div class="cap">${a.onscreen.text}</div>`)
+    :'';
+  return `<div class="slide board"><div class="sheet">
+    <div class="bhead"><div class="bkick">${f.name} · ${a.no}</div><div class="bh">${a.title}</div></div>
+    <div class="grid">
+      <div class="visual"><div class="phone"><img src="${a.frame||f.img}"><div class="pscrim"></div>${inner}</div></div>
+      <div class="txt">
+        <div class="beat">Hear · Courtney (VO) · ${a.time}</div>
+        <div class="vo" style="margin:8px 0 20px">${a.vo}</div>
+        ${a.onscreen?`<div class="beat">On Screen</div>${osHTML(a.onscreen).replace('<div class="blk"><div class="lab">On Screen</div>','').replace('<div class="blk"><div class="lab">Graphic Card</div>','').replace(/<\/div>$/,'')}`:''}
+        <div class="beat" style="margin-top:20px">See · Editor</div>
+        <div class="see" style="margin-top:6px">${a.see}</div>
+      </div>
+    </div>
+  </div></div>`;
 }
 
+/* ---- helpers for CAMPAIGN OPTION slides ---- */
+function optCover(img,kick,h,sub){return `<div class="slide board"><div class="sheet"><div class="bhead"><div class="bkick">${kick}</div><div class="bh">${h}</div></div><div class="grid"><div class="visual" style="padding:0"><img src="${img}" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,34,30,.1),rgba(24,34,30,.55))"></div></div><div class="txt"><div class="beat">The concept</div><div class="vo" style="margin-top:10px;font-size:16px">${sub}</div></div></div></div></div>`;}
+function optSplit(head,bK,bT,aK,aT,img){return `<div class="slide board"><div class="sheet"><div class="bhead"><div class="bkick">The casting</div><div class="bh">${head}</div></div><div class="grid"><div class="visual" style="padding:0"><img src="${img}" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,34,30,.1),rgba(24,34,30,.55))"></div></div><div class="txt"><div class="beat">${bK}</div><div class="vo" style="margin:6px 0 18px;font-size:15px">${bT}</div><div class="beat" style="color:var(--gold)">${aK}</div><div class="vo" style="margin-top:6px;font-size:16px;font-weight:500">${aT}</div></div></div></div></div>`;}
+function optStack(kick,h,items){const r=items.map(x=>`<div style="margin-bottom:16px"><div class="beat" style="color:var(--gold)">${x[0]}</div><div class="vo" style="margin-top:5px;font-size:15px">${x[1]}</div></div>`).join('');return `<div class="slide board"><div class="sheet"><div class="bhead"><div class="bkick">${kick}</div><div class="bh">${h}</div></div><div style="padding:26px 40px 30px">${r}</div></div></div>`;}
+function optRows(kick,h,rows){const r=rows.map(x=>`<div style="display:grid;grid-template-columns:120px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--line2)"><div class="beat" style="color:var(--sage)">${x[0]}</div><div class="see" style="font-size:14px;color:var(--ink)">${x[1]}</div></div>`).join('');return `<div class="slide board"><div class="sheet"><div class="bhead"><div class="bkick">${kick}</div><div class="bh">${h}</div></div><div style="padding:14px 40px 30px">${r}</div></div></div>`;}
+function optCards(kick,h,cc){const c=cc.map(x=>`<div style="background:#FBF6EA;border:1px solid #E8DCBF;border-top:3px solid var(--gold);border-radius:10px;padding:16px"><div style="font-family:Fraunces,serif;font-size:15px;font-weight:600;color:#6B5620">${x[0]}</div><div class="see" style="margin-top:8px">${x[1]}</div></div>`).join('');return `<div class="slide board"><div class="sheet"><div class="bhead"><div class="bkick">${kick}</div><div class="bh">${h}</div></div><div style="padding:22px 40px 30px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px">${c}</div></div></div>`;}
+function optClose(h,sub){return `<div class="slide board"><div class="sheet"><div class="cta"><div class="ch">${h}</div><div class="cs">${sub}</div><div class="pill">Enroll Now</div><div class="promo">Use code for 20% off — $1,500 → $1,200</div><div class="tag">It's Your Life. Live It Well.</div></div></div></div>`;}
+
+/* ============ THE 3 FILMS ============ */
 const FILMS=[
-{
-  n:"01", name:"Be There", img:IMG.cover,
-  kick:"Film 01 · The core nerve", h:"Be There.",
+{ n:"01", name:"Be There", img:IMG.cover, kick:"Film 01 · The core nerve", h:"Be There.",
   promise:"The deepest driver isn't dying — it's not being <i>there</i>, strong, for the people you love. Gain-framed, legacy-led. <b>The most powerful cold hook.</b>",
   specs:["~80 sec","9:16","Emotional hook","Hard proof","Enroll CTA"],
   acts:[
-    act("Act I · The Hook","0:00–0:08","Land the real fear — not death, absence.","“I'm not afraid of getting older. I'm afraid of being in the room — but too tired, too foggy, too fragile to really be <i>in</i> it. That's the fear no one says out loud.”",{text:"It's not about living longer. It's about being there."},"Open on a real moment she'd hate to miss half-present — a kid's game, a slow walk, a dinner table. Courtney watching, then turns to camera. Warm, quiet, no hype."),
-    act("Act II · The Stakes","0:08–0:20","Make 'more years' mean the RIGHT years.","“Everyone sells you more years. I want the good ones — sharp, strong, able to keep up. The version of you that's still fully present at seventy, not just still here.”",{verb:"Reframe",text:"“Don't just add years. Stay strong enough to live them.”"},"Vibrant 60s–70s montage — hiking, dancing, grandkids — not frail 'wellness' clichés. Word-to-image on 'present.' Aspirational, real."),
-    act("Act III · The Proof","0:20–0:36","Gain-framed hard science, not fear.","“And this is provable. Harvard tracked 123,000 adults: just five everyday habits by age forty added up to fourteen extra years of healthy life. Not a supplement. Habits.”",{verb:"Learn",text:"Harvard · Circulation 2018: 5 habits by 40 = +14 yrs (women), +12 (men)"},"Clean data card animates the +14 figure with the Harvard citation. Editorial, credible, premium. This is the 'it's real' beat."),
-    act("Act IV · The Midpoint","0:36–0:52","Forty is the fork in the road.","“Here's what nobody tells you at forty: this is the exact decade the curve decides. The body you'll live in at seventy is being built right now, by what you do this year. Wait ten more years and you're not building — you're just managing the decline.”",{verb:"Reframe",text:"Forty isn't the peak. It's the fork."},"A single line splits into two futures — one strong and upright, one fading. Land hard on Courtney at the fork. This is the urgency beat: now, not someday."),
-    act("Act V · The Mechanism","0:52–1:06","Turn belief into a doable plan.","“Inside Longevity Life Academy it's eighteen live sessions across six simple pillars — how you eat, sleep, move, supplement, protect your heart, and use your own data. Simple enough to keep, powerful enough to change your trajectory.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · simple enough to actually keep"},"Six pillars build one by one — clean icons, 'like brushing your teeth' simplicity. Live-session faces on camera. Buyable, not theoretical."),
-    act("Act VI · The Close","1:06–1:22","Legacy close + witty sign-off.","“The people you love don't need more of you someday. They need the strong, sharp you — for as long as possible. So don't wait for a wake-up call you can feel. Start this week, take twenty percent off — and let's make future-you thank present-you. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Return to the opening moment — now she's fully in it, present, strong. She delivers the sign-off direct to camera with a small, knowing smile. ENROLL NOW pulses, price drops. LLA lock-up + 'It's Your Life. Live It Well.'")
+    act("Act I · The Hook","0:00–0:08","Land the real fear — not death, absence.","“I'm not afraid of getting older. I'm afraid of being in the room — but too tired, too foggy, too fragile to really be <i>in</i> it. That's the fear no one says out loud.”",{text:"It's not about living longer. It's about being there."},"Open on a real moment she'd hate to miss half-present — a kid's game, a slow walk, a dinner table. Courtney watching, then turns to camera. Warm, quiet, no hype.",IMG.cover),
+    act("Act II · The Stakes","0:08–0:20","Make 'more years' mean the RIGHT years.","“Everyone sells you more years. I want the good ones — sharp, strong, able to keep up. The version of you that's still fully present at seventy, not just still here.”",{verb:"Reframe",text:"“Don't just add years. Stay strong enough to live them.”"},"Vibrant 60s–70s montage — hiking, dancing, grandkids — not frail 'wellness' clichés. Aspirational, real.",IMG.f1e),
+    act("Act III · The Proof","0:20–0:36","Gain-framed hard science, not fear.","“And this is provable. Harvard tracked 123,000 adults: just five everyday habits by age forty added up to fourteen extra years of healthy life. Not a supplement. Habits.”",{verb:"Learn",text:"Harvard · Circulation 2018: 5 habits by 40 = +14 yrs (women), +12 (men)"},"Clean data card animates the +14 figure with the Harvard citation. Editorial, credible, premium.",IMG.gtraj),
+    act("Act IV · The Midpoint","0:36–0:52","Forty is the fork in the road.","“Here's what nobody tells you at forty: this is the exact decade the curve decides. The body you'll live in at seventy is being built right now, by what you do this year. Wait ten more years and you're not building — you're just managing the decline.”",{verb:"Reframe",text:"Forty isn't the peak. It's the fork."},"A single line splits into two futures — one strong and upright, one fading. Land hard on Courtney at the fork.",IMG.glev),
+    act("Act V · The Mechanism","0:52–1:06","Turn belief into a doable plan.","“Inside Longevity Life Academy it's eighteen live sessions across six simple pillars — how you eat, sleep, move, supplement, protect your heart, and use your own data. Simple enough to keep, powerful enough to change your trajectory.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · simple enough to actually keep"},"Six pillars build one by one — clean icons, 'like brushing your teeth' simplicity. Buyable, not theoretical.",IMG.gpil),
+    act("Act VI · The Close","1:06–1:22","Legacy close + witty sign-off.","“The people you love don't need more of you someday. They need the strong, sharp you — for as long as possible. So don't wait for a wake-up call you can feel. Start this week, take twenty percent off — and let's make future-you thank present-you. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Return to the opening moment — now she's fully in it, present, strong. Sign-off direct to camera with a small, knowing smile.",IMG.portrait)
   ],
-  cta:{h:"They don't need more of you someday. They need you — strong — now.",sub:"Hits the true driver (presence, not immortality), makes forty the urgent fork in the road, proves it with gain-framed Harvard data, then closes on a warm, witty direct-to-camera sign-off.",
+  cta:{h:"They don't need more of you someday. They need you — strong — now.",sub:"Hits the true driver (presence, not immortality), makes forty the urgent fork, proves it with gain-framed Harvard data, then closes on a warm, witty direct-to-camera sign-off.",
     stack:["Nerve: be there for them","Proof: +14 yrs (Harvard)","Forty = the fork","18 live sessions · 6 Pillars","<b>20% off → $1,200</b>"]}
 },
-{
-  n:"02", name:"Sold the Wrong Things", img:IMG.portrait,
-  kick:"Film 02 · Anti-hype / been-lied-to", h:"You've Been Sold the Wrong Things.",
+{ n:"02", name:"Sold the Wrong Things", img:IMG.portrait, kick:"Film 02 · Anti-hype / been-lied-to", h:"You've Been Sold the Wrong Things.",
   promise:"Hits the resentment nerve: you've spent years and money on gadgets, powders and fads that never moved the needle — the fundamentals were the answer all along. <b>Anti-hype, righteous.</b>",
   specs:["~78 sec","9:16","Anti-hype","700k-adult proof","Enroll CTA"],
   acts:[
-    act("Act I · The Hook","0:00–0:08","Name what they sold you.","“The cold plunge. The two-hundred-dollar greens. The supplement stack you can't even pronounce. Be honest — how much of it actually changed how you feel? The wellness industry got rich selling forty-year-olds the wrong things.”",{text:"You weren't lazy. You were sold the wrong things."},"Fast, glossy montage of gadgets, powders, fad devices — then a hard cut to Courtney, arms crossed, unimpressed, direct to camera. A little defiant."),
-    act("Act II · The Reframe","0:08–0:24","Absolve them, then redirect.","“It was never a discipline problem. You were pointed at the shiny stuff while the things that actually work — the free, boring, unsexy fundamentals — sat right in front of you. Nobody could sell you those, so nobody did.”",{verb:"Reframe",text:"The fundamentals don't have a marketing budget. That's the only reason you missed them."},"Shiny products fade to grey; simple icons — a plate, a bed, a pair of shoes — light up gold. The contrast IS the ad."),
-    act("Act III · The Mechanism","0:24–0:38","What actually works.","“It's how you eat, sleep, and move — done consistently, like brushing your teeth. Six simple pillars. That's the whole secret the gadget crowd keeps burying, because there's no upsell in it.”",{verb:"Learn",text:"The 6 Pillars: eat · sleep · move · supplement · heart · your data"},"Six pillars snap in, each tagged near-zero cost. 'Like brushing your teeth' beat. Clean, almost provocative in its simplicity."),
-    act("Act IV · The Hard Data","0:38–0:52","Prove the boring move is powerful.","“And it's not small. A study of seven hundred thousand adults found eight of these habits by age forty added up to twenty-plus years of extra healthy life. Free habits. Decades of payoff. No plunge required.”",{verb:"Trust",text:"Million Veteran Program 2023: 8 habits by 40 = +24 yrs (men), +21 (women)"},"Bold data card: +24 with the study citation. The number does the persuading — hold on it. Editorial, undeniable."),
-    act("Act V · The Offer","0:52–1:06","Make the access explicit.","“Inside Longevity Life Academy, our faculty walk you through all six pillars — eighteen live sessions, real coaching, turning your own numbers into a personal blueprint. Everything that works, none of the stuff that doesn't.”",{verb:"Master",text:"18 LIVE sessions · your data → your blueprint · what works, nothing that doesn't"},"Live-session faces, then a glucose/biomarker readout morphing into a clean 'Longevity Blueprint.'"),
-    act("Act VI · The Close","1:06–1:20","Anti-hype close + witty sign-off.","“Stop paying for the hype. Start doing the stuff that actually works — with people who'll show you how. Take twenty percent off this week. Cancel the subscription that isn't working; keep the body that will. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Courtney, confident, direct to camera with a wry half-smile on the sign-off. ENROLL NOW pulses, price drops. LLA lock-up + tagline. Resolve.")
+    act("Act I · The Hook","0:00–0:08","Name what they sold you.","“The cold plunge. The two-hundred-dollar greens. The supplement stack you can't even pronounce. Be honest — how much of it actually changed how you feel? The wellness industry got rich selling forty-year-olds the wrong things.”",{text:"You weren't lazy. You were sold the wrong things."},"Fast, glossy montage of gadgets, powders, fad devices — then a hard cut to Courtney, arms crossed, unimpressed, direct to camera. A little defiant.",IMG.f3),
+    act("Act II · The Reframe","0:08–0:24","Absolve them, then redirect.","“It was never a discipline problem. You were pointed at the shiny stuff while the things that actually work — the free, boring, unsexy fundamentals — sat right in front of you. Nobody could sell you those, so nobody did.”",{verb:"Reframe",text:"The fundamentals don't have a marketing budget. That's the only reason you missed them."},"Shiny products fade to grey; simple icons — a plate, a bed, a pair of shoes — light up gold. The contrast IS the ad.",IMG.f2s),
+    act("Act III · The Mechanism","0:24–0:38","What actually works.","“It's how you eat, sleep, and move — done consistently, like brushing your teeth. Six simple pillars. That's the whole secret the gadget crowd keeps burying, because there's no upsell in it.”",{verb:"Learn",text:"The 6 Pillars: eat · sleep · move · supplement · heart · your data"},"Six pillars snap in, each tagged near-zero cost. 'Like brushing your teeth' beat. Clean, almost provocative in its simplicity.",IMG.gpil),
+    act("Act IV · The Hard Data","0:38–0:52","Prove the boring move is powerful.","“And it's not small. A study of seven hundred thousand adults found eight of these habits by age forty added up to twenty-plus years of extra healthy life. Free habits. Decades of payoff. No plunge required.”",{verb:"Trust",text:"Million Veteran Program 2023: 8 habits by 40 = +24 yrs (men), +21 (women)"},"Bold data card: +24 with the study citation. The number does the persuading — hold on it. Editorial, undeniable.",IMG.gres),
+    act("Act V · The Offer","0:52–1:06","Make the access explicit.","“Inside Longevity Life Academy, our faculty walk you through all six pillars — eighteen live sessions, real coaching, turning your own numbers into a personal blueprint. Everything that works, none of the stuff that doesn't.”",{verb:"Master",text:"18 LIVE sessions · your data → your blueprint · what works, nothing that doesn't"},"Live-session faces, then a glucose/biomarker readout morphing into a clean 'Longevity Blueprint.'",IMG.gui),
+    act("Act VI · The Close","1:06–1:20","Anti-hype close + witty sign-off.","“Stop paying for the hype. Start doing the stuff that actually works — with people who'll show you how. Take twenty percent off this week. Cancel the subscription that isn't working; keep the body that will. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Courtney, confident, direct to camera with a wry half-smile on the sign-off. Resolve.",IMG.f2)
   ],
   cta:{h:"You weren't lazy. You were sold the wrong things.",sub:"Flips years of wasted gadget-and-supplement spend into righteous motivation, redirects to the free fundamentals, proves it with 700k-person data, then closes on a wry direct-to-camera sign-off.",
     stack:["Nerve: been sold the wrong things","Fundamentals > hype","Proof: +24 yrs (700k adults)","Data → personal blueprint","<b>20% off → $1,200</b>"]}
 },
-{
-  n:"03", name:"You Can't Change What You Can't See", img:IMG.closeup,
-  kick:"Film 03 · Retargeting / data", h:"You Can't Change What You Can't See.",
+{ n:"03", name:"You Can't Change What You Can't See", img:IMG.closeup, kick:"Film 03 · Retargeting / data", h:"You Can't Change What You Can't See.",
   promise:"For warm leads who 'know' the habits but haven't acted. The unlock is measurement — your numbers become your blueprint. <b>Converts the fence-sitter.</b>",
   specs:["~74 sec","9:16","Insight hook","Blueprint","Enroll CTA"],
   acts:[
-    act("Act I · The Hook","0:00–0:07","Break the 'I already know this' wall.","“You already know you should eat better, sleep more, move daily. So why hasn't it changed anything? Because you can't improve what you've never actually measured.”",{text:"You can't change what you can't see."},"Courtney intimate, seated, direct. Interrupts the smug 'I know the basics' reflex. Quiet, sharp, no music — an insight, not a pitch."),
-    act("Act II · The Real Problem","0:07–0:20","Effort without feedback fails.","“You've been guessing in the dark — trying random things, never knowing what's working for <i>your</i> body. Motivation fades fast when you can't see it moving the needle. That's not a discipline problem. It's a data problem.”",{verb:"Reframe",text:"Not a willpower problem — a visibility problem."},"B-roll: half-used trackers, abandoned diets, a foggy mirror wiped clear. Lands on Courtney — she names the thing they feel but can't articulate."),
-    act("Act III · The Unlock","0:20–0:34","Numbers → a personal blueprint.","“The moment you can see your real numbers — your sleep, your glucose, your biological age — everything changes. Suddenly you're not guessing. You have a blueprint built for the body you actually have.”",{verb:"See",text:"Your numbers → your personal Longevity Blueprint"},"Biomarker readouts animate into a clean, personalized 'Longevity Blueprint' card. Feedback loop made visible. Empowering, premium."),
-    act("Act IV · The Proof","0:34–0:50","Measured, then moved.","“This isn't theory. Our members track their numbers, adjust, and measurably slow their biological aging — some by months in a single program. Not because they tried harder. Because for the first time, they could see what was actually working.”",{verb:"Trust",text:"Members slow biological aging up to 3.8 months · measured, not guessed"},"A members' biological-age line ticks downward on screen; real numbers, real graphs. Proof that the see-it-then-move-it loop works."),
-    act("Act V · The Offer","0:50–1:04","The program is the system + the eyes.","“Longevity Life Academy gives you both — eighteen live sessions across the Six Pillars, and the guidance to turn your own data into action. You stop guessing. You start seeing. And this time, it sticks.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · data-guided so it finally sticks"},"Live-session faces beside the personal blueprint. The pillars and the data card lock together — system + visibility as one offer."),
-    act("Act VI · The Close","1:04–1:18","Fence-sitter close + witty sign-off.","“You've had good intentions for years. Intentions don't change your numbers — seeing them does. Give yourself the one thing that finally makes it stick. Twenty percent off this week. Stop guessing about the only body you get. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Foggy mirror from Act II, now crystal clear — she sees herself sharply, delivers the sign-off direct to camera. ENROLL NOW pulses, price drops. LLA lock-up + tagline.")
+    act("Act I · The Hook","0:00–0:07","Break the 'I already know this' wall.","“You already know you should eat better, sleep more, move daily. So why hasn't it changed anything? Because you can't improve what you've never actually measured.”",{text:"You can't change what you can't see."},"Courtney intimate, seated, direct. Interrupts the smug 'I know the basics' reflex. Quiet, sharp, no music — an insight, not a pitch.",IMG.closeup),
+    act("Act II · The Real Problem","0:07–0:20","Effort without feedback fails.","“You've been guessing in the dark — trying random things, never knowing what's working for <i>your</i> body. Motivation fades fast when you can't see it moving the needle. That's not a discipline problem. It's a data problem.”",{verb:"Reframe",text:"Not a willpower problem — a visibility problem."},"B-roll: half-used trackers, abandoned diets, a foggy mirror wiped clear. Lands on Courtney — she names the thing they feel but can't articulate.",IMG.f3k),
+    act("Act III · The Unlock","0:20–0:34","Numbers → a personal blueprint.","“The moment you can see your real numbers — your sleep, your glucose, your biological age — everything changes. Suddenly you're not guessing. You have a blueprint built for the body you actually have.”",{verb:"See",text:"Your numbers → your personal Longevity Blueprint"},"Biomarker readouts animate into a clean, personalized 'Longevity Blueprint' card. Feedback loop made visible. Empowering, premium.",IMG.gui),
+    act("Act IV · The Proof","0:34–0:50","Measured, then moved.","“This isn't theory. Our members track their numbers, adjust, and measurably slow their biological aging — some by months in a single program. Not because they tried harder. Because for the first time, they could see what was actually working.”",{verb:"Trust",text:"Members slow biological aging up to 3.8 months · measured, not guessed"},"A members' biological-age line ticks downward on screen; real numbers, real graphs. Proof that the see-it-then-move-it loop works.",IMG.gres),
+    act("Act V · The Offer","0:50–1:04","The program is the system + the eyes.","“Longevity Life Academy gives you both — eighteen live sessions across the Six Pillars, and the guidance to turn your own data into action. You stop guessing. You start seeing. And this time, it sticks.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · data-guided so it finally sticks"},"Live-session faces beside the personal blueprint. The pillars and the data card lock together — system + visibility as one offer.",IMG.gpil),
+    act("Act VI · The Close","1:04–1:18","Fence-sitter close + witty sign-off.","“You've had good intentions for years. Intentions don't change your numbers — seeing them does. Give yourself the one thing that finally makes it stick. Twenty percent off this week. Stop guessing about the only body you get. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Foggy mirror from Act II, now crystal clear — she sees herself sharply, delivers the sign-off direct to camera.",IMG.closeup)
   ],
   cta:{h:"You don't need more willpower. You need to see your numbers.",sub:"Breaks the warm lead's 'I already know this' wall by reframing failure as invisibility, proves it with measured member results, then closes on a sharp direct-to-camera sign-off.",
     stack:["Insight: visibility, not willpower","Data → personal blueprint","Measured, not guessed","Members slow aging ~3.8 mo","<b>20% off → $1,200</b>"]}
 }
 ];
 
-const chooser=document.getElementById('chooser'),wrap=document.getElementById('wrap');
-FILMS.forEach((f,fi)=>{
-  const b=document.createElement('button');b.className=(fi===0?'on':'');b.innerHTML=`<span class="n">${f.n}</span>${f.name}`;b.onclick=()=>show(fi);chooser.appendChild(b);
-  const el=document.createElement('div');el.className='film'+(fi===0?' active':'');
-  el.innerHTML=`<div class="sheet">
-    <div class="hero"><img src="${f.img}"><div class="grad"></div>
-      <div class="htext"><div class="fkick">${f.kick}</div><div class="fh">${f.h}</div><div class="fpromise">${f.promise}</div>
-      <div class="specs">${f.specs.map(s=>`<span class="spec">${s}</span>`).join('')}</div></div></div>
-    <div class="body">${f.acts.join('')}</div>
-    <div class="cta"><div class="ch">${f.cta.h}</div><div class="cs">${f.cta.sub}</div>
-      <div class="stack">${f.cta.stack.map(s=>`<span class="val">${s}</span>`).join('')}</div>
+/* ============ THE 5 CAMPAIGN OPTIONS ============ */
+/* Each option: a short "script slide" (concept summary as the opener) + its campaign slides */
+const OPTIONS=[
+{ name:"The Insider", tagline:"Longevity's best-kept secret finally talks.",
+  scriptLead:{kick:"Option 01 · The Insider",h:"Courtney, on the record.",img:IMG.set_cover,
+    promise:"A confession, not an ad. Courtney says the quiet part out loud — the industry oversold it — and becomes the trusted face of the Academy. <b>Documentary-style, curiosity-led.</b>",
+    specs:["75 sec","Insider angle","Real set","Docu-interview"],
+    beats:[["The angle","A confession, not an ad — 'here's what they never tell you,' built to be watched twice."],["Insider credibility","Framed like a documentary interview, not a commercial."],["Curiosity hook","The quiet part, said out loud — turns a skeptic into a watcher."]]},
+  slides:[
+    optSplit("The face changes everything.","Generic","A stock 'wellness' model.","Courtney","A real woman people believe.",IMG.set_portrait),
+    optStack("The angle","The secret gets out.",[["A confession, not an ad","She says the quiet part out loud — the industry oversold it."],["Insider credibility","Framed like a documentary interview, not a commercial."],["Curiosity hook","'Here's what they never tell you' — built to be watched twice."]]),
+    optRows("The look","Cinematic treatment.",[["Lighting","Warm practicals, soft key. Golden, never clinical."],["Camera","Shallow depth. Subject sharp, room soft."],["Palette","Wood browns, amber lamplight, deep shadow."],["Pace","Unhurried. Let her land the line."]]),
+    optCards("Deliverables","One shoot, everywhere.",[["The film","75-sec hero film for the launch."],["Social reels","6–8 vertical cut-downs for IG & TikTok."],["Paid ads","Meta / YouTube frames from the close-ups."],["Stills","Thumbnails, press kit, article headers."]]),
+    optClose("Meet the insider.","One woman. One system. The story the $2M crowd doesn't want told.")
+  ]
+},
+{ name:"The Reframe", tagline:"Not more years — better ones.",
+  scriptLead:{kick:"Option 02 · The Reframe",h:"Add life to your years.",img:IMG.portrait,
+    promise:"One idea flip: everyone sells lifespan. Courtney sells healthspan — the years you actually get to live well. <b>Aspirational, not clinical.</b>",
+    specs:["70 sec","Reframe","Healthspan","Aspirational"],
+    beats:[["The flip","Most advice adds years. She adds life to years."],["It's trainable","The one word that turns a wish into a plan."],["Aspirational","Strong, sharp, free — at seventy and eighty."]]},
+  slides:[
+    optSplit("The right person to say it.","A slogan","'Live longer' — abstract, tired.","Courtney","Proof it can be lived, now.",IMG.f2),
+    optStack("The angle","Lifespan vs. healthspan.",[["The flip","Most advice adds years. She adds life to years."],["It's trainable","The one word that turns a wish into a plan."],["Aspirational, not clinical","Strong. Sharp. Free — at seventy and eighty."]]),
+    optRows("The look","Cinematic treatment.",[["Lighting","Golden hour indoors. Optimistic warmth."],["Camera","Eye-level, intimate, shallow depth."],["Palette","Amber, ivory, deep shadow."],["Sound","Her voice leads; soft, hopeful score."]]),
+    optCards("Deliverables","One shoot, everywhere.",[["The film","70-sec brand film for site & launch."],["Social reels","Healthspan-vs-lifespan cut-downs."],["Paid ads","Reframe hook frames for Meta."],["Stills","Lifestyle press & thumbnail library."]]),
+    optClose("Don't just add years.","Add life to them — and start this week.")
+  ]
+},
+{ name:"The Myth-Buster", tagline:"You don't need $2M to slow aging.",
+  scriptLead:{kick:"Option 03 · The Myth-Buster",h:"The $2M myth, busted.",img:IMG.set_interview,
+    promise:"Takes on biohacking's biggest lie — that longevity is only for the rich — with a real woman and a real result. <b>Punchy, price-anchored.</b>",
+    specs:["85 sec","Myth-buster","Price anchor","Punchy"],
+    beats:[["The enemy","Plunges, red-light rooms, 100 supplements."],["The truth","What moves the needle is cheap and repeatable."],["The proof","On a normal budget, she got the result."]]},
+  slides:[
+    optSplit("The credibility swap.","A biohacker","Gadgets, plunges, hype.","Courtney","Boring, repeatable, affordable.",IMG.f3),
+    optStack("The angle","Expensive noise vs. what works.",[["The enemy","Plunges, red-light rooms, 100 supplements."],["The truth","What moves the needle is cheap and repeatable."],["The proof","On a normal budget, she got the result."]]),
+    optRows("The look","Cinematic treatment.",[["Lighting","Warm, grounded, real-home honesty."],["Camera","Handheld texture on the myth, locked on the truth."],["Palette","Deep green, gold, kitchen daylight."],["Pace","Punchy on the myths, calm on the answer."]]),
+    optCards("Deliverables","One shoot, everywhere.",[["The film","85-sec myth-buster hero film."],["Social reels","'Expensive noise' rapid-cut reels."],["Paid ads","Price-anchor hooks for Meta / YouTube."],["Stills","Comparison + press stills."]]),
+    optClose("It's closer than you think.","And far cheaper than they told you. Start this week.")
+  ]
+},
+{ name:"The Guide", tagline:"A teacher, not a pitch.",
+  scriptLead:{kick:"Option 04 · The Guide",h:"Your longevity teacher.",img:IMG.set_closeup,
+    promise:"A warmer, education-first campaign: Courtney as the calm guide who walks you through it, lesson by lesson. <b>Trustworthy, mentor-led.</b>",
+    specs:["75 sec","Education-first","Mentor","Warm"],
+    beats:[["Step by step","Energy, strength, sleep, a clear mind."],["No gimmicks","The handful of things that truly work."],["Always a next step","A path built for real life, not a second job."]]},
+  slides:[
+    optSplit("The right teacher.","A spokesperson","Reading lines to camera.","Courtney","A mentor you'd actually follow.",IMG.f1),
+    optStack("The angle","Guided, not guessing.",[["Step by step","Energy, strength, sleep, a clear mind."],["No gimmicks","The handful of things that truly work."],["Always the next step","A path built for real life, not a second job."]]),
+    optRows("The look","Cinematic treatment.",[["Lighting","Soft, trustworthy, classroom-warm."],["Camera","Steady, patient, close enough to trust."],["Palette","Deep green, gold, paper-warm neutrals."],["Sound","Reassuring, intimate room tone."]]),
+    optCards("Deliverables","One shoot, everywhere.",[["The film","75-sec 'your guide' hero film."],["Social reels","Lesson-teaser cut-downs."],["Paid ads","'Never guess again' hooks."],["Stills","Course-UI + mentor stills."]]),
+    optClose("A guided path.","Lesson by lesson, with support — so you never waste time guessing.")
+  ]
+},
+{ name:"The Two Lives", tagline:"Same birthday. Different ending.",
+  scriptLead:{kick:"Option 05 · The Two Lives",h:"Two lives. One choice.",img:IMG.set_cover,
+    promise:"A high-concept campaign on one visual: two people, same age — and the gap that decides who stays strong far longer. <b>High-concept, visual hook.</b>",
+    specs:["75 sec","High-concept","Split visual","Trajectory"],
+    beats:[["The hook","Two curves diverging from the same start."],["Not luck","A choice — and a simple system."],["The payoff","More good years, on a normal budget."]]},
+  slides:[
+    optSplit("The face of the better path.","Decline","The curve that keeps falling.","Courtney","The curve that bends up.",IMG.f1e),
+    optStack("The angle","Bend your trajectory.",[["The visual hook","Two curves diverging from the same start."],["Not luck","A choice — and a simple system."],["The payoff","More good years, on a normal budget."]]),
+    optRows("The look","Cinematic treatment.",[["Lighting","Contrast: cool decline vs warm rise."],["Camera","Split framing, then land on her warmth."],["Palette","Deep green, sage, gold highlight."],["Pace","Tense open, hopeful resolve."]]),
+    optCards("Deliverables","One shoot, everywhere.",[["The film","75-sec 'two lives' hero film."],["Social reels","Curve-reveal cut-downs."],["Paid ads","Split-screen hook frames."],["Stills","Concept + portrait library."]]),
+    optClose("Which curve is yours?","The best time to bend it is this week.")
+  ]
+}
+];
+
+/* Option "script lead" slide (concept opener, styled like the film script hero) */
+function optLeadSlide(o){const l=o.scriptLead;
+  const beats=l.beats.map(b=>`<div class="act"><div class="lft"><div class="no">${b[0]}</div></div><div class="rgt"><div class="vo">${b[1]}</div></div></div>`).join('');
+  return `<div class="slide scr active"><div class="sheet">
+    <div class="hero"><img src="${l.img}"><div class="grad"></div>
+      <div class="htext"><div class="fkick">${l.kick}</div><div class="fh">${l.h}</div><div class="fpromise">${l.promise}</div>
+      <div class="specs">${l.specs.map(s=>`<span class="spec">${s}</span>`).join('')}</div></div></div>
+    <div>${beats}</div>
+    <div class="cta"><div class="ch">${o.tagline}</div><div class="cs">The concept in one line. The slides that follow show the casting, the angle, the look, and the deliverables.</div>
       <div class="pill">Enroll Now</div><div class="promo">Use code for 20% off — $1,500 → $1,200</div><div class="tag">It's Your Life. Live It Well.</div></div>
-    </div>`;
-  wrap.appendChild(el);
+  </div></div>`;
+}
+
+/* ============ BUILD MASTER DECK ============ */
+const ENTRIES=[];
+FILMS.forEach(f=>ENTRIES.push({name:f.name,tag:f.promise.replace(/<[^>]+>/g,''),group:'film',
+  slides:[scriptSlide(f)].concat(f.acts.map(a=>boardSlide(f,a)))}));
+OPTIONS.forEach(o=>ENTRIES.push({name:o.name,tag:o.tagline,group:'opt',
+  slides:[optLeadSlide(o)].concat(o.slides)}));
+
+const stage=document.getElementById('stage'),meta=document.getElementById('meta');
+const chFilms=document.getElementById('chFilms'),chOpts=document.getElementById('chOpts');
+ENTRIES.forEach((e,ei)=>{
+  const b=document.createElement('button');b.className=(ei===0?'on':'');
+  const num=e.group==='film'?`0${ei+1}`:`0${ei-2}`;
+  b.innerHTML=`<span class="n">${num}</span>${e.name}`;b.onclick=()=>setEntry(ei);
+  (e.group==='film'?chFilms:chOpts).appendChild(b);
+  const w=document.createElement('div');w.className='entry'+(ei===0?' active':'');
+  w.innerHTML=e.slides.join('');stage.appendChild(w);
 });
-const filmEls=[...wrap.children],chooserEls=[...chooser.children];
-function show(x){filmEls.forEach((e,k)=>e.classList.toggle('active',k===x));chooserEls.forEach((e,k)=>e.classList.toggle('on',k===x));window.scrollTo({top:0,behavior:'smooth'});}
-window.show=show;
+const entryEls=[...stage.children],btns=[...chFilms.children,...chOpts.children];
+let ei=0,i=0;
+function slidesOf(x){return [...entryEls[x].querySelectorAll('.slide')];}
+function setEntry(x){ei=x;i=0;
+  entryEls.forEach((el,k)=>el.classList.toggle('active',k===ei));
+  btns.forEach((b,k)=>b.classList.toggle('on',k===ei));
+  meta.innerHTML=`<div class="mname">${ENTRIES[ei].name}</div><div class="mtag">${ENTRIES[ei].tag}</div>`;
+  document.getElementById('tot').textContent=slidesOf(ei).length;go(0);}
+function go(n){const s=slidesOf(ei);i=Math.max(0,Math.min(s.length-1,n));
+  s.forEach((el,x)=>el.classList.toggle('active',x===i));
+  document.getElementById('cur').textContent=i+1;
+  document.getElementById('prev').disabled=(i===0);
+  document.getElementById('next').disabled=(i===s.length-1);
+  window.scrollTo({top:document.querySelector('.meta').offsetTop-10,behavior:'smooth'});}
+document.getElementById('prev').onclick=()=>go(i-1);
+document.getElementById('next').onclick=()=>go(i+1);
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(i+1);if(e.key==='ArrowLeft')go(i-1);});
+document.getElementById('fs').onclick=()=>{const el=entryEls[ei];if(!document.fullscreenElement)el.requestFullscreen&&el.requestFullscreen();else document.exitFullscreen();};
+window.setEntry=setEntry;window.go=go;
+setEntry(0);
 </script>
 </body>
 </html>
