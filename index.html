@@ -5,90 +5,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Courtney × Longevity Life Academy — Masterclass Scripts</title>
 <style>
-  :root{ --navy:#02091C; --navy2:#050E28; --blue:#1A7FFF; --sky:#7EC8FF; --card:#0E1F48; --line:#24427a; --ink:#B7C6E0; --gold:#C9A24B; }
+  :root{ --navy:#02091C; --navy2:#050E28; --blue:#1A7FFF; --sky:#7EC8FF; --card:#0B1834; --line:#22406f; --ink:#B7C6E0; --gold:#C9A24B; }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--navy);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 
-  header.top{padding:28px 20px 8px;text-align:center}
+  header.top{padding:30px 20px 8px;text-align:center}
   header.top .kick{color:var(--sky);font-size:12px;letter-spacing:4px;font-weight:700;text-transform:uppercase}
-  header.top h1{font-size:28px;font-weight:800;margin-top:8px;letter-spacing:-.5px}
-  header.top p{color:var(--ink);font-size:13px;margin-top:8px;max-width:720px;margin-left:auto;margin-right:auto}
+  header.top h1{font-size:30px;font-weight:800;margin-top:8px;letter-spacing:-.5px}
+  header.top p{color:var(--ink);font-size:14px;margin-top:8px;max-width:760px;margin-left:auto;margin-right:auto}
 
-  .chooser{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:14px}
-  .chooser button{background:var(--card);color:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;transition:.15s}
+  .chooser{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:18px 14px 8px}
+  .chooser button{background:var(--card);color:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:.15s}
   .chooser button .n{color:var(--sky);margin-right:6px}
   .chooser button.on{background:var(--blue);border-color:var(--blue)}
   .chooser button:hover{border-color:var(--blue)}
 
-  .optmeta{text-align:center;padding:2px 16px 6px;color:var(--ink);font-size:13px}
-  .optmeta b{color:var(--sky);font-weight:700;letter-spacing:.04em}
+  .wrap{max-width:1080px;margin:0 auto;padding:10px 18px 40px}
+  .film{display:none}
+  .film.active{display:block}
 
-  .toolbar{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;padding:6px 16px 16px}
-  .toolbar button{background:var(--blue);color:#fff;border:none;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer}
-  .toolbar .ghost{background:transparent;border:1px solid var(--line);color:var(--sky)}
-  .counter{color:var(--ink);font-size:13px}
+  /* HERO banner */
+  .hero{position:relative;border-radius:16px 16px 0 0;overflow:hidden;height:300px;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .hero .topbar{position:absolute;top:0;left:0;right:0;height:6px;background:var(--blue);z-index:8}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 26%}
+  .hero .grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,9,28,.92) 30%,rgba(2,9,28,.35) 70%,rgba(2,9,28,.15))}
+  .hero .htext{position:absolute;left:6%;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;max-width:60%;z-index:5}
+  .hero .fkick{color:var(--sky);font-size:13px;letter-spacing:.28em;font-weight:800;text-transform:uppercase}
+  .hero .fh{font-size:34px;font-weight:800;line-height:1.05;margin:8px 0 10px;letter-spacing:-.5px}
+  .hero .fsub{color:#E7EEFB;font-size:14px;line-height:1.5;max-width:92%}
+  .hero .specs{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}
+  .hero .spec{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--sky);border:1px solid rgba(126,200,255,.35);border-radius:6px;padding:5px 9px}
 
-  .stage{max-width:1180px;margin:0 auto;padding:0 16px}
-  .opt{display:none}.opt.active{display:block}
-  .slide{display:none;position:relative;width:100%;aspect-ratio:16/9;background:var(--navy);border-radius:14px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.55);border:1px solid rgba(26,127,255,.16)}
-  .slide.active{display:block}
-  .slide .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .topbar{position:absolute;top:0;left:0;right:0;height:6px;background:var(--blue);z-index:8}
-  .pg{position:absolute;right:2.4%;bottom:3.4%;z-index:8;color:var(--ink);font-size:.9vw}
-  .kick{font-size:1vw;letter-spacing:.32em;font-weight:800;text-transform:uppercase;color:var(--sky)}
-  .h{font-weight:800;color:#fff;line-height:1.03;letter-spacing:-.015em}
+  /* SCRIPT BODY — full script, all acts, one slide */
+  .body{background:linear-gradient(180deg,#050E28,#02091C);border:1px solid rgba(26,127,255,.16);border-top:none;border-radius:0 0 16px 16px;padding:6px 0 10px}
+  .act{display:grid;grid-template-columns:150px 1fr;gap:0;border-bottom:1px solid rgba(34,64,111,.5)}
+  .act:last-child{border-bottom:none}
+  .act .lft{padding:22px 20px 22px 30px;border-right:2px solid var(--blue)}
+  .act .no{font-size:13px;letter-spacing:.2em;font-weight:800;color:var(--sky);text-transform:uppercase;line-height:1.3}
+  .act .time{font-size:12px;color:#7C8CA8;font-weight:600;margin-top:6px}
+  .act .rgt{padding:22px 30px 22px 24px}
+  .act .atitle{font-size:19px;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-.2px}
+  .blk{margin-bottom:12px}
+  .blk:last-child{margin-bottom:0}
+  .lab{font-size:11px;letter-spacing:.2em;font-weight:800;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+  .vo{font-size:16px;line-height:1.5;color:#fff;font-weight:500}
+  .vo .q{color:var(--sky)}
+  .see{font-size:13px;line-height:1.5;color:#AEBDD9}
+  .onscreen{display:inline-block;background:linear-gradient(160deg,rgba(26,127,255,.16),rgba(26,127,255,.05));border:1px solid rgba(26,127,255,.4);border-left:3px solid var(--blue);border-radius:7px;padding:8px 13px;font-size:14px;font-weight:700;color:#EAF2FF}
+  .card{display:inline-flex;align-items:center;gap:11px;background:linear-gradient(160deg,rgba(201,162,75,.14),rgba(201,162,75,.03));border:1px solid rgba(201,162,75,.45);border-radius:8px;padding:9px 14px;flex-wrap:wrap}
+  .card .verb{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;border:1px solid rgba(201,162,75,.55);border-radius:5px;padding:4px 8px;white-space:nowrap}
+  .card .ctext{font-size:14px;color:#F3E9D2;font-weight:600;line-height:1.4}
 
-  /* COVER */
-  .cvr .bg{height:58%;object-position:50% 30%}
-  .cvr .band{position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg,rgba(2,9,28,.4),var(--navy) 34%);z-index:5;display:flex;flex-direction:column;justify-content:center;padding:0 5%}
-  .cvr .kick{margin-bottom:.6vw}
-  .cvr .h{font-size:3.9vw}
-  .cvr .sub{font-size:1.15vw;margin-top:.9vw;max-width:76%;color:#E7EEFB;line-height:1.45}
-  .cvr .facts{display:flex;gap:1.6vw;margin-top:1.2vw}
-  .cvr .fact{font-size:.85vw;color:var(--sky);letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+  /* CTA foot */
+  .cta{text-align:center;padding:30px 20px 34px;background:linear-gradient(180deg,rgba(26,127,255,.08),transparent)}
+  .cta .ch{font-size:24px;font-weight:800;letter-spacing:-.3px}
+  .cta .cs{color:var(--ink);font-size:14px;margin-top:8px}
+  .cta .pill{display:inline-block;margin-top:16px;background:var(--blue);color:#fff;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:14px;padding:13px 32px;border-radius:999px;box-shadow:0 12px 34px rgba(26,127,255,.4)}
+  .cta .tag{margin-top:14px;color:var(--sky);font-size:12px;letter-spacing:.14em}
 
-  /* SCRIPT SLIDE: photo left, script content right */
-  .scr .bg{width:38%;object-position:55% 35%}
-  .scr.right .bg{left:auto;right:0}
-  .scr .panel{position:absolute;top:0;bottom:0;width:62%;z-index:5;padding:3.4% 3.6%;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
-  .scr.left .panel{right:0}.scr.right .panel{left:0}
-  .scr .act{display:flex;align-items:baseline;gap:1vw;margin-bottom:.5vw}
-  .scr .act .no{font-size:.95vw;letter-spacing:.3em;font-weight:800;color:var(--sky);text-transform:uppercase}
-  .scr .act .time{font-size:.85vw;color:#7C8CA8;font-weight:600}
-  .scr .h{font-size:2.1vw;margin:.1vw 0 1vw}
-  .scr .blk{margin-bottom:1vw}
-  .scr .blk .lab{font-size:.78vw;letter-spacing:.22em;font-weight:800;text-transform:uppercase;color:var(--gold);margin-bottom:.3vw}
-  .scr .vo{font-size:1.12vw;line-height:1.42;color:#fff;font-weight:500}
-  .scr .vo .q{color:var(--sky)}
-  .scr .see{font-size:.92vw;line-height:1.4;color:#C3D0E8}
-  .scr .onscreen{display:inline-block;background:linear-gradient(160deg,rgba(26,127,255,.16),rgba(26,127,255,.05));border:1px solid rgba(26,127,255,.4);border-left:3px solid var(--blue);border-radius:.5vw;padding:.55vw .9vw;font-size:.95vw;font-weight:700;color:#EAF2FF}
-  .scr .card{display:flex;align-items:center;gap:.7vw;background:linear-gradient(160deg,rgba(201,162,75,.14),rgba(201,162,75,.03));border:1px solid rgba(201,162,75,.45);border-radius:.55vw;padding:.6vw .9vw}
-  .scr .card .verb{font-size:.8vw;font-weight:800;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;border:1px solid rgba(201,162,75,.55);border-radius:.35vw;padding:.25vw .5vw;white-space:nowrap}
-  .scr .card .ctext{font-size:.95vw;color:#F3E9D2;font-weight:600;line-height:1.3}
-
-  /* CLOSE / CTA */
-  .cls .bg{object-position:50% 28%}
-  .cls .grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,9,28,.72),rgba(2,9,28,.93));z-index:4}
-  .cls .in{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 8%}
-  .cls .h{font-size:3.4vw}
-  .cls .sub{font-size:1.2vw;margin-top:1vw;max-width:70%;color:#E7EEFB;line-height:1.45}
-  .cls .pill{margin-top:1.8vw;background:var(--blue);color:#fff;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:1vw;padding:.9vw 2.2vw;border-radius:999px;box-shadow:0 12px 34px rgba(26,127,255,.4)}
-  .cls .tag{margin-top:1.4vw;color:var(--sky);font-size:.9vw;letter-spacing:.14em}
-
-  .nav{display:flex;justify-content:space-between;align-items:center;max-width:1180px;margin:16px auto 0;padding:0 16px;gap:12px}
-  .nav button{background:var(--card);color:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 22px;font-size:14px;font-weight:600;cursor:pointer}
-  .nav button:disabled{opacity:.35}
-  .dots{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
-  .dot{width:9px;height:9px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0}
-  .dot.on{background:var(--sky)}
-  footer{text-align:center;color:#7C8CA8;font-size:12px;padding:28px 16px}
-  @media(max-width:760px){
-    header.top h1{font-size:20px}
-    .cvr .h{font-size:6.6vw}.cvr .sub{font-size:2.3vw;max-width:92%}
-    .scr .bg{width:100%;height:34%}.scr.right .bg{right:0}
-    .scr .panel{position:relative;width:100%;top:34%;height:66%;padding:5% 6%}
-    .scr .h,.cls .h{font-size:5vw}
-    .scr .vo{font-size:2.5vw}.scr .see,.scr .onscreen,.scr .card .ctext{font-size:2.1vw}
+  footer{text-align:center;color:#7C8CA8;font-size:12px;padding:8px 16px 34px}
+  @media(max-width:720px){
+    header.top h1{font-size:22px}
+    .hero{height:auto;border-radius:16px 16px 0 0}
+    .hero img{position:relative;height:180px}
+    .hero .grad{background:linear-gradient(180deg,rgba(2,9,28,.2),rgba(2,9,28,.95))}
+    .hero .htext{position:relative;max-width:100%;padding:16px 6% 22px}
+    .hero .fh{font-size:24px}
+    .act{grid-template-columns:1fr}
+    .act .lft{border-right:none;border-bottom:2px solid var(--blue);padding:16px 20px}
+    .act .rgt{padding:18px 20px}
   }
 </style>
 </head>
@@ -96,171 +81,91 @@
 <header class="top">
   <div class="kick">Courtney × Longevity Life Academy</div>
   <h1>The Masterclass Films — Full Scripts</h1>
-  <p>Three cinematic films for the launch, built in the Julie production-deck language. Each slide is one scripted beat: what the editor sees, the on-screen graphic, and the exact words Courtney says.</p>
+  <p>Three cinematic launch films, built in the Julie production-deck language. Pick a film below — the entire script appears on one page: every act with the exact words Courtney says, the on-screen graphics, and the editor's shot notes.</p>
 </header>
 
 <div class="chooser" id="chooser"></div>
-<div class="optmeta" id="optmeta"></div>
 
-<div class="toolbar">
-  <button id="prevTop">‹ Prev</button>
-  <span class="counter"><span id="cur">1</span> / <span id="tot">6</span></span>
-  <button id="nextTop">Next ›</button>
-  <button class="ghost" id="fs">Fullscreen</button>
-</div>
-
-<div class="stage" id="stage"></div>
-
-<div class="nav">
-  <button id="prev">‹ Previous</button>
-  <div class="dots" id="dots"></div>
-  <button id="next">Next ›</button>
-</div>
+<div class="wrap" id="wrap"></div>
 
 <footer>Confidential — prepared for the Longevity Life Academy partnership. Real Courtney footage direction. Insert her verified result wherever you see [RESULT].</footer>
 
 <script>
 const IMG={cover:'images/real_cover.png',portrait:'images/real_portrait.png',closeup:'images/real_closeup.png'};
-const bar=n=>`<div class="topbar"></div><div class="pg">${n}</div>`;
 
-function cover(img,kick,h,sub,facts,n){
-  const f=facts.map(x=>`<div class="fact">${x}</div>`).join('');
-  return `<div class="slide cvr"><img class="bg" src="${img}">${bar(n)}<div class="band"><div class="kick">${kick}</div><div class="h">${h}</div><div class="sub">${sub}</div><div class="facts">${f}</div></div></div>`;}
-
-// script slide: side = photo side, img, actNo, time, actTitle, vo, onscreen{type:'text'|'card', ...}, see, n
-function scriptSlide(side,img,actNo,time,actTitle,vo,onscreen,see,n){
-  let osHtml='';
+function act(no,time,title,vo,onscreen,see){
+  let os='';
   if(onscreen){
-    if(onscreen.verb){
-      osHtml=`<div class="blk"><div class="lab">Graphic Card</div><div class="card"><span class="verb">${onscreen.verb}</span><span class="ctext">${onscreen.text}</span></div></div>`;
-    } else {
-      osHtml=`<div class="blk"><div class="lab">On Screen</div><span class="onscreen">${onscreen.text}</span></div>`;
-    }
+    if(onscreen.verb) os=`<div class="blk"><div class="lab">Graphic Card</div><div class="card"><span class="verb">${onscreen.verb}</span><span class="ctext">${onscreen.text}</span></div></div>`;
+    else os=`<div class="blk"><div class="lab">On Screen</div><span class="onscreen">${onscreen.text}</span></div>`;
   }
-  return `<div class="slide scr ${side}"><img class="bg" src="${img}">${bar(n)}<div class="panel">
-    <div class="act"><span class="no">${actNo}</span><span class="time">${time}</span></div>
-    <div class="h">${actTitle}</div>
-    <div class="blk"><div class="lab">Hear · Courtney (VO)</div><div class="vo">${vo}</div></div>
-    ${osHtml}
-    <div class="blk"><div class="lab">See · Editor</div><div class="see">${see}</div></div>
-  </div></div>`;}
+  return `<div class="act"><div class="lft"><div class="no">${no}</div><div class="time">${time}</div></div><div class="rgt"><div class="atitle">${title}</div>
+    <div class="blk"><div class="lab">Hear · Courtney (VO)</div><div class="vo"><span class="q">${vo}</span></div></div>
+    ${os}
+    <div class="blk"><div class="lab">See · Editor</div><div class="see">${see}</div></div></div></div>`;
+}
 
-function close(img,h,sub,tag,n){return `<div class="slide cls"><img class="bg" src="${img}"><div class="grade"></div>${bar(n)}<div class="in"><div class="h">${h}</div><div class="sub">${sub}</div><div class="pill">Enroll Now</div><div class="tag">${tag}</div></div></div>`;}
-
-const OPTIONS=[
+const FILMS=[
 {
-  name:"Film 01 · The Trajectory", tagline:"You can change the direction you're aging in. ~75 sec · 9:16.",
-  slides:[
-    cover(IMG.cover,"Film 01 — The Trajectory","You're not aging the way you think.","Curiosity → Realization → Proof → Empowerment → Desire → Action. The most desirable promise in longevity: your aging is a trajectory, not a fate.",["~75 sec","9:16","6 acts","≈185 words"],1),
-    scriptSlide("left",IMG.closeup,"Act I · The Hook","0:00–0:06","Pattern-interrupt to camera.",
-      `<span class="q">“Here's what almost no one tells you about how you age.”</span>`,
-      {text:"You're not aging the way you think."},
-      "Slow push-in, Courtney direct to camera, calm confidence. Soft window light, warm navy interior. Fade from black.",2),
-    scriptSlide("right",IMG.portrait,"Act II · The Reframe","0:06–0:16","Aging is a trajectory, not a fate.",
-      `<span class="q">“Two people, same birthday. One keeps climbing — faster decline every year. The other bends the curve and stays strong far longer. That gap isn't luck, and it isn't even mostly genetics.”</span>`,
-      {verb:"Learn",text:"“Aging is a trajectory, not a fate.” → Learn how to bend your curve"},
-      "Talking head cuts to a clean animated line graph: one steep climbing line, a second bends flatter. Blue accent line glows on the bend.",3),
-    scriptSlide("left",IMG.cover,"Act III · Confession + Proof","0:16–0:38","The $2M myth, broken by her own result.",
-      `<span class="q">“For years I believed longevity belonged to the wealthy — the private labs, the injections, the two-million-dollar protocols. I was wrong. With one simple, repeatable system, I <b>[RESULT]</b>. No extreme diet. No fortune. Just the right things, in the right order.”</span>`,
-      {text:"[RESULT] — insert Courtney's real number"},
-      "Return to Courtney walking outdoors, energized, real life. Then a navy result card animates in on the [RESULT] number. Slow push-in for intimacy.",4),
-    scriptSlide("right",IMG.closeup,"Act IV · The Method","0:38–0:50","The handful that moves the needle.",
-      `<span class="q">“That's what we teach inside Longevity Life Academy — the science-backed steps that actually bend your trajectory. Not a hundred rules. The handful that move the needle.”</span>`,
-      {verb:"Master",text:"“Master the 3 levers that actually move aging.” → Master the method"},
-      "Three icons animate one at a time: Move · Eat · Recover. Premium, rhythmic cut per word.",5),
-    scriptSlide("left",IMG.portrait,"Act V · The Course","0:50–1:02","Guided, lesson by lesson.",
-      `<span class="q">“It's a guided path, lesson by lesson, built for real life — for people who want more good years, not a second job. You always know your next step.”</span>`,
-      {text:"Longevity Life Academy"},
-      "Course UI glimpse: lessons, checklist, weekly plan, progress bar. Warm, calm.",6),
-    close(IMG.cover,"Your trajectory is still yours to change.","The best time to start is this week. Enroll in Longevity Life Academy today. (Act VI · 1:02–1:15 · Card 3 · Start)","It's Your Life. Live It Well.",7)
-  ]
+  n:"01", name:"The Trajectory", img:IMG.cover,
+  kick:"Film 01", h:"The Trajectory", sub:"You can change the direction you're aging in. Curiosity → Realization → Proof → Empowerment → Desire → Action.",
+  specs:["~75 sec","9:16","≈185 words","Cold + idea"],
+  acts:[
+    act("Act I · The Hook","0:00–0:06","Pattern-interrupt to camera.","“Here's what almost no one tells you about how you age.”",{text:"You're not aging the way you think."},"Slow push-in, Courtney direct to camera, calm confidence. Soft window light, warm navy interior. Fade from black."),
+    act("Act II · The Reframe","0:06–0:16","Aging is a trajectory, not a fate.","“Two people, same birthday. One keeps climbing — faster decline every year. The other bends the curve and stays strong far longer. That gap isn't luck, and it isn't even mostly genetics.”",{verb:"Learn",text:"“Aging is a trajectory, not a fate.” → Learn how to bend your curve"},"Talking head cuts to a clean animated line graph: one steep climbing line, a second bends flatter. Blue accent line glows on the bend."),
+    act("Act III · Confession + Proof","0:16–0:38","The $2M myth, broken by her own result.","“For years I believed longevity belonged to the wealthy — the private labs, the injections, the two-million-dollar protocols. I was wrong. With one simple, repeatable system, I [RESULT]. No extreme diet. No fortune. Just the right things, in the right order.”",{text:"[RESULT] — insert Courtney's real number"},"Return to Courtney walking outdoors, energized, real life. Then a navy result card animates in on the [RESULT] number. Slow push-in for intimacy."),
+    act("Act IV · The Method","0:38–0:50","The handful that moves the needle.","“That's what we teach inside Longevity Life Academy — the science-backed steps that actually bend your trajectory. Not a hundred rules. The handful that move the needle.”",{verb:"Master",text:"“Master the 3 levers that actually move aging.” → Master the method"},"Three icons animate one at a time: Move · Eat · Recover. Premium, rhythmic cut per word."),
+    act("Act V · The Course","0:50–1:02","Guided, lesson by lesson.","“It's a guided path, lesson by lesson, built for real life — for people who want more good years, not a second job. You always know your next step.”",{text:"Longevity Life Academy"},"Course UI glimpse: lessons, checklist, weekly plan, progress bar. Warm, calm."),
+    act("Act VI · The Invitation","1:02–1:15","Your trajectory is still yours to change.","“The best time to start is this week. Enroll in Longevity Life Academy today.”",{verb:"Start",text:"“Your trajectory is still yours to change.” → Enroll now · start this week"},"Blue ENROLL NOW button pulses; LLA logo + tagline lock-up on deep navy. Music resolves.")
+  ],
+  cta:{h:"Bend your aging trajectory — starting this week.",sub:"Two people, same age — one aging twice as fast. The difference isn't genetics, it's a method."}
 },
 {
-  name:"Film 02 · Healthspan", tagline:"Add life to your years, not just years to your life. ~70 sec · 9:16.",
-  slides:[
-    cover(IMG.portrait,"Film 02 — Healthspan, Not Lifespan","Nobody wants to just live longer.","Recognition → Aspiration → Clarity → Proof → Trust → Action. Reframe the goal from living longer to living well longer — emotional, aspirational, best for retargeting.",["~70 sec","9:16","6 acts","≈170 words"],1),
-    scriptSlide("left",IMG.closeup,"Act I · The Hook","0:00–0:06","Nobody wants to just live longer.",
-      `<span class="q">“Let me be honest — nobody actually wants to just live longer.”</span>`,
-      {text:"Nobody wants to just live longer."},
-      "Courtney, warm, seated, slight lean-in. Soft key light, navy room. Static hold.",2),
-    scriptSlide("right",IMG.cover,"Act II · The Aspiration","0:06–0:18","Healthspan is the years you live well.",
-      `<span class="q">“What they really want is to feel like <i>this</i> at seventy. And eighty. Strong. Sharp. Free to do what they love. That's healthspan — the years you actually get to live well.”</span>`,
-      {verb:"Learn",text:"“Healthspan is the years you live well.” → Learn what healthspan means"},
-      "Montage, word-to-image match: hiking with grandkids, dancing, travel, gardening — vibrant people in their 50s–60s. Warm grade.",3),
-    scriptSlide("left",IMG.portrait,"Act III · The Reframe","0:18–0:30","Lifespan vs. Healthspan — it's trainable.",
-      `<span class="q">“Most advice adds years to your life. We add life to your years. That's the whole difference — and the part that matters most: it's trainable.”</span>`,
-      {text:"Lifespan vs. Healthspan"},
-      "Split screen: “Lifespan” side greys and fades; “Healthspan” side glows warm. Slow push-in on the bright side.",4),
-    scriptSlide("right",IMG.closeup,"Act IV · The Proof","0:30–0:44","Proof it works on a normal budget.",
-      `<span class="q">“I'm proof it works on a normal budget. I <b>[RESULT]</b> — not with gadgets or extremes, but with a routine that fits an ordinary week. If I can, so can you.”</span>`,
-      {verb:"Master",text:"“Master the routine that fits a normal week.” → Master your week"},
-      "Courtney beside her result card, bold [RESULT] number. Medium-close, intimate.",5),
-    scriptSlide("left",IMG.portrait,"Act V · The Course","0:44–0:56","A complete, guided path.",
-      `<span class="q">“Inside Longevity Life Academy we walk you through it step by step — energy, strength, sleep, and a clear mind. No guessing, no gimmicks, no equipment you'll never touch.”</span>`,
-      {text:"Energy · Strength · Sleep · Mind"},
-      "Course modules fan out cleanly. Calm UI.",6),
-    close(IMG.portrait,"Don't just add years. Add life to them.","Enroll in Longevity Life Academy and start this week. (Act VI · 0:56–1:05 · Card 3 · Start)","It's Your Life. Live It Well.",7)
-  ]
+  n:"02", name:"Healthspan", img:IMG.portrait,
+  kick:"Film 02", h:"Healthspan, Not Lifespan", sub:"Add life to your years, not just years to your life. Recognition → Aspiration → Clarity → Proof → Trust → Action.",
+  specs:["~70 sec","9:16","≈170 words","Retargeting"],
+  acts:[
+    act("Act I · The Hook","0:00–0:06","Nobody wants to just live longer.","“Let me be honest — nobody actually wants to just live longer.”",{text:"Nobody wants to just live longer."},"Courtney, warm, seated, slight lean-in. Soft key light, navy room. Static hold."),
+    act("Act II · The Aspiration","0:06–0:18","Healthspan is the years you live well.","“What they really want is to feel like this at seventy. And eighty. Strong. Sharp. Free to do what they love. That's healthspan — the years you actually get to live well.”",{verb:"Learn",text:"“Healthspan is the years you live well.” → Learn what healthspan means"},"Montage, word-to-image match: hiking with grandkids, dancing, travel, gardening — vibrant people in their 50s–60s. Warm grade."),
+    act("Act III · The Reframe","0:18–0:30","Lifespan vs. Healthspan — it's trainable.","“Most advice adds years to your life. We add life to your years. That's the whole difference — and the part that matters most: it's trainable.”",{text:"Lifespan vs. Healthspan"},"Split screen: “Lifespan” side greys and fades; “Healthspan” side glows warm. Slow push-in on the bright side."),
+    act("Act IV · The Proof","0:30–0:44","Proof it works on a normal budget.","“I'm proof it works on a normal budget. I [RESULT] — not with gadgets or extremes, but with a routine that fits an ordinary week. If I can, so can you.”",{verb:"Master",text:"“Master the routine that fits a normal week.” → Master your week"},"Courtney beside her result card, bold [RESULT] number. Medium-close, intimate."),
+    act("Act V · The Course","0:44–0:56","A complete, guided path.","“Inside Longevity Life Academy we walk you through it step by step — energy, strength, sleep, and a clear mind. No guessing, no gimmicks, no equipment you'll never touch.”",{text:"Energy · Strength · Sleep · Mind"},"Course modules fan out cleanly. Calm UI."),
+    act("Act VI · The Invitation","0:56–1:05","Add life to your years.","“Don't just add years. Add life to them. Enroll in Longevity Life Academy and start this week.”",{verb:"Start",text:"“Add life to your years.” → Enroll now · start this week"},"Warm close on Courtney, then ENROLL NOW button + tagline lock-up.")
+  ],
+  cta:{h:"Add life to your years, not just years to your life.",sub:"Healthspan is the years you're strong, sharp and free — and it's trainable at any budget."}
 },
 {
-  name:"Film 03 · The $2M Myth", tagline:"Slow your aging — without the $2M price tag. ~85 sec · 9:16.",
-  slides:[
-    cover(IMG.cover,"Film 03 — The $2M Myth","You don't need $2 million to slow aging.","Disruption → Relief → Credibility → Proof → Simplicity → Trust → Action. Kills the #1 objection — “longevity is only for rich biohackers.” Punchy, proof-heavy, strongest cold-traffic opener.",["~85 sec","9:16","7 acts","≈205 words"],1),
-    scriptSlide("left",IMG.closeup,"Act I · The Hook","0:00–0:06","You don't need $2M to slow aging.",
-      `<span class="q">“You do not need two million dollars to slow down how fast you age. Let me prove it.”</span>`,
-      {text:"You don't need $2 million to slow aging."},
-      "Fast, confident cut. Courtney direct to camera, a little bold. Punch-in.",2),
-    scriptSlide("right",IMG.portrait,"Act II · The Objection","0:06–0:18","Take control back from the hype.",
-      `<span class="q">“The plunges. The red-light rooms. The hundred supplements before breakfast. You've assumed that's the price of entry. It isn't. Most of it is expensive noise.”</span>`,
-      {verb:"Control",text:"“Take control back from the hype.” → Learn what actually works"},
-      "Quick montage of extreme-biohacker clichés — cold plunge, red-light room, hundred-pill morning — then Courtney's gentle “no” gesture.",3),
-    scriptSlide("left",IMG.portrait,"Act III · The Reframe","0:18–0:30","What works is boring, cheap, repeatable.",
-      `<span class="q">“What actually moves the needle is boring, repeatable, and affordable. That's the good news nobody selling you gadgets wants you to hear.”</span>`,
-      {text:"Real life. Real results."},
-      "Courtney in an ordinary kitchen / neighborhood. Relatable but premium. Natural light.",4),
-    scriptSlide("right",IMG.closeup,"Act IV · The Proof","0:30–0:44","Her result, on a normal budget.",
-      `<span class="q">“On a normal schedule and a normal budget, I <b>[RESULT]</b>. Not a study. Not a theory. My own result, from doing the simple things well.”</span>`,
-      {text:"[RESULT] — insert Courtney's real number"},
-      "Result card, one bold [RESULT] number front and center.",5),
-    scriptSlide("left",IMG.cover,"Act V · The 4 Pillars","0:44–0:58","Master the 4 things that matter.",
-      `<span class="q">“Inside Longevity Life Academy we cut through it and focus on the handful of things that truly work — how you move, eat, sleep, and connect. Then we make them stick.”</span>`,
-      {verb:"Master",text:"“Master the 4 things that matter.” → Master the 4 pillars"},
-      "Four clean pillars animate one by one: Move · Eat · Sleep · Connect. Rhythmic cuts.",6),
-    scriptSlide("right",IMG.portrait,"Act VI · The Course","0:58–1:12","Guided. Proven. Doable.",
-      `<span class="q">“You get the whole system, laid out lesson by lesson, with support along the way — so you never waste time guessing what's worth doing.”</span>`,
-      {text:"Guided. Proven. Doable."},
-      "Course experience: guided lessons, a coach, a supportive community.",7),
-    close(IMG.cover,"It's closer — and far cheaper — than you think.","Enroll in Longevity Life Academy and start this week. (Act VII · 1:12–1:25 · Card 3 · Start)","It's Your Life. Live It Well.",8)
-  ]
+  n:"03", name:"The $2M Myth", img:IMG.closeup,
+  kick:"Film 03", h:"The $2M Myth", sub:"Slow your aging — without the $2M price tag. Disruption → Relief → Credibility → Proof → Simplicity → Trust → Action.",
+  specs:["~85 sec","9:16","≈205 words","Cold opener"],
+  acts:[
+    act("Act I · The Hook","0:00–0:06","You don't need $2M to slow aging.","“You do not need two million dollars to slow down how fast you age. Let me prove it.”",{text:"You don't need $2 million to slow aging."},"Fast, confident cut. Courtney direct to camera, a little bold. Punch-in."),
+    act("Act II · The Objection","0:06–0:18","Take control back from the hype.","“The plunges. The red-light rooms. The hundred supplements before breakfast. You've assumed that's the price of entry. It isn't. Most of it is expensive noise.”",{verb:"Control",text:"“Take control back from the hype.” → Learn what actually works"},"Quick montage of extreme-biohacker clichés — cold plunge, red-light room, hundred-pill morning — then Courtney's gentle “no” gesture."),
+    act("Act III · The Reframe","0:18–0:30","What works is boring, cheap, repeatable.","“What actually moves the needle is boring, repeatable, and affordable. That's the good news nobody selling you gadgets wants you to hear.”",{text:"Real life. Real results."},"Courtney in an ordinary kitchen / neighborhood. Relatable but premium. Natural light."),
+    act("Act IV · The Proof","0:30–0:44","Her result, on a normal budget.","“On a normal schedule and a normal budget, I [RESULT]. Not a study. Not a theory. My own result, from doing the simple things well.”",{text:"[RESULT] — insert Courtney's real number"},"Result card, one bold [RESULT] number front and center."),
+    act("Act V · The 4 Pillars","0:44–0:58","Master the 4 things that matter.","“Inside Longevity Life Academy we cut through it and focus on the handful of things that truly work — how you move, eat, sleep, and connect. Then we make them stick.”",{verb:"Master",text:"“Master the 4 things that matter.” → Master the 4 pillars"},"Four clean pillars animate one by one: Move · Eat · Sleep · Connect. Rhythmic cuts."),
+    act("Act VI · The Course","0:58–1:12","Guided. Proven. Doable.","“You get the whole system, laid out lesson by lesson, with support along the way — so you never waste time guessing what's worth doing.”",{text:"Guided. Proven. Doable."},"Course experience: guided lessons, a coach, a supportive community."),
+    act("Act VII · The Invitation","1:12–1:25","Closer and cheaper than you think.","“It's closer — and far cheaper — than you've been led to believe. Enroll in Longevity Life Academy and start this week.”",{verb:"Start",text:"“Slowing your aging is closer than you think.” → Enroll now · start this week"},"ENROLL NOW button pulses; LLA logo + tagline on deep navy. Music resolves.")
+  ],
+  cta:{h:"Slow your aging — without the $2M price tag.",sub:"The billionaires want you to think longevity costs millions. It doesn't."}
 }
 ];
 
-const chooser=document.getElementById('chooser'),stage=document.getElementById('stage'),dots=document.getElementById('dots'),optmeta=document.getElementById('optmeta');
-OPTIONS.forEach((o,oi)=>{
-  const b=document.createElement('button');b.className=(oi===0?'on':'');b.innerHTML=`<span class="n">0${oi+1}</span>${o.name}`;b.onclick=()=>setOpt(oi);chooser.appendChild(b);
-  const wrap=document.createElement('div');wrap.className='opt'+(oi===0?' active':'');
-  wrap.innerHTML=o.slides.join('');stage.appendChild(wrap);
+const chooser=document.getElementById('chooser'),wrap=document.getElementById('wrap');
+FILMS.forEach((f,fi)=>{
+  const b=document.createElement('button');b.className=(fi===0?'on':'');b.innerHTML=`<span class="n">${f.n}</span>${f.name}`;b.onclick=()=>show(fi);chooser.appendChild(b);
+  const el=document.createElement('div');el.className='film'+(fi===0?' active':'');
+  el.innerHTML=`
+    <div class="hero"><div class="topbar"></div><img src="${f.img}"><div class="grad"></div>
+      <div class="htext"><div class="fkick">${f.kick}</div><div class="fh">${f.h}</div><div class="fsub">${f.sub}</div>
+      <div class="specs">${f.specs.map(s=>`<span class="spec">${s}</span>`).join('')}</div></div></div>
+    <div class="body">${f.acts.join('')}</div>
+    <div class="cta"><div class="ch">${f.cta.h}</div><div class="cs">${f.cta.sub}</div><div class="pill">Enroll Now</div><div class="tag">It's Your Life. Live It Well.</div></div>`;
+  wrap.appendChild(el);
 });
-const optEls=[...stage.children],chooserEls=[...chooser.children];
-let oi=0,i=0;
-function slidesOf(x){return [...optEls[x].querySelectorAll('.slide')];}
-function buildDots(){dots.innerHTML='';const s=slidesOf(oi);s.forEach((_,k)=>{const d=document.createElement('button');d.className='dot'+(k===0?' on':'');d.onclick=()=>go(k);dots.appendChild(d);});}
-function setOpt(x){oi=x;i=0;optEls.forEach((e,k)=>e.classList.toggle('active',k===oi));chooserEls.forEach((e,k)=>e.classList.toggle('on',k===oi));
-  optmeta.innerHTML=`<b>${OPTIONS[oi].name}</b> — ${OPTIONS[oi].tagline}`;
-  document.getElementById('tot').textContent=slidesOf(oi).length;buildDots();go(0);}
-function go(n){const s=slidesOf(oi);i=Math.max(0,Math.min(s.length-1,n));
-  s.forEach((el,x)=>el.classList.toggle('active',x===i));
-  [...dots.children].forEach((d,x)=>d.classList.toggle('on',x===i));
-  document.getElementById('cur').textContent=i+1;
-  document.getElementById('prev').disabled=document.getElementById('prevTop').disabled=(i===0);
-  document.getElementById('next').disabled=document.getElementById('nextTop').disabled=(i===s.length-1);
-  window.scrollTo({top:0,behavior:'smooth'});}
-document.getElementById('prev').onclick=document.getElementById('prevTop').onclick=()=>go(i-1);
-document.getElementById('next').onclick=document.getElementById('nextTop').onclick=()=>go(i+1);
-document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(i+1);if(e.key==='ArrowLeft')go(i-1);});
-document.getElementById('fs').onclick=()=>{if(!document.fullscreenElement)stage.requestFullscreen&&stage.requestFullscreen();else document.exitFullscreen();};
-window.setOpt=setOpt;window.go=go;
-setOpt(0);
+const filmEls=[...wrap.children],chooserEls=[...chooser.children];
+function show(x){filmEls.forEach((e,k)=>e.classList.toggle('active',k===x));chooserEls.forEach((e,k)=>e.classList.toggle('on',k===x));window.scrollTo({top:0,behavior:'smooth'});}
+window.show=show;
 </script>
 </body>
 </html>
