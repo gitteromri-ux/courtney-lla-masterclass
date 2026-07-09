@@ -5,100 +5,118 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Courtney × Longevity Life Academy — Master Deck</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#EEEBE3; --panel:#FCFBF7; --ink:#182420; --ink2:#5A6763;
-    --sage:#5E7A6B; --sage-d:#33473C; --gold:#9C7A2A; --gold-l:#C9A24B;
-    --line:#DBD6CA; --line2:#E7E3D9;
-    --sh-s:0 1px 2px rgba(24,36,32,.05);
-    --sh-m:0 4px 12px rgba(24,36,32,.06),0 1px 3px rgba(24,36,32,.05);
-    --sh-l:0 2px 4px rgba(24,36,32,.05),0 24px 60px -16px rgba(24,36,32,.22);
+    /* Luxe dark editorial — cinematic production house */
+    --bg:#0C0E0D; --bg2:#111413; --char:#151A18;
+    --paper:#F5F2EA; --panel:#FBF9F2;
+    --ink:#14181640; --ink:#161A18; --ink2:#5B655F;
+    --bone:#EDE7DA; --bone2:#B9BDB3; --bone3:#8A9089;
+    --sage:#7FA891; --sage-d:#2E4038; --emer:#123A2E;
+    --gold:#C9A24B; --gold-d:#A9832F;
+    --hair:rgba(233,225,208,.12); --hair2:rgba(233,225,208,.07);
+    --line:#E3DECF; --line2:#EDE8DA;
+    --sh-s:0 1px 2px rgba(6,8,7,.5);
+    --sh-m:0 8px 24px -6px rgba(6,8,7,.55),0 2px 6px rgba(6,8,7,.4);
+    --sh-l:0 2px 6px rgba(6,8,7,.4),0 30px 70px -18px rgba(0,0,0,.7);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:
-      radial-gradient(1200px 620px at 50% -220px,rgba(94,122,107,.14),transparent 70%),
-      radial-gradient(900px 500px at 88% 8%,rgba(156,122,42,.07),transparent 60%),
-      var(--paper);
-    color:var(--ink);font-family:'Inter',-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+      radial-gradient(1100px 560px at 50% -160px,rgba(127,168,145,.14),transparent 66%),
+      radial-gradient(820px 460px at 84% 4%,rgba(201,162,75,.09),transparent 60%),
+      linear-gradient(180deg,var(--bg2),var(--bg) 40%);
+    background-attachment:fixed;
+    color:var(--bone);font-family:'Inter',-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
 
-  header.top{padding:54px 20px 6px;text-align:center;position:relative}
-  header.top .kick{color:var(--sage);font-size:11px;letter-spacing:.4em;font-weight:600;text-transform:uppercase}
-  header.top h1{font-size:46px;font-weight:600;margin-top:14px;letter-spacing:-1px;font-family:'Fraunces',Georgia,serif;color:var(--ink);line-height:1.02}
-  header.top p{color:var(--ink2);font-size:14.5px;max-width:660px;margin:14px auto 0;line-height:1.65}
-  header.top .idx{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:8px 16px 8px 10px;background:var(--panel);border:1px solid var(--line);border-radius:999px;box-shadow:var(--sh-s)}
-  header.top .idx .idx-n{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--sage-d);background:#EDF1ED;border:1px solid #DCE4DD;border-radius:999px;width:34px;height:34px;display:flex;align-items:center;justify-content:center}
-  header.top .idx .idx-l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);font-weight:600}
+  header.top{padding:64px 20px 4px;text-align:center;position:relative}
+  header.top .kick{color:var(--gold);font-size:11px;letter-spacing:.46em;font-weight:600;text-transform:uppercase}
+  header.top .kick::before,header.top .kick::after{content:'';display:inline-block;width:26px;height:1px;background:var(--gold-d);vertical-align:middle;margin:0 14px;opacity:.7}
+  header.top h1{font-size:64px;font-weight:500;margin-top:20px;letter-spacing:-1.6px;font-family:'Fraunces',Georgia,serif;color:#F7F3EA;line-height:.98}
+  header.top h1 em{font-style:italic;color:var(--gold)}
+  header.top p{color:var(--bone2);font-size:14.5px;max-width:600px;margin:18px auto 0;line-height:1.7}
+  header.top .idx{display:inline-flex;align-items:center;gap:11px;margin-top:26px;padding:7px 18px 7px 8px;background:rgba(255,255,255,.03);border:1px solid var(--hair);border-radius:999px;backdrop-filter:blur(8px)}
+  header.top .idx .idx-n{font-family:'Fraunces',serif;font-size:15px;font-weight:500;color:#0C0E0D;background:var(--gold);border-radius:999px;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+  header.top .idx .idx-l{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone2);font-weight:600}
 
-  /* chooser: single flat list of 8 — premium chip cards */
-  .grp{max-width:1120px;margin:32px auto 0;padding:0 18px}
+  /* chooser: single flat list of 8 — cinematic index cards */
+  .grp{max-width:1140px;margin:40px auto 0;padding:0 20px}
   .chooser{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .chooser .chip{position:relative;display:flex;align-items:center;gap:12px;text-align:left;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:13px 15px;font-family:inherit;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;box-shadow:var(--sh-s)}
-  .chooser .chip .n{flex:none;font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--sage-d);background:#EDF1ED;border:1px solid #DCE4DD;border-radius:9px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+  .chooser .chip{position:relative;display:flex;align-items:center;gap:13px;text-align:left;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));color:var(--bone);border:1px solid var(--hair);border-radius:14px;padding:14px 16px;font-family:inherit;cursor:pointer;transition:transform .2s cubic-bezier(.2,.7,.2,1),box-shadow .2s,border-color .2s,background .2s;overflow:hidden}
+  .chooser .chip::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);opacity:0;transition:.2s}
+  .chooser .chip .n{flex:none;font-family:'Fraunces',serif;font-size:15px;font-weight:500;color:var(--gold);border:1px solid var(--hair);border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;background:rgba(0,0,0,.2)}
   .chooser .chip .cn{display:flex;flex-direction:column;min-width:0}
-  .chooser .chip .cname{font-size:13.5px;font-weight:600;line-height:1.2;letter-spacing:-.1px}
-  .chooser .chip .cangle{font-size:11px;color:var(--ink2);margin-top:3px;line-height:1.2}
-  .chooser .chip:hover{transform:translateY(-2px);box-shadow:var(--sh-m);border-color:#C9C3B4}
-  .chooser .chip.on{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:var(--sh-l)}
-  .chooser .chip.on .cangle{color:#AFC0B6}
-  .chooser .chip.on .n{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:var(--gold-l)}
+  .chooser .chip .cname{font-size:13.5px;font-weight:600;line-height:1.2;letter-spacing:-.1px;color:#F3EFE5}
+  .chooser .chip .cangle{font-size:11px;color:var(--bone3);margin-top:4px;line-height:1.2;letter-spacing:.01em}
+  .chooser .chip:hover{transform:translateY(-3px);border-color:rgba(233,225,208,.22);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));box-shadow:var(--sh-m)}
+  .chooser .chip:hover::before{opacity:.5}
+  .chooser .chip.on{background:linear-gradient(180deg,rgba(201,162,75,.16),rgba(201,162,75,.05));border-color:rgba(201,162,75,.5);box-shadow:var(--sh-m),inset 0 0 0 1px rgba(201,162,75,.12)}
+  .chooser .chip.on::before{opacity:1}
+  .chooser .chip.on .n{background:var(--gold);color:#0C0E0D;border-color:transparent}
+  .chooser .chip.on .cangle{color:#D9C79A}
 
-  .meta{text-align:center;padding:34px 16px 2px}
-  .meta .mnum{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
-  .meta .mname{font-family:'Fraunces',Georgia,serif;font-size:30px;font-weight:600;color:var(--ink);margin-top:8px;letter-spacing:-.4px}
-  .meta .mangle{color:var(--sage-d);font-size:12.5px;font-weight:600;letter-spacing:.02em;margin-top:6px}
-  .meta .mtag{color:var(--ink2);font-size:13px;margin:10px auto 0;max-width:640px;line-height:1.6}
+  .meta{text-align:center;padding:46px 16px 4px;position:relative}
+  .meta .mnum{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .meta .mname{font-family:'Fraunces',Georgia,serif;font-size:40px;font-weight:500;color:#F7F3EA;margin-top:12px;letter-spacing:-.8px;line-height:1.02}
+  .meta .mangle{color:var(--sage);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-top:12px}
+  .meta .mtag{color:var(--bone2);font-size:13.5px;margin:14px auto 0;max-width:600px;line-height:1.65}
 
-  .toolbar{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;padding:14px 16px 8px}
-  .toolbar button{background:var(--sage-d);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit;transition:.16s;box-shadow:var(--sh-s)}
-  .toolbar button:hover:not(:disabled){transform:translateY(-1px);box-shadow:var(--sh-m)}
-  .toolbar button:disabled{opacity:.28;cursor:default;box-shadow:none}
-  .toolbar .counter{color:var(--ink2);font-size:12.5px;font-variant-numeric:tabular-nums;font-weight:600;letter-spacing:.02em}
-  .toolbar .counter span{color:var(--ink)}
-  .toolbar .ghost{background:var(--panel);border:1px solid var(--line);color:var(--sage-d)}
+  .toolbar{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;padding:22px 16px 10px}
+  .toolbar button{background:rgba(255,255,255,.05);color:var(--bone);border:1px solid var(--hair);border-radius:999px;padding:10px 20px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:.16s;letter-spacing:.02em}
+  .toolbar button:hover:not(:disabled){background:rgba(255,255,255,.1);border-color:rgba(233,225,208,.25);transform:translateY(-1px)}
+  .toolbar button:disabled{opacity:.25;cursor:default}
+  .toolbar .counter{color:var(--bone3);font-size:12px;font-variant-numeric:tabular-nums;font-weight:600;letter-spacing:.1em;padding:0 6px}
+  .toolbar .counter span{color:var(--gold)}
+  .toolbar #next{background:var(--gold);color:#0C0E0D;border-color:transparent}
+  .toolbar #next:hover:not(:disabled){background:#D8B25C}
 
-  .stage{max-width:1080px;margin:0 auto;padding:6px 18px 10px}
+  .stage{max-width:1060px;margin:0 auto;padding:12px 20px 10px}
   .entry{display:none}.entry.active{display:block}
-  .slide{display:none}.slide.active{display:block}
+  .slide{display:none}.slide.active{display:block;animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(14px) scale(.99)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.slide.active{animation:none}}
 
-  .sheet{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--sh-l)}
+  .sheet{background:var(--panel);border:1px solid rgba(0,0,0,.06);border-radius:20px;overflow:hidden;box-shadow:var(--sh-l);color:var(--ink)}
 
   /* ===== SCRIPT SLIDE (full one-page script) ===== */
-  .scr .hero{position:relative;overflow:hidden;height:320px;border-bottom:1px solid var(--line)}
-  .scr .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
-  .scr .hero .grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,26,22,.92) 0%,rgba(18,26,22,.72) 42%,rgba(18,26,22,.18) 74%,rgba(18,26,22,0)),linear-gradient(0deg,rgba(18,26,22,.4),transparent 45%)}
-  .scr .hero .htext{position:absolute;left:40px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;max-width:62%;z-index:5}
-  .scr .fkick{color:#CBD8CF;font-size:11px;letter-spacing:.3em;font-weight:600;text-transform:uppercase}
-  .scr .fh{font-size:42px;font-weight:600;line-height:1.02;margin:14px 0;letter-spacing:-.8px;color:#fff;font-family:'Fraunces',Georgia,serif;text-shadow:0 2px 24px rgba(0,0,0,.28)}
-  .scr .fpromise{color:#EAECE8;font-size:14px;line-height:1.55;max-width:96%;font-weight:400}
-  .scr .fpromise b{color:#fff;font-weight:600}.scr .fpromise i{color:#DCE6DE}
-  .scr .specs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
-  .scr .spec{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#E7EDE9;border:1px solid rgba(255,255,255,.32);border-radius:5px;padding:5px 10px}
-  .act{display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--line2)}
+  .scr .hero{position:relative;overflow:hidden;height:360px;border-bottom:1px solid var(--line)}
+  .scr .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:saturate(1.02) contrast(1.02)}
+  .scr .hero .grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,14,12,.94) 0%,rgba(10,14,12,.78) 40%,rgba(10,14,12,.24) 72%,rgba(10,14,12,.05)),linear-gradient(0deg,rgba(10,14,12,.5),transparent 42%)}
+  .scr .hero .htext{position:absolute;left:46px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;max-width:64%;z-index:5}
+  .scr .fkick{color:var(--gold);font-size:11px;letter-spacing:.34em;font-weight:600;text-transform:uppercase}
+  .scr .fh{font-size:50px;font-weight:500;line-height:1;margin:16px 0;letter-spacing:-1.2px;color:#fff;font-family:'Fraunces',Georgia,serif;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+  .scr .fpromise{color:#E7E2D6;font-size:14px;line-height:1.6;max-width:94%;font-weight:400}
+  .scr .fpromise b{color:#fff;font-weight:600}.scr .fpromise i{color:var(--sage);font-style:italic}
+  .scr .specs{display:flex;gap:7px;margin-top:20px;flex-wrap:wrap}
+  .scr .spec{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#EDE7DA;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 12px;backdrop-filter:blur(6px)}
+  .act{display:grid;grid-template-columns:172px 1fr;border-bottom:1px solid var(--line2)}
   .act:last-child{border-bottom:none}
-  .act .lft{padding:24px 18px 24px 40px}
-  .act .no{font-size:11px;letter-spacing:.16em;font-weight:600;color:var(--sage);text-transform:uppercase;line-height:1.5}
-  .act .time{font-size:12px;color:#9AA39E;font-weight:500;margin-top:7px;font-variant-numeric:tabular-nums}
-  .act .rgt{padding:24px 40px 24px 12px;border-left:1px solid var(--line2)}
-  .act .atitle{font-size:19px;font-weight:600;color:var(--ink);margin-bottom:14px;letter-spacing:-.2px;line-height:1.25;font-family:'Fraunces',Georgia,serif}
-  .blk{margin-bottom:14px}.blk:last-child{margin-bottom:0}
-  .lab{font-size:10px;letter-spacing:.18em;font-weight:600;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-  .vo{font-size:15.5px;line-height:1.62;color:var(--ink);font-weight:400}
+  .act:nth-child(odd){background:linear-gradient(90deg,rgba(46,64,56,.025),transparent 60%)}
+  .act .lft{padding:30px 18px 30px 46px}
+  .act .no{font-family:'Fraunces',serif;font-size:15px;font-weight:500;color:var(--sage-d);line-height:1.35}
+  .act .no b{display:block;font-family:'Inter';font-size:9.5px;letter-spacing:.22em;font-weight:700;color:var(--gold-d);text-transform:uppercase;margin-bottom:8px}
+  .act .time{font-size:11.5px;color:#A7ADA3;font-weight:500;margin-top:10px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+  .act .rgt{padding:30px 46px 30px 22px;border-left:1px solid var(--line2)}
+  .act .atitle{font-size:21px;font-weight:500;color:var(--ink);margin-bottom:18px;letter-spacing:-.3px;line-height:1.22;font-family:'Fraunces',Georgia,serif}
+  .blk{margin-bottom:16px}.blk:last-child{margin-bottom:0}
+  .lab{font-size:9.5px;letter-spacing:.2em;font-weight:700;text-transform:uppercase;color:var(--gold-d);margin-bottom:7px}
+  .vo{font-size:16.5px;line-height:1.66;color:#20261F;font-weight:400;font-family:'Fraunces',Georgia,serif}
   .vo i{color:var(--sage-d);font-style:italic}
-  .see{font-size:12.5px;line-height:1.6;color:var(--ink2)}
-  .onscreen{display:inline-block;background:#EEF2EE;border:1px solid #D4DED6;border-left:3px solid var(--sage);border-radius:6px;padding:9px 14px;font-size:14px;font-weight:600;color:var(--sage-d)}
-  .card{display:inline-flex;align-items:center;gap:12px;background:#FBF6EA;border:1px solid #E8DCBF;border-radius:8px;padding:9px 14px;flex-wrap:wrap}
-  .card .verb{font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;border:1px solid #E0CF9E;border-radius:5px;padding:4px 8px;white-space:nowrap}
-  .card .ctext{font-size:14px;color:#6B5620;font-weight:600;line-height:1.4}
-  .cta{text-align:center;padding:36px 24px 40px;background:var(--sage-d);color:#fff}
-  .cta .ch{font-size:24px;font-weight:600;letter-spacing:-.3px;font-family:'Fraunces',Georgia,serif;max-width:640px;margin:0 auto;line-height:1.2}
-  .cta .cs{color:#D3DED6;font-size:13px;margin:12px auto 0;max-width:600px;line-height:1.6}
-  .cta .stk{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-  .cta .val{font-size:11.5px;font-weight:600;color:#EAF0EC;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:6px;padding:7px 12px}
-  .cta .val b{color:#F2D98A}
-  .cta .pill{display:inline-block;margin-top:22px;background:var(--gold);color:#231B08;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;padding:14px 38px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.22)}
-  .cta .promo{margin-top:14px;color:#F2D98A;font-size:12.5px;font-weight:600}
-  .cta .tag{margin-top:14px;color:#B9C7BE;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  .see{font-size:12.5px;line-height:1.62;color:var(--ink2)}
+  .onscreen{display:inline-block;background:#EEF2ED;border:1px solid #D6DFD7;border-left:3px solid var(--sage);border-radius:7px;padding:10px 15px;font-size:14px;font-weight:600;color:var(--sage-d)}
+  .card{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(180deg,#FCF7EB,#F8F0DE);border:1px solid #EADFC1;border-radius:9px;padding:10px 15px;flex-wrap:wrap;box-shadow:0 1px 2px rgba(120,90,20,.06)}
+  .card .verb{font-size:9.5px;font-weight:700;letter-spacing:.16em;color:var(--gold-d);text-transform:uppercase;border:1px solid #E2CF9C;border-radius:999px;padding:5px 10px;white-space:nowrap;background:#fff}
+  .card .ctext{font-size:14px;color:#5F4C1B;font-weight:600;line-height:1.4}
+  .cta{text-align:center;padding:48px 24px 52px;background:radial-gradient(120% 140% at 50% -20%,#1B3329,#0F241C 70%);color:#fff;position:relative}
+  .cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.6}
+  .cta .ch{font-size:29px;font-weight:500;letter-spacing:-.5px;font-family:'Fraunces',Georgia,serif;max-width:660px;margin:0 auto;line-height:1.16;color:#F7F3EA}
+  .cta .cs{color:#B9C7BE;font-size:13px;margin:14px auto 0;max-width:580px;line-height:1.65}
+  .cta .stk{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+  .cta .val{font-size:11px;font-weight:600;color:#E7EFE9;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:8px 14px;letter-spacing:.02em}
+  .cta .val b{color:var(--gold)}
+  .cta .pill{display:inline-block;margin-top:26px;background:linear-gradient(180deg,#D8B25C,#C9A24B);color:#1A1405;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13.5px;padding:15px 42px;border-radius:999px;box-shadow:0 12px 30px -6px rgba(201,162,75,.5),inset 0 1px 0 rgba(255,255,255,.35)}
+  .cta .promo{margin-top:16px;color:var(--gold);font-size:12.5px;font-weight:600}
+  .cta .tag{margin-top:16px;color:#8CA096;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase}
 
   /* ===== STORYBOARD / CAMPAIGN SLIDES (16:9 sheets) ===== */
   .board{padding:0}
@@ -175,7 +193,8 @@ const IMG={cover:'images/real_cover.png',portrait:'images/real_portrait.png',clo
 /* ---- act data ---- */
 function act(no,time,title,vo,onscreen,see,frame){return {no,time,title,vo,onscreen,see,frame};}
 function osHTML(o){if(!o)return '';return o.verb?`<div class="blk"><div class="lab">Graphic Card</div><div class="card"><span class="verb">${o.verb}</span><span class="ctext">${o.text}</span></div></div>`:`<div class="blk"><div class="lab">On Screen</div><span class="onscreen">${o.text}</span></div>`;}
-function actRow(a,speaker){return `<div class="act"><div class="lft"><div class="no">${a.no}</div><div class="time">${a.time}</div></div><div class="rgt"><div class="atitle">${a.title}</div>
+function noHTML(no){const p=String(no).split('·');return p.length>1?`<b>${p[0].trim()}</b>${p.slice(1).join('·').trim()}`:no;}
+function actRow(a,speaker){return `<div class="act"><div class="lft"><div class="no">${noHTML(a.no)}</div><div class="time">${a.time}</div></div><div class="rgt"><div class="atitle">${a.title}</div>
   <div class="blk"><div class="lab">Hear · ${speaker||'Courtney'} (VO)</div><div class="vo">${a.vo}</div></div>${osHTML(a.onscreen)}
   <div class="blk"><div class="lab">See · Editor</div><div class="see">${a.see}</div></div></div></div>`;}
 
@@ -226,12 +245,12 @@ const FILMS=[
   promise:"The deepest driver isn't dying — it's not being <i>there</i>, strong, for the people you love. Gain-framed, legacy-led. <b>The most powerful cold hook.</b>",
   specs:["~80 sec","9:16","Emotional hook","Hard proof","Enroll CTA"],
   acts:[
-    act("Act I · The Hook","0:00–0:08","Land the real fear — not death, absence.","“I'm not afraid of getting older. I'm afraid of being in the room — but too tired, too foggy, too fragile to really be <i>in</i> it. That's the fear no one says out loud.”",{text:"It's not about living longer. It's about being there."},"Open on a real moment she'd hate to miss half-present — a kid's game, a slow walk, a dinner table. Courtney watching, then turns to camera. Warm, quiet, no hype.",IMG.cover),
-    act("Act II · The Stakes","0:08–0:20","Make 'more years' mean the RIGHT years.","“Everyone sells you more years. I want the good ones — sharp, strong, able to keep up. The version of you that's still fully present at seventy, not just still here.”",{verb:"Reframe",text:"“Don't just add years. Stay strong enough to live them.”"},"Vibrant 60s–70s montage — hiking, dancing, grandkids — not frail 'wellness' clichés. Aspirational, real.",IMG.f1e),
-    act("Act III · The Proof","0:20–0:36","Gain-framed hard science, not fear.","“And this is provable. Harvard tracked 123,000 adults: just five everyday habits by age forty added up to fourteen extra years of healthy life. Not a supplement. Habits.”",{verb:"Learn",text:"Harvard · Circulation 2018: 5 habits by 40 = +14 yrs (women), +12 (men)"},"Clean data card animates the +14 figure with the Harvard citation. Editorial, credible, premium.",IMG.gtraj),
-    act("Act IV · The Midpoint","0:36–0:52","Forty is the fork in the road.","“Here's what nobody tells you at forty: this is the exact decade the curve decides. The body you'll live in at seventy is being built right now, by what you do this year. Wait ten more years and you're not building — you're just managing the decline.”",{verb:"Reframe",text:"Forty isn't the peak. It's the fork."},"A single line splits into two futures — one strong and upright, one fading. Land hard on Courtney at the fork.",IMG.glev),
-    act("Act V · The Mechanism","0:52–1:06","Turn belief into a doable plan.","“Inside Longevity Life Academy it's eighteen live sessions across six simple pillars — how you eat, sleep, move, supplement, protect your heart, and use your own data. Simple enough to keep, powerful enough to change your trajectory.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · simple enough to actually keep"},"Six pillars build one by one — clean icons, 'like brushing your teeth' simplicity. Buyable, not theoretical.",IMG.gpil),
-    act("Act VI · The Close","1:06–1:22","Legacy close + witty sign-off.","“The people you love don't need more of you someday. They need the strong, sharp you — for as long as possible. So don't wait for a wake-up call you can feel. Start this week, take twenty percent off — and let's make future-you thank present-you. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Return to the opening moment — now she's fully in it, present, strong. Sign-off direct to camera with a small, knowing smile.",IMG.portrait)
+    act("Act I · The Hook","0:00–0:08","Land the real fear — not death, absence.","“I'm not afraid of getting older. I'm afraid of being in the room — but too tired, too foggy to really be <i>in</i> it.”",{text:"It's not about living longer. It's about being there."},"Open on a real moment she'd hate to miss half-present — a kid's game, a slow walk, a dinner table. Courtney watching, then turns to camera. Warm, quiet, no hype.",IMG.cover),
+    act("Act II · The Stakes","0:08–0:20","Make 'more years' mean the RIGHT years.","“Everyone sells more years. I want the good ones — sharp, strong, still fully present at seventy. Not just still here.”",{verb:"Reframe",text:"“Don't just add years. Stay strong enough to live them.”"},"Vibrant 60s–70s montage — hiking, dancing, grandkids — not frail 'wellness' clichés. Aspirational, real.",IMG.f1e),
+    act("Act III · The Proof","0:20–0:36","Gain-framed hard science, not fear.","“And it's provable. Harvard tracked 123,000 adults: five everyday habits by forty added fourteen extra healthy years.”",{verb:"Learn",text:"Harvard · Circulation 2018: 5 habits by 40 = +14 yrs (women), +12 (men)"},"Clean data card animates the +14 figure with the Harvard citation. Editorial, credible, premium.",IMG.gtraj),
+    act("Act IV · The Midpoint","0:36–0:52","Forty is the fork in the road.","“Forty is the fork. The body you'll have at seventy is being built right now — by what you do this year.”",{verb:"Reframe",text:"Forty isn't the peak. It's the fork."},"A single line splits into two futures — one strong and upright, one fading. Land hard on Courtney at the fork.",IMG.glev),
+    act("Act V · The Mechanism","0:52–1:06","Turn belief into a doable plan.","“Inside the Academy it's eighteen live sessions across six simple pillars — eat, sleep, move, supplement, heart, your data. Simple enough to keep.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · simple enough to actually keep"},"Six pillars build one by one — clean icons, 'like brushing your teeth' simplicity. Buyable, not theoretical.",IMG.gpil),
+    act("Act VI · The Close","1:06–1:22","Legacy close + witty sign-off.","“They don't need more of you someday. They need the strong you — now. Start this week, twenty percent off. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Return to the opening moment — now she's fully in it, present, strong. Sign-off direct to camera with a small, knowing smile.",IMG.portrait)
   ],
   cta:{h:"They don't need more of you someday. They need you — strong — now.",sub:"Hits the true driver (presence, not immortality), makes forty the urgent fork, proves it with gain-framed Harvard data, then closes on a warm, witty direct-to-camera sign-off.",
     stack:["Nerve: be there for them","Proof: +14 yrs (Harvard)","Forty = the fork","18 live sessions · 6 Pillars","<b>20% off → $1,200</b>"]}
@@ -240,12 +259,12 @@ const FILMS=[
   promise:"Hits the resentment nerve: you've spent years and money on gadgets, powders and fads that never moved the needle — the fundamentals were the answer all along. <b>Anti-hype, righteous.</b>",
   specs:["~78 sec","9:16","Anti-hype","700k-adult proof","Enroll CTA"],
   acts:[
-    act("Act I · The Hook","0:00–0:08","Name what they sold you.","“The cold plunge. The two-hundred-dollar greens. The supplement stack you can't even pronounce. Be honest — how much of it actually changed how you feel? The wellness industry got rich selling forty-year-olds the wrong things.”",{text:"You weren't lazy. You were sold the wrong things."},"Fast, glossy montage of gadgets, powders, fad devices — then a hard cut to Courtney, arms crossed, unimpressed, direct to camera. A little defiant.",IMG.f3),
-    act("Act II · The Reframe","0:08–0:24","Absolve them, then redirect.","“It was never a discipline problem. You were pointed at the shiny stuff while the things that actually work — the free, boring, unsexy fundamentals — sat right in front of you. Nobody could sell you those, so nobody did.”",{verb:"Reframe",text:"The fundamentals don't have a marketing budget. That's the only reason you missed them."},"Shiny products fade to grey; simple icons — a plate, a bed, a pair of shoes — light up gold. The contrast IS the ad.",IMG.f2s),
-    act("Act III · The Mechanism","0:24–0:38","What actually works.","“It's how you eat, sleep, and move — done consistently, like brushing your teeth. Six simple pillars. That's the whole secret the gadget crowd keeps burying, because there's no upsell in it.”",{verb:"Learn",text:"The 6 Pillars: eat · sleep · move · supplement · heart · your data"},"Six pillars snap in, each tagged near-zero cost. 'Like brushing your teeth' beat. Clean, almost provocative in its simplicity.",IMG.gpil),
-    act("Act IV · The Hard Data","0:38–0:52","Prove the boring move is powerful.","“And it's not small. A study of seven hundred thousand adults found eight of these habits by age forty added up to twenty-plus years of extra healthy life. Free habits. Decades of payoff. No plunge required.”",{verb:"Trust",text:"Million Veteran Program 2023: 8 habits by 40 = +24 yrs (men), +21 (women)"},"Bold data card: +24 with the study citation. The number does the persuading — hold on it. Editorial, undeniable.",IMG.gres),
-    act("Act V · The Offer","0:52–1:06","Make the access explicit.","“Inside Longevity Life Academy, our faculty walk you through all six pillars — eighteen live sessions, real coaching, turning your own numbers into a personal blueprint. Everything that works, none of the stuff that doesn't.”",{verb:"Master",text:"18 LIVE sessions · your data → your blueprint · what works, nothing that doesn't"},"Live-session faces, then a glucose/biomarker readout morphing into a clean 'Longevity Blueprint.'",IMG.gui),
-    act("Act VI · The Close","1:06–1:20","Anti-hype close + witty sign-off.","“Stop paying for the hype. Start doing the stuff that actually works — with people who'll show you how. Take twenty percent off this week. Cancel the subscription that isn't working; keep the body that will. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Courtney, confident, direct to camera with a wry half-smile on the sign-off. Resolve.",IMG.f2)
+    act("Act I · The Hook","0:00–0:08","Name what they sold you.","“The cold plunge. The two-hundred-dollar greens. Be honest — did any of it change how you feel? You were sold the wrong things.”",{text:"You weren't lazy. You were sold the wrong things."},"Fast, glossy montage of gadgets, powders, fad devices — then a hard cut to Courtney, arms crossed, unimpressed, direct to camera. A little defiant.",IMG.f3),
+    act("Act II · The Reframe","0:08–0:24","Absolve them, then redirect.","“It was never willpower. You were pointed at the shiny stuff while the free, boring fundamentals sat right in front of you.”",{verb:"Reframe",text:"The fundamentals don't have a marketing budget. That's the only reason you missed them."},"Shiny products fade to grey; simple icons — a plate, a bed, a pair of shoes — light up gold. The contrast IS the ad.",IMG.f2s),
+    act("Act III · The Mechanism","0:24–0:38","What actually works.","“What works is how you eat, sleep and move — done like brushing your teeth. Six simple pillars. That's the whole secret.”",{verb:"Learn",text:"The 6 Pillars: eat · sleep · move · supplement · heart · your data"},"Six pillars snap in, each tagged near-zero cost. 'Like brushing your teeth' beat. Clean, almost provocative in its simplicity.",IMG.gpil),
+    act("Act IV · The Hard Data","0:38–0:52","Prove the boring move is powerful.","“And it's not small. Seven hundred thousand adults: eight habits by forty added twenty-plus healthy years. Free habits, decades of payoff.”",{verb:"Trust",text:"Million Veteran Program 2023: 8 habits by 40 = +24 yrs (men), +21 (women)"},"Bold data card: +24 with the study citation. The number does the persuading — hold on it. Editorial, undeniable.",IMG.gres),
+    act("Act V · The Offer","0:52–1:06","Make the access explicit.","“Inside the Academy our faculty walk you through all six — eighteen live sessions, turning your own numbers into a personal blueprint.”",{verb:"Master",text:"18 LIVE sessions · your data → your blueprint · what works, nothing that doesn't"},"Live-session faces, then a glucose/biomarker readout morphing into a clean 'Longevity Blueprint.'",IMG.gui),
+    act("Act VI · The Close","1:06–1:20","Anti-hype close + witty sign-off.","“Stop paying for hype. Do what works, with people who show you how. Twenty percent off this week. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Courtney, confident, direct to camera with a wry half-smile on the sign-off. Resolve.",IMG.f2)
   ],
   cta:{h:"You weren't lazy. You were sold the wrong things.",sub:"Flips years of wasted gadget-and-supplement spend into righteous motivation, redirects to the free fundamentals, proves it with 700k-person data, then closes on a wry direct-to-camera sign-off.",
     stack:["Nerve: been sold the wrong things","Fundamentals > hype","Proof: +24 yrs (700k adults)","Data → personal blueprint","<b>20% off → $1,200</b>"]}
@@ -254,12 +273,12 @@ const FILMS=[
   promise:"For warm leads who 'know' the habits but haven't acted. The unlock is measurement — your numbers become your blueprint. <b>Converts the fence-sitter.</b>",
   specs:["~74 sec","9:16","Insight hook","Blueprint","Enroll CTA"],
   acts:[
-    act("Act I · The Hook","0:00–0:07","Break the 'I already know this' wall.","“You already know you should eat better, sleep more, move daily. So why hasn't it changed anything? Because you can't improve what you've never actually measured.”",{text:"You can't change what you can't see."},"Courtney intimate, seated, direct. Interrupts the smug 'I know the basics' reflex. Quiet, sharp, no music — an insight, not a pitch.",IMG.closeup),
-    act("Act II · The Real Problem","0:07–0:20","Effort without feedback fails.","“You've been guessing in the dark — trying random things, never knowing what's working for <i>your</i> body. Motivation fades fast when you can't see it moving the needle. That's not a discipline problem. It's a data problem.”",{verb:"Reframe",text:"Not a willpower problem — a visibility problem."},"B-roll: half-used trackers, abandoned diets, a foggy mirror wiped clear. Lands on Courtney — she names the thing they feel but can't articulate.",IMG.f3k),
-    act("Act III · The Unlock","0:20–0:34","Numbers → a personal blueprint.","“The moment you can see your real numbers — your sleep, your glucose, your biological age — everything changes. Suddenly you're not guessing. You have a blueprint built for the body you actually have.”",{verb:"See",text:"Your numbers → your personal Longevity Blueprint"},"Biomarker readouts animate into a clean, personalized 'Longevity Blueprint' card. Feedback loop made visible. Empowering, premium.",IMG.gui),
-    act("Act IV · The Proof","0:34–0:50","Measured, then moved.","“This isn't theory. Our members track their numbers, adjust, and measurably slow their biological aging — some by months in a single program. Not because they tried harder. Because for the first time, they could see what was actually working.”",{verb:"Trust",text:"Members slow biological aging up to 3.8 months · measured, not guessed"},"A members' biological-age line ticks downward on screen; real numbers, real graphs. Proof that the see-it-then-move-it loop works.",IMG.gres),
-    act("Act V · The Offer","0:50–1:04","The program is the system + the eyes.","“Longevity Life Academy gives you both — eighteen live sessions across the Six Pillars, and the guidance to turn your own data into action. You stop guessing. You start seeing. And this time, it sticks.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · data-guided so it finally sticks"},"Live-session faces beside the personal blueprint. The pillars and the data card lock together — system + visibility as one offer.",IMG.gpil),
-    act("Act VI · The Close","1:04–1:18","Fence-sitter close + witty sign-off.","“You've had good intentions for years. Intentions don't change your numbers — seeing them does. Give yourself the one thing that finally makes it stick. Twenty percent off this week. Stop guessing about the only body you get. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Foggy mirror from Act II, now crystal clear — she sees herself sharply, delivers the sign-off direct to camera.",IMG.closeup)
+    act("Act I · The Hook","0:00–0:07","Break the 'I already know this' wall.","“You already know you should eat better, sleep more, move daily. So why hasn't it changed anything? You can't improve what you never measure.”",{text:"You can't change what you can't see."},"Courtney intimate, seated, direct. Interrupts the smug 'I know the basics' reflex. Quiet, sharp, no music — an insight, not a pitch.",IMG.closeup),
+    act("Act II · The Real Problem","0:07–0:20","Effort without feedback fails.","“You've been guessing in the dark, never knowing what works for <i>your</i> body. That's not a discipline problem — it's a data problem.”",{verb:"Reframe",text:"Not a willpower problem — a visibility problem."},"B-roll: half-used trackers, abandoned diets, a foggy mirror wiped clear. Lands on Courtney — she names the thing they feel but can't articulate.",IMG.f3k),
+    act("Act III · The Unlock","0:20–0:34","Numbers → a personal blueprint.","“The moment you see your real numbers — sleep, glucose, biological age — everything changes. You stop guessing. You get a blueprint for your body.”",{verb:"See",text:"Your numbers → your personal Longevity Blueprint"},"Biomarker readouts animate into a clean, personalized 'Longevity Blueprint' card. Feedback loop made visible. Empowering, premium.",IMG.gui),
+    act("Act IV · The Proof","0:34–0:50","Measured, then moved.","“This isn't theory. Our members track, adjust, and measurably slow their aging — some by months — because they can finally see what's working.”",{verb:"Trust",text:"Members slow biological aging up to 3.8 months · measured, not guessed"},"A members' biological-age line ticks downward on screen; real numbers, real graphs. Proof that the see-it-then-move-it loop works.",IMG.gres),
+    act("Act V · The Offer","0:50–1:04","The program is the system + the eyes.","“The Academy gives you both — eighteen live sessions across the six pillars, and the guidance to turn your data into action. This time it sticks.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · data-guided so it finally sticks"},"Live-session faces beside the personal blueprint. The pillars and the data card lock together — system + visibility as one offer.",IMG.gpil),
+    act("Act VI · The Close","1:04–1:18","Fence-sitter close + witty sign-off.","“Intentions don't change your numbers — seeing them does. Twenty percent off this week. Stop guessing about the only body you get. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Foggy mirror from Act II, now crystal clear — she sees herself sharply, delivers the sign-off direct to camera.",IMG.closeup)
   ],
   cta:{h:"You don't need more willpower. You need to see your numbers.",sub:"Breaks the warm lead's 'I already know this' wall by reframing failure as invisibility, proves it with measured member results, then closes on a sharp direct-to-camera sign-off.",
     stack:["Insight: visibility, not willpower","Data → personal blueprint","Measured, not guessed","Members slow aging ~3.8 mo","<b>20% off → $1,200</b>"]}
@@ -274,12 +293,12 @@ const OPTIONS=[
     promise:"A confession, not an ad. Courtney says the quiet part out loud — the industry oversold it — and becomes the trusted face of the Academy. <b>Documentary-style, curiosity-led.</b>",
     specs:["~75 sec","9:16","Docu-interview","Curiosity hook","Enroll CTA"],
     acts:[
-      act("Act I · The Hook","0:00–0:08","Say the quiet part out loud.","“I spent years inside the wellness industry, so let me tell you the part they'd fire me for saying. Almost everything they sold you at forty — the plunge, the powders, the gadgets — was never built to work. It was built to sell. I know, because I was in the room when they designed it. Sit down. I'm about to cost them a fortune.”",{text:"Here's what they never tell you."},"Courtney seated in a warm, lamp-lit study, direct to camera — a confession, not a commercial. Slow push-in. No music yet.",IMG.set_cover),
-      act("Act II · The Confession","0:08–0:24","Earn trust by admitting the truth.","“The gadgets, the hundred-dollar powders, the biohacking theater — I saw exactly how it was marketed and to whom. To forty-year-olds scared of getting older. It was built to sell, not to work. And once you see that, you can't unsee it.”",{verb:"Reframe",text:"Built to sell to you — not to work for you."},"Cut to glossy product B-roll going grey as she names it. Return to her face, unimpressed, credible.",IMG.set_portrait),
-      act("Act III · The Real System","0:24–0:40","Reveal the boring thing that works.","“What actually moves the needle isn't a secret — it's just unsexy. Six simple pillars: how you eat, sleep, move, supplement, protect your heart, and read your own numbers. No upsell in it, so no one shouts about it. We do.”",{verb:"Learn",text:"The 6 Pillars — the system with no marketing budget"},"Six pillars light up gold, one by one, over her calm delivery. Clean, editorial, premium.",IMG.gpil),
-      act("Act IV · The Proof","0:40–0:56","Back the confession with hard data.","“And this is measured, not sold. A study of seven hundred thousand adults found the right habits by forty added up to twenty-plus years of extra healthy life. Free habits. Decades of payoff. That's the story they buried.”",{verb:"Trust",text:"700k adults: right habits by 40 = +24 yrs (men), +21 (women)"},"Bold data card holds on the +24 figure with citation. The number does the persuading.",IMG.gres),
-      act("Act V · The Offer","0:56–1:08","Bring them inside.","“Inside Longevity Life Academy you get the whole thing done right — eighteen live sessions across the six pillars, and the guidance to turn your own numbers into a real blueprint. Everything that works. None of the theater.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · your data → your blueprint"},"Live-session faces, then a biomarker readout resolving into a clean 'Longevity Blueprint' card.",IMG.gui),
-      act("Act VI · The Close","1:08–1:22","Insider close + witty sign-off.","“Now you know what the insiders know — and you can't unknow it. The only question left is whether you use it, or keep writing checks to the theater. Take twenty percent off this week. Consider it your leak from the inside. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Back to the study, lamp-lit, small knowing smile on the sign-off. Direct to camera.",IMG.set_interview)
+      act("Act I · The Hook","0:00–0:08","Say the quiet part out loud.","“I spent years inside the wellness industry. Almost everything they sold you at forty was built to sell — not to work. I was in the room.”",{text:"Here's what they never tell you."},"Courtney seated in a warm, lamp-lit study, direct to camera — a confession, not a commercial. Slow push-in. No music yet.",IMG.set_cover),
+      act("Act II · The Confession","0:08–0:24","Earn trust by admitting the truth.","“The gadgets, the hundred-dollar powders, the biohacking theater — marketed to forty-year-olds scared of aging. Built to sell, not to work.”",{verb:"Reframe",text:"Built to sell to you — not to work for you."},"Cut to glossy product B-roll going grey as she names it. Return to her face, unimpressed, credible.",IMG.set_portrait),
+      act("Act III · The Real System","0:24–0:40","Reveal the boring thing that works.","“What actually moves the needle isn't a secret — it's just unsexy. Six simple pillars. No upsell in it, so no one shouts about it. We do.”",{verb:"Learn",text:"The 6 Pillars — the system with no marketing budget"},"Six pillars light up gold, one by one, over her calm delivery. Clean, editorial, premium.",IMG.gpil),
+      act("Act IV · The Proof","0:40–0:56","Back the confession with hard data.","“And it's measured, not sold. Seven hundred thousand adults: the right habits by forty added twenty-plus healthy years. That's the story they buried.”",{verb:"Trust",text:"700k adults: right habits by 40 = +24 yrs (men), +21 (women)"},"Bold data card holds on the +24 figure with citation. The number does the persuading.",IMG.gres),
+      act("Act V · The Offer","0:56–1:08","Bring them inside.","“Inside the Academy you get it done right — eighteen live sessions across the six pillars, your own numbers turned into a real blueprint.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · your data → your blueprint"},"Live-session faces, then a biomarker readout resolving into a clean 'Longevity Blueprint' card.",IMG.gui),
+      act("Act VI · The Close","1:08–1:22","Insider close + witty sign-off.","“Now you know what the insiders know — and you can't unknow it. Twenty percent off this week. Consider it your leak. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Back to the study, lamp-lit, small knowing smile on the sign-off. Direct to camera.",IMG.set_interview)
     ]},
   slides:[
     optSplit("The face changes everything.","Generic","A stock 'wellness' model.","Courtney","A real woman people believe.",IMG.set_portrait),
@@ -294,12 +313,12 @@ const OPTIONS=[
     promise:"One idea flip: everyone sells lifespan. Courtney sells healthspan — the years you actually get to live well. <b>Aspirational, not clinical.</b>",
     specs:["~70 sec","9:16","Reframe hook","Healthspan proof","Enroll CTA"],
     acts:[
-      act("Act I · The Hook","0:00–0:08","Flip the whole conversation.","“Living longer is the wrong goal — and chasing it is quietly stealing your best years. Nobody wants ten more spent tired, foggy, and stuck in a chair. The only question that matters is how many good years you get. Sharp. Strong. Still fully you. Those are the years I want to talk about.”",{text:"Don't add years. Add life to them."},"Courtney at golden hour, warm and confident, direct to camera. Aspirational, alive — no clinical wellness clichés.",IMG.portrait),
-      act("Act II · The Reframe","0:08–0:22","Name the word that changes everything.","“There's a word for the good years: healthspan. Not how long you live — how long you live well. And here's what nobody tells you at forty: healthspan isn't luck. It's trainable. It's a choice you make this decade.”",{verb:"Reframe",text:"Lifespan is how long. Healthspan is how well."},"Split the screen: a fading, frail 'lifespan' path vs a vibrant, active 'healthspan' path. She stands on the bright side.",IMG.f2),
-      act("Act III · The Proof","0:22–0:38","Show it's provable, not wishful.","“And this is proven. Harvard tracked a hundred and twenty-three thousand adults: five everyday habits by forty added fourteen extra years of healthy life. Not more years in decline — more years lived well. That's healthspan you can measure.”",{verb:"Learn",text:"Harvard · Circulation 2018: 5 habits by 40 = +14 healthy yrs"},"Clean data card animates the +14 figure with the Harvard citation. Editorial, credible.",IMG.gtraj),
-      act("Act IV · The Mechanism","0:38–0:52","Make the reframe doable.","“You build healthspan the same simple way: six pillars — how you eat, sleep, move, supplement, protect your heart, and read your own numbers. Small, repeatable, powerful. This is how you train the years, not just count them.”",{verb:"Master",text:"6 Pillars · train the good years, don't just count them"},"Six pillars build over a vibrant 60s–70s montage — hiking, dancing, grandkids. Strong, not frail.",IMG.gpil),
-      act("Act V · The Offer","0:52–1:06","Make access explicit.","“Inside Longevity Life Academy we walk you through all six — eighteen live sessions, real coaching, and your own data turned into a personal blueprint for more good years. Aspirational, and completely doable.”",{verb:"Master",text:"18 LIVE sessions · your data → your blueprint"},"Live-session faces beside a personalized 'more good years' blueprint card.",IMG.gui),
-      act("Act VI · The Close","1:06–1:20","Aspirational close + witty sign-off.","“So stop counting years you might not even enjoy — and start building the ones you will. Take twenty percent off this week. A long life is nice. A long life lived fully is the entire point. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Return to golden-hour Courtney, radiant, delivering the sign-off with a warm smile.",IMG.f2)
+      act("Act I · The Hook","0:00–0:08","Flip the whole conversation.","“Living longer is the wrong goal. Nobody wants ten more years tired and foggy. The only question that matters is how many <i>good</i> years you get.”",{text:"Don't add years. Add life to them."},"Courtney at golden hour, warm and confident, direct to camera. Aspirational, alive — no clinical wellness clichés.",IMG.portrait),
+      act("Act II · The Reframe","0:08–0:22","Name the word that changes everything.","“There's a word for the good years: healthspan. Not how long you live — how well. And at forty, it's trainable. It's a choice.”",{verb:"Reframe",text:"Lifespan is how long. Healthspan is how well."},"Split the screen: a fading, frail 'lifespan' path vs a vibrant, active 'healthspan' path. She stands on the bright side.",IMG.f2),
+      act("Act III · The Proof","0:22–0:38","Show it's provable, not wishful.","“And it's proven. Harvard tracked 123,000 adults: five habits by forty added fourteen healthy years. Not years in decline — years lived well.”",{verb:"Learn",text:"Harvard · Circulation 2018: 5 habits by 40 = +14 healthy yrs"},"Clean data card animates the +14 figure with the Harvard citation. Editorial, credible.",IMG.gtraj),
+      act("Act IV · The Mechanism","0:38–0:52","Make the reframe doable.","“You build healthspan the simple way: six pillars — eat, sleep, move, supplement, protect your heart, read your numbers. Train the years, don't just count them.”",{verb:"Master",text:"6 Pillars · train the good years, don't just count them"},"Six pillars build over a vibrant 60s–70s montage — hiking, dancing, grandkids. Strong, not frail.",IMG.gpil),
+      act("Act V · The Offer","0:52–1:06","Make access explicit.","“Inside the Academy we walk you through all six — eighteen live sessions, your data turned into a blueprint for more good years.”",{verb:"Master",text:"18 LIVE sessions · your data → your blueprint"},"Live-session faces beside a personalized 'more good years' blueprint card.",IMG.gui),
+      act("Act VI · The Close","1:06–1:20","Aspirational close + witty sign-off.","“Stop counting years you won't enjoy — start building the ones you will. Twenty percent off this week. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Return to golden-hour Courtney, radiant, delivering the sign-off with a warm smile.",IMG.f2)
     ]},
   slides:[
     optSplit("The right person to say it.","A slogan","'Live longer' — abstract, tired.","Courtney","Proof it can be lived, now.",IMG.f2),
@@ -314,12 +333,12 @@ const OPTIONS=[
     promise:"Takes on biohacking's biggest lie — that longevity is only for the rich — with a real woman and a real result. <b>Punchy, price-anchored.</b>",
     specs:["~85 sec","9:16","Price anchor","Real result","Enroll CTA"],
     acts:[
-      act("Act I · The Hook","0:00–0:08","Name the $2M lie.","“A tech billionaire spends two million dollars a year trying to stay young — plunges, red-light beds, a hundred pills a day. And every headline whispers the same lie: that staying healthy is a rich man's game. Here's the part that should make you angry — a woman on an ordinary budget out-aged him. I can prove it in sixty seconds.”",{text:"You don't need $2M to slow aging."},"Rapid-cut montage of extravagant biohacking theater, then a hard cut to Courtney in a real home, arms crossed, unbothered. Punchy.",IMG.set_interview),
-      act("Act II · The Enemy","0:08–0:22","Expose the expensive noise.","“Ninety percent of what they spend on does almost nothing — it just looks impressive on camera. The plunge, the gadgets, the stacks. Expensive noise, dressed up as science, sold to people who are scared and can afford to overpay.”",{verb:"Reframe",text:"Expensive noise ≠ what actually works."},"Luxury gadgets flash with big price tags, then fade to grey. The contrast is the whole point.",IMG.f3),
-      act("Act III · The Truth","0:22–0:38","Reveal the cheap thing that works.","“What actually moves the needle costs almost nothing and never trends: six simple pillars — eat, sleep, move, supplement wisely, protect your heart, read your own numbers. Boring, repeatable, and it's the whole game.”",{verb:"Learn",text:"The 6 Pillars · near-zero cost, maximum payoff"},"Six pillars snap in, each tagged 'free' or near-free. Clean, almost defiant in its simplicity.",IMG.gpil),
-      act("Act IV · The Proof","0:38–0:54","Bust the myth with data.","“And it's proven at scale. Seven hundred thousand adults: the right habits by forty added up to twenty-plus years of extra healthy life. Not two million dollars. Free habits. Anyone can do this — including you.”",{verb:"Trust",text:"700k adults: right habits by 40 = +24 yrs (men), +21 (women)"},"Bold price-anchor card: '$2,000,000' struck through next to '$0 habits · +24 yrs.' Hold on it.",IMG.gres),
-      act("Act V · The Offer","0:54–1:08","Anchor the price.","“Inside Longevity Life Academy you get all of it — eighteen live sessions across the six pillars, plus your own numbers turned into a blueprint. Not two million a year. Not even close. Everything that works, on a normal budget.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · normal-budget access"},"Live-session faces beside the blueprint card. The $2M anchor lingers small in the corner for contrast.",IMG.gui),
-      act("Act VI · The Close","1:08–1:24","Price-anchor close + witty sign-off.","“So no — you don't need a lab, a coach, or two million dollars. You need six things, done consistently. Take twenty percent off this week. Let the billionaires keep the plunge. You keep the results. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Courtney, confident, wry half-smile on the sign-off. Direct to camera. Resolve.",IMG.f3)
+      act("Act I · The Hook","0:00–0:08","Name the $2M lie.","“A billionaire spends two million a year to stay young. A woman on an ordinary budget out-aged him. I can prove it in sixty seconds.”",{text:"You don't need $2M to slow aging."},"Rapid-cut montage of extravagant biohacking theater, then a hard cut to Courtney in a real home, arms crossed, unbothered. Punchy.",IMG.set_interview),
+      act("Act II · The Enemy","0:08–0:22","Expose the expensive noise.","“Ninety percent of what they spend does almost nothing. Plunges, gadgets, stacks — expensive noise, dressed up as science, sold to the scared.”",{verb:"Reframe",text:"Expensive noise ≠ what actually works."},"Luxury gadgets flash with big price tags, then fade to grey. The contrast is the whole point.",IMG.f3),
+      act("Act III · The Truth","0:22–0:38","Reveal the cheap thing that works.","“What actually works costs almost nothing: six simple pillars — eat, sleep, move, supplement, heart, your own numbers. Boring, repeatable, the whole game.”",{verb:"Learn",text:"The 6 Pillars · near-zero cost, maximum payoff"},"Six pillars snap in, each tagged 'free' or near-free. Clean, almost defiant in its simplicity.",IMG.gpil),
+      act("Act IV · The Proof","0:38–0:54","Bust the myth with data.","“And it's proven at scale. Seven hundred thousand adults: the right habits by forty added twenty-plus healthy years. Not two million dollars. Free habits.”",{verb:"Trust",text:"700k adults: right habits by 40 = +24 yrs (men), +21 (women)"},"Bold price-anchor card: '$2,000,000' struck through next to '$0 habits · +24 yrs.' Hold on it.",IMG.gres),
+      act("Act V · The Offer","0:54–1:08","Anchor the price.","“Inside the Academy you get all of it — eighteen live sessions across six pillars, your numbers turned into a blueprint. Not two million. Not close.”",{verb:"Master",text:"18 LIVE sessions · 6 Pillars · normal-budget access"},"Live-session faces beside the blueprint card. The $2M anchor lingers small in the corner for contrast.",IMG.gui),
+      act("Act VI · The Close","1:08–1:24","Price-anchor close + witty sign-off.","“You don't need a lab or two million dollars. You need six things, done consistently. Twenty percent off this week. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Courtney, confident, wry half-smile on the sign-off. Direct to camera. Resolve.",IMG.f3)
     ]},
   slides:[
     optSplit("The credibility swap.","A biohacker","Gadgets, plunges, hype.","Courtney","Boring, repeatable, affordable.",IMG.f3),
@@ -334,12 +353,12 @@ const OPTIONS=[
     promise:"A warmer, education-first campaign: Courtney as the calm guide who walks you through it, lesson by lesson. <b>Trustworthy, mentor-led.</b>",
     specs:["~75 sec","9:16","Education-first","Mentor tone","Enroll CTA"],
     acts:[
-      act("Act I · The Hook","0:00–0:08","Meet the calm in the noise.","“If you've ever tried to fix your health alone, you already know the problem: a thousand voices, all shouting, all contradicting each other, every one of them selling something. It's exhausting — and it's designed to be. So take a breath. Forget the noise. I'm going to walk you through it myself — step by step, no hype, just what actually works.”",{text:"Let me walk you through it."},"Courtney close, warm, classroom-lit, speaking like a trusted teacher. Slow, patient, reassuring. Direct to camera.",IMG.set_closeup),
-      act("Act II · The Problem","0:08–0:22","Name why they've been stuck.","“The reason it never stuck isn't you. It's that no one ever gave you the whole picture — just fragments, sold one gadget at a time. You can't build a healthy body from a pile of disconnected tips. You need a path.”",{verb:"Reframe",text:"You didn't lack willpower. You lacked a path."},"B-roll: scattered articles, half-finished trackers, contradicting headlines — then Courtney, calm, offering order.",IMG.f1),
-      act("Act III · The Lessons","0:22–0:38","Lay out the curriculum.","“So here's the whole path, in six simple lessons: how you eat, sleep, move, supplement, protect your heart, and read your own numbers. Master these, in order, and everything else falls into place. That's the entire curriculum.”",{verb:"Learn",text:"6 Pillars · the full curriculum, in order"},"Six pillars appear as clean lesson cards, building in sequence like a syllabus. Ordered, calm, credible.",IMG.gpil),
-      act("Act IV · The Proof","0:38–0:54","Show the path is proven.","“And these aren't my opinions. Harvard tracked a hundred and twenty-three thousand adults: five of these habits by forty added fourteen extra years of healthy life. I'm just here to teach you how to actually do them.”",{verb:"Trust",text:"Harvard · Circulation 2018: 5 habits by 40 = +14 healthy yrs"},"Clean data card with the Harvard figure, framed like a teaching slide. Editorial, trustworthy.",IMG.gtraj),
-      act("Act V · The Offer","0:54–1:08","Offer the guided classroom.","“That's what Longevity Life Academy is — a guided classroom, not a pile of tips. Eighteen live sessions, real coaching, and your own numbers turned into a blueprint. You always know the next step, and you're never doing it alone.”",{verb:"Master",text:"18 LIVE sessions · guided · always a next step"},"Warm live-session faces, a course-UI walkthrough, a mentor answering a real question.",IMG.gui),
-      act("Act VI · The Close","1:08–1:22","Mentor close + witty sign-off.","“You don't need more information — you're drowning in it. You need someone to show you the order and stay with you while you learn it. Take twenty percent off this week and let's start lesson one. Class is in session. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Back to warm classroom light, small encouraging smile on the sign-off. Direct to camera.",IMG.set_closeup)
+      act("Act I · The Hook","0:00–0:08","Meet the calm in the noise.","“Trying to fix your health alone means a thousand voices, all shouting, all selling. Take a breath. I'll walk you through it myself — no hype.”",{text:"Let me walk you through it."},"Courtney close, warm, classroom-lit, speaking like a trusted teacher. Slow, patient, reassuring. Direct to camera.",IMG.set_closeup),
+      act("Act II · The Problem","0:08–0:22","Name why they've been stuck.","“It never stuck because no one gave you the whole picture — just fragments, one gadget at a time. You didn't lack willpower. You lacked a path.”",{verb:"Reframe",text:"You didn't lack willpower. You lacked a path."},"B-roll: scattered articles, half-finished trackers, contradicting headlines — then Courtney, calm, offering order.",IMG.f1),
+      act("Act III · The Lessons","0:22–0:38","Lay out the curriculum.","“Here's the whole path in six lessons: eat, sleep, move, supplement, protect your heart, read your numbers. Master these in order — that's the curriculum.”",{verb:"Learn",text:"6 Pillars · the full curriculum, in order"},"Six pillars appear as clean lesson cards, building in sequence like a syllabus. Ordered, calm, credible.",IMG.gpil),
+      act("Act IV · The Proof","0:38–0:54","Show the path is proven.","“And these aren't opinions. Harvard tracked 123,000 adults: five of these habits by forty added fourteen healthy years. I just teach you how.”",{verb:"Trust",text:"Harvard · Circulation 2018: 5 habits by 40 = +14 healthy yrs"},"Clean data card with the Harvard figure, framed like a teaching slide. Editorial, trustworthy.",IMG.gtraj),
+      act("Act V · The Offer","0:54–1:08","Offer the guided classroom.","“That's the Academy — a guided classroom, not a pile of tips. Eighteen live sessions, real coaching, your numbers turned into a blueprint.”",{verb:"Master",text:"18 LIVE sessions · guided · always a next step"},"Warm live-session faces, a course-UI walkthrough, a mentor answering a real question.",IMG.gui),
+      act("Act VI · The Close","1:08–1:22","Mentor close + witty sign-off.","“You don't need more information — you need someone to show you the order and stay with you. Twenty percent off. Class is in session. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Back to warm classroom light, small encouraging smile on the sign-off. Direct to camera.",IMG.set_closeup)
     ]},
   slides:[
     optSplit("The right teacher.","A spokesperson","Reading lines to camera.","Courtney","A mentor you'd actually follow.",IMG.f1),
@@ -354,12 +373,12 @@ const OPTIONS=[
     promise:"A high-concept campaign on one visual: two people, same age — and the gap that decides who stays strong far longer. <b>High-concept, visual hook.</b>",
     specs:["~75 sec","9:16","Split-trajectory visual","High-concept","Enroll CTA"],
     acts:[
-      act("Act I · The Hook","0:00–0:08","Two people. Same age.","“Two women. Same birthday. Same starting line at forty. Fast-forward thirty years — one takes the stairs two at a time and out-walks her grandkids. The other needs a hand just to stand. Same age. Same genes, near enough. One thing split them apart — and it wasn't luck. It was a choice, and you're about to make yours.”",{text:"Same birthday. Different ending."},"Split screen: two forty-year-olds side by side, then time-lapse diverging into two seventy-year-olds. Courtney narrates from the bright side.",IMG.set_cover),
-      act("Act II · The Divergence","0:08–0:22","It's not luck — it's a fork.","“It wasn't genetics. It wasn't luck. Somewhere in their forties, one of them made a choice — small, boring, repeated daily — and the two curves split. This is that fork. And right now, you're standing on it.”",{verb:"Reframe",text:"Not luck. A choice you make at the fork."},"A single trajectory line splits into two — one bending up, one falling. Courtney at the fork, gesturing to both.",IMG.f1e),
-      act("Act III · The Proof","0:22–0:38","Quantify the gap.","“And the gap is huge. Harvard followed a hundred and twenty-three thousand people: five everyday habits by forty meant fourteen more years of healthy life. That's the distance between the two curves. Fourteen good years — decided by what you do this decade.”",{verb:"Learn",text:"Harvard · Circulation 2018: the gap = +14 healthy yrs"},"The two curves reappear with the +14 gap measured between them and the Harvard citation. Clean, dramatic.",IMG.gtraj),
-      act("Act IV · The Mechanism","0:38–0:52","Show how to bend the curve.","“Bending your curve up isn't complicated. Six simple pillars — eat, sleep, move, supplement, protect your heart, read your numbers. Done consistently, they're the difference between the two lives. Simple system. Enormous gap.”",{verb:"Master",text:"6 Pillars · the system that bends the curve"},"The rising curve fills in with six glowing pillar points along it. Cause and effect made visible.",IMG.gpil),
-      act("Act V · The Offer","0:52–1:06","Make the choice actionable.","“Longevity Life Academy is how you take the upper curve — eighteen live sessions across the six pillars, and your own numbers turned into a blueprint. On a normal budget. Same starting line as everyone else. Better ending.”",{verb:"Master",text:"18 LIVE sessions · your data → your blueprint"},"The upper-curve figure walks strong through live-session faces and a personal blueprint card.",IMG.gui),
-      act("Act VI · The Close","1:06–1:20","Trajectory close + witty sign-off.","“Two lives. One fork. You don't get to skip the choice — because not choosing is choosing the lower curve. Take twenty percent off this week and pick the good one while it's still yours to pick. Same birthday. Make it a different ending. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Both curves on screen; the bright one pulses. Courtney lands the sign-off from the upper path, direct to camera.",IMG.f1e)
+      act("Act I · The Hook","0:00–0:08","Two people. Same age.","“Two women. Same birthday, same start at forty. Thirty years later, one out-walks her grandkids; the other needs a hand to stand. It wasn't luck.”",{text:"Same birthday. Different ending."},"Split screen: two forty-year-olds side by side, then time-lapse diverging into two seventy-year-olds. Courtney narrates from the bright side.",IMG.set_cover),
+      act("Act II · The Divergence","0:08–0:22","It's not luck — it's a fork.","“It wasn't genetics. Somewhere in their forties, one made a choice — small, boring, repeated daily — and the curves split. You're standing at that fork.”",{verb:"Reframe",text:"Not luck. A choice you make at the fork."},"A single trajectory line splits into two — one bending up, one falling. Courtney at the fork, gesturing to both.",IMG.f1e),
+      act("Act III · The Proof","0:22–0:38","Quantify the gap.","“And the gap is huge. Harvard followed 123,000 people: five habits by forty meant fourteen more healthy years. That's the distance between the two curves.”",{verb:"Learn",text:"Harvard · Circulation 2018: the gap = +14 healthy yrs"},"The two curves reappear with the +14 gap measured between them and the Harvard citation. Clean, dramatic.",IMG.gtraj),
+      act("Act IV · The Mechanism","0:38–0:52","Show how to bend the curve.","“Bending your curve up isn't complicated. Six simple pillars, done consistently, are the difference between the two lives. Simple system, enormous gap.”",{verb:"Master",text:"6 Pillars · the system that bends the curve"},"The rising curve fills in with six glowing pillar points along it. Cause and effect made visible.",IMG.gpil),
+      act("Act V · The Offer","0:52–1:06","Make the choice actionable.","“The Academy is how you take the upper curve — eighteen live sessions across six pillars, your numbers turned into a blueprint. Same start, better ending.”",{verb:"Master",text:"18 LIVE sessions · your data → your blueprint"},"The upper-curve figure walks strong through live-session faces and a personal blueprint card.",IMG.gui),
+      act("Act VI · The Close","1:06–1:20","Trajectory close + witty sign-off.","“Not choosing is choosing the lower curve. Twenty percent off this week — pick the good one while it's yours to pick. I'm Courtney. This is Longevity Life Academy.”",{verb:"Enroll",text:"Enroll now → 20% off · $1,500 → $1,200 · start this week"},"Both curves on screen; the bright one pulses. Courtney lands the sign-off from the upper path, direct to camera.",IMG.f1e)
     ]},
   slides:[
     optSplit("The face of the better path.","Decline","The curve that keeps falling.","Courtney","The curve that bends up.",IMG.f1e),
