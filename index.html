@@ -125,8 +125,15 @@
   .fscript .fh2{font-family:'Fraunces',Georgia,serif;font-size:52px;font-weight:500;line-height:1.02;letter-spacing:-1.2px;margin-top:16px;color:#F7F3EA}
   .fscript .fmeta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
   .fscript .fmeta span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#EDE7DA;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:7px 14px}
-  .fscript .fbody{padding:52px 72px 58px;background:var(--panel)}
-  .fscript .fbody p{font-family:'Fraunces',Georgia,serif;font-size:25px;line-height:1.62;color:#1B211B;font-weight:400;margin:0 0 30px;max-width:none}
+  .fscript .fbody{padding:44px 72px 52px;background:var(--panel)}
+  .fscript .fblk{padding:26px 0;border-bottom:1px solid var(--line2)}
+  .fscript .fblk:first-child{padding-top:0}
+  .fscript .fblk:last-child{border-bottom:none;padding-bottom:0}
+  .fscript .fbkick{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+  .fscript .bkn{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.2em;font-weight:700;text-transform:uppercase;color:var(--gold-d);white-space:nowrap}
+  .fscript .bkt{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:500;color:var(--ink);letter-spacing:-.3px}
+  .fscript .bkm{margin-left:auto;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--sage);letter-spacing:.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .fscript .fbody p{font-family:'Fraunces',Georgia,serif;font-size:24px;line-height:1.6;color:#1B211B;font-weight:400;margin:0 0 20px;max-width:none}
   .fscript .fbody p:last-child{margin-bottom:0}
   .fscript .fbody p b{font-weight:600;color:#0F241C}
   .fscript .fsign{text-align:center;padding:40px 24px 46px;background:radial-gradient(120% 140% at 50% -20%,#1B3329,#0F241C 70%);color:#fff;position:relative}
@@ -136,7 +143,8 @@
   .fscript .fsign .fstag{margin-top:14px;color:#8CA096;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
   @media(max-width:820px){
     .fscript .fhead{padding:32px 26px 28px}.fscript .fh2{font-size:34px}
-    .fscript .fbody{padding:32px 26px 36px}.fscript .fbody p{font-size:20px;line-height:1.6;margin-bottom:22px}
+    .fscript .fbody{padding:28px 26px 34px}.fscript .fbody p{font-size:19px;line-height:1.58;margin-bottom:16px}
+    .fscript .fbkick{flex-wrap:wrap;gap:6px 12px}.fscript .bkt{font-size:19px}.fscript .bkm{margin-left:0}
   }
 
   /* ===== STORYBOARD / CAMPAIGN SLIDES (16:9 sheets) ===== */
@@ -464,9 +472,14 @@ function optLeadSlide(o){const l=o.scriptLead;
   </div></div>`;
 }
 
-/* Full verbatim VO script slide — large readable type, one script per slide, not a word changed */
-function fullScriptSlide(kick,title,meta,paras){
-  const body=paras.map(p=>`<p>${p}</p>`).join('');
+/* Full verbatim VO script slide — large readable type, act headlines threaded through, not a word changed */
+function fullScriptSlide(kick,title,meta,blocks){
+  const body=blocks.map(b=>{
+    const paras=b.paras.map(p=>`<p>${p}</p>`).join('');
+    const t=b.head.split('·');
+    const label=t.length>1?`<span class="bkn">${t[0].trim()}</span><span class="bkt">${t.slice(1).join('·').trim()}</span>`:`<span class="bkt">${b.head}</span>`;
+    return `<div class="fblk"><div class="fbkick">${label}${b.time?`<span class="bkm">${b.time}</span>`:''}</div>${paras}</div>`;
+  }).join('');
   return `<div class="slide fscript active"><div class="sheet">
     <div class="fhead"><div class="fkick2">${kick}</div><div class="fh2">${title}</div>
       <div class="fmeta">${meta.map(m=>`<span>${m}</span>`).join('')}</div></div>
@@ -476,22 +489,34 @@ function fullScriptSlide(kick,title,meta,paras){
 }
 
 const FULL_S07=[
-  "Trying to fix your health alone means a thousand voices — every influencer, every headline, all shouting, all contradicting, all quietly selling. No wonder you're overwhelmed. So take a breath. Put the noise down. I'm going to walk you through the whole thing myself, calmly, with no hype and nothing to push.",
-  "Let me tell you why it never stuck, because it wasn't your fault. Nobody gave you the whole picture — just fragments, one gadget at a time, with no order. That's like building furniture with no instructions. You didn't lack willpower. You lacked a path. And a path can be taught.",
-  "So here's the whole path, laid out plainly, in six PILLARS — like a real curriculum, not a pile of tips. Eat. Sleep. Move. Supplement. Protect your heart. Understand your numbers. You master them in order, each building on the last. Not overwhelming when it's sequenced — just 18 lessons, week by week, with a guide.",
-  "And these lessons aren't my opinions or the trend of the month. Harvard tracked 123,000 adults. 5 of these very habits by age 40 added FOURTEEN healthy years. The science already did the hard part. My whole job is simply to teach you how to do it.",
-  "That's exactly what the Academy is — a guided classroom, not another pile of tips you'll bookmark and forget. 18 live sessions where you can raise your hand, real coaching that meets you where you are, and your own numbers turned into a personal blueprint. Someone walks the path with you.",
-  "So here's the honest truth. You don't need more information — you're already buried in it. You need someone to show you the right order and stay with you while you walk it. That's what I'm offering, twenty percent off this week. Class is in session, and there's a seat for you. I'm Courtney. This is Longevity Life Academy."
+  {head:"Act I · The Hook",time:"0:00–0:08",paras:[
+    "Trying to fix your health alone means a thousand voices — every influencer, every headline, all shouting, all contradicting, all quietly selling. No wonder you're overwhelmed. So take a breath. Put the noise down. I'm going to walk you through the whole thing myself, calmly, with no hype and nothing to push."]},
+  {head:"Act II · The Problem",time:"0:08–0:22",paras:[
+    "Let me tell you why it never stuck, because it wasn't your fault. Nobody gave you the whole picture — just fragments, one gadget at a time, with no order. That's like building furniture with no instructions. You didn't lack willpower. You lacked a path. And a path can be taught."]},
+  {head:"Act III · The Lessons",time:"0:22–0:38",paras:[
+    "So here's the whole path, laid out plainly, in six PILLARS — like a real curriculum, not a pile of tips. Eat. Sleep. Move. Supplement. Protect your heart. Understand your numbers. You master them in order, each building on the last. Not overwhelming when it's sequenced — just 18 lessons, week by week, with a guide."]},
+  {head:"Act IV · The Proof",time:"0:38–0:54",paras:[
+    "And these lessons aren't my opinions or the trend of the month. Harvard tracked 123,000 adults. 5 of these very habits by age 40 added FOURTEEN healthy years. The science already did the hard part. My whole job is simply to teach you how to do it."]},
+  {head:"Act V · The Offer",time:"0:54–1:08",paras:[
+    "That's exactly what the Academy is — a guided classroom, not another pile of tips you'll bookmark and forget. 18 live sessions where you can raise your hand, real coaching that meets you where you are, and your own numbers turned into a personal blueprint. Someone walks the path with you."]},
+  {head:"Act VI · The Close",time:"1:08–1:22",paras:[
+    "So here's the honest truth. You don't need more information — you're already buried in it. You need someone to show you the right order and stay with you while you walk it. That's what I'm offering, twenty percent off this week. Class is in session, and there's a seat for you. I'm Courtney. This is Longevity Life Academy."]}
 ];
 const FULL_S08=[
-  "Picture two women. Same birthday, same start at forty. Fast-forward thirty years. One out-walks her grandkids on a mountain trail, sharp and strong. The other needs a hand just to stand up. Same start, wildly different endings. And it wasn't luck, and it wasn't genes. It was chosen.",
-  "This wasn't genetics — that's the comfortable lie we tell ourselves. Somewhere in their forties, one woman started making a choice. Small, boring, invisible on any single day, but repeated daily for years. And slowly the two curves split. You are standing at that exact fork right now, whether you feel it or not.",
-  "And don't think the gap is small.",
-  "OPTION 1: Harvard followed 123,000 people. 5 habits by age 40 meant FOURTEEN more healthy years. That's the measurable distance between the woman on the trail and the woman reaching for a hand. Fourteen good years — chosen, not given.",
-  "OPTION 2: The Million Veteran Program tracked 700,000 adults. 8 basic habits by AGE forty added 20+ healthy years — 24 for men, 21 for women. That's the measurable distance between the woman on the trail and the woman reaching for a hand. 20+ good years — chosen, not given.",
-  "Here's the hopeful part. Bending your curve toward the upper life isn't complicated. It doesn't take a lab or a fortune. We teach six simple pillars — nutrition, sleep, movement, strategic supplementation, protect your heart, understand your numbers — done consistently, day after ordinary day. A small lever, an enormous gap between the two lives.",
-  "The Academy is simply how you take the upper curve on purpose, instead of drifting onto the lower one by default. Eighteen live sessions across the six pillars, with your own numbers turned into a personal blueprint. Same starting line you're on now — but a deliberately better ending.",
-  "So here's the thing about that fork. Not choosing is a choice — it's quietly choosing the lower curve. And every day you wait is a step in the wrong direction. It's twenty percent off this week, which makes right now the cheapest, easiest moment you'll ever have to pick the good life while it's still yours to pick. Choose the upper curve. I'm Courtney. This is Longevity Life Academy."
+  {head:"Act I · The Hook",time:"0:00–0:08",paras:[
+    "Picture two women. Same birthday, same start at forty. Fast-forward thirty years. One out-walks her grandkids on a mountain trail, sharp and strong. The other needs a hand just to stand up. Same start, wildly different endings. And it wasn't luck, and it wasn't genes. It was chosen."]},
+  {head:"Act II · The Divergence",time:"0:08–0:22",paras:[
+    "This wasn't genetics — that's the comfortable lie we tell ourselves. Somewhere in their forties, one woman started making a choice. Small, boring, invisible on any single day, but repeated daily for years. And slowly the two curves split. You are standing at that exact fork right now, whether you feel it or not."]},
+  {head:"Act III · The Proof",time:"0:22–0:38",paras:[
+    "And don't think the gap is small.",
+    "OPTION 1: Harvard followed 123,000 people. 5 habits by age 40 meant FOURTEEN more healthy years. That's the measurable distance between the woman on the trail and the woman reaching for a hand. Fourteen good years — chosen, not given.",
+    "OPTION 2: The Million Veteran Program tracked 700,000 adults. 8 basic habits by AGE forty added 20+ healthy years — 24 for men, 21 for women. That's the measurable distance between the woman on the trail and the woman reaching for a hand. 20+ good years — chosen, not given."]},
+  {head:"Act IV · The Mechanism",time:"0:38–0:52",paras:[
+    "Here's the hopeful part. Bending your curve toward the upper life isn't complicated. It doesn't take a lab or a fortune. We teach six simple pillars — nutrition, sleep, movement, strategic supplementation, protect your heart, understand your numbers — done consistently, day after ordinary day. A small lever, an enormous gap between the two lives."]},
+  {head:"Act V · The Offer",time:"0:52–1:06",paras:[
+    "The Academy is simply how you take the upper curve on purpose, instead of drifting onto the lower one by default. Eighteen live sessions across the six pillars, with your own numbers turned into a personal blueprint. Same starting line you're on now — but a deliberately better ending."]},
+  {head:"Act VI · The Close",time:"1:06–1:20",paras:[
+    "So here's the thing about that fork. Not choosing is a choice — it's quietly choosing the lower curve. And every day you wait is a step in the wrong direction. It's twenty percent off this week, which makes right now the cheapest, easiest moment you'll ever have to pick the good life while it's still yours to pick. Choose the upper curve. I'm Courtney. This is Longevity Life Academy."]}
 ];
 
 /* ============ BUILD THE SCRIPT BOOK ============ */
